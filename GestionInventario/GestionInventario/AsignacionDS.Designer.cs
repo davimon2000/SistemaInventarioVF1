@@ -279,8 +279,6 @@ namespace GestionInventario {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class AsignacionDataTable : global::System.Data.TypedTableBase<AsignacionRow> {
             
-            private global::System.Data.DataColumn columnSede;
-            
             private global::System.Data.DataColumn columnFechaAsignacion;
             
             private global::System.Data.DataColumn columnId;
@@ -320,14 +318,6 @@ namespace GestionInventario {
             protected AsignacionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SedeColumn {
-                get {
-                    return this.columnSede;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -399,10 +389,9 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AsignacionRow AddAsignacionRow(string Sede, System.DateTime FechaAsignacion, string CodInterno, string Serial) {
+            public AsignacionRow AddAsignacionRow(System.DateTime FechaAsignacion, string CodInterno, string Serial) {
                 AsignacionRow rowAsignacionRow = ((AsignacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Sede,
                         FechaAsignacion,
                         null,
                         CodInterno,
@@ -436,7 +425,6 @@ namespace GestionInventario {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnSede = base.Columns["Sede"];
                 this.columnFechaAsignacion = base.Columns["FechaAsignacion"];
                 this.columnId = base.Columns["Id"];
                 this.columnCodInterno = base.Columns["CodInterno"];
@@ -446,8 +434,6 @@ namespace GestionInventario {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnSede = new global::System.Data.DataColumn("Sede", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSede);
                 this.columnFechaAsignacion = new global::System.Data.DataColumn("FechaAsignacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaAsignacion);
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
@@ -458,7 +444,6 @@ namespace GestionInventario {
                 base.Columns.Add(this.columnSerial);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
-                this.columnSede.MaxLength = 50;
                 this.columnId.AutoIncrement = true;
                 this.columnId.AutoIncrementSeed = -1;
                 this.columnId.AutoIncrementStep = -1;
@@ -610,22 +595,6 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Sede {
-                get {
-                    try {
-                        return ((string)(this[this.tableAsignacion.SedeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Sede\' de la tabla \'Asignacion\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAsignacion.SedeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime FechaAsignacion {
                 get {
                     try {
@@ -676,18 +645,6 @@ namespace GestionInventario {
                 set {
                     this[this.tableAsignacion.SerialColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSedeNull() {
-                return this.IsNull(this.tableAsignacion.SedeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSedeNull() {
-                this[this.tableAsignacion.SedeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -874,7 +831,6 @@ namespace GestionInventario.AsignacionDSTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Asignacion";
-            tableMapping.ColumnMappings.Add("Sede", "Sede");
             tableMapping.ColumnMappings.Add("FechaAsignacion", "FechaAsignacion");
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("CodInterno", "CodInterno");
@@ -895,9 +851,9 @@ namespace GestionInventario.AsignacionDSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \r\n    a.Id,\r\n    r.CodInterno,\r\n    r.Serial,\r\n    a.Sede,\r\n    a.FechaAsi" +
-                "gnacion\r\nFROM dbo.Asignacion a\r\nINNER JOIN dbo.RegistroActivos r\r\n    ON a.IdAct" +
-                "ivo = r.Id";
+            this._commandCollection[0].CommandText = "SELECT        a.Id, r.CodInterno, r.Serial, a.FechaAsignacion\r\nFROM            As" +
+                "ignacion AS a INNER JOIN\r\n                         RegistroActivos AS r ON a.IdA" +
+                "ctivo = r.Id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;

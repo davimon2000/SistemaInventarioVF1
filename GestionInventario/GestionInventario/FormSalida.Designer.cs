@@ -50,6 +50,10 @@
             this.lblObservacion = new System.Windows.Forms.Label();
             this.txtUsuarioAsig = new System.Windows.Forms.TextBox();
             this.lblusuarioAsig = new System.Windows.Forms.Label();
+            this.cmbCondicionEntrega = new System.Windows.Forms.ComboBox();
+            this.lblCondicionEntrega = new System.Windows.Forms.Label();
+            this.lblEstadoDevolucion = new System.Windows.Forms.Label();
+            this.cmbEstadoDevolucion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesDSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).BeginInit();
@@ -143,7 +147,7 @@
             // 
             this.btnAsign.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnAsign.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsign.Location = new System.Drawing.Point(199, 342);
+            this.btnAsign.Location = new System.Drawing.Point(199, 379);
             this.btnAsign.Name = "btnAsign";
             this.btnAsign.Size = new System.Drawing.Size(98, 32);
             this.btnAsign.TabIndex = 23;
@@ -155,7 +159,7 @@
             // 
             this.btnDevolver.BackColor = System.Drawing.Color.Tan;
             this.btnDevolver.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolver.Location = new System.Drawing.Point(214, 342);
+            this.btnDevolver.Location = new System.Drawing.Point(214, 379);
             this.btnDevolver.Name = "btnDevolver";
             this.btnDevolver.Size = new System.Drawing.Size(98, 32);
             this.btnDevolver.TabIndex = 24;
@@ -210,7 +214,7 @@
             // 
             // txtObservacion
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(196, 260);
+            this.txtObservacion.Location = new System.Drawing.Point(196, 297);
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(195, 20);
             this.txtObservacion.TabIndex = 33;
@@ -219,7 +223,7 @@
             // 
             this.lblObservacion.AutoSize = true;
             this.lblObservacion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservacion.Location = new System.Drawing.Point(50, 257);
+            this.lblObservacion.Location = new System.Drawing.Point(50, 294);
             this.lblObservacion.Name = "lblObservacion";
             this.lblObservacion.Size = new System.Drawing.Size(106, 21);
             this.lblObservacion.TabIndex = 32;
@@ -227,7 +231,7 @@
             // 
             // txtUsuarioAsig
             // 
-            this.txtUsuarioAsig.Location = new System.Drawing.Point(198, 303);
+            this.txtUsuarioAsig.Location = new System.Drawing.Point(198, 340);
             this.txtUsuarioAsig.Name = "txtUsuarioAsig";
             this.txtUsuarioAsig.Size = new System.Drawing.Size(195, 20);
             this.txtUsuarioAsig.TabIndex = 35;
@@ -236,17 +240,65 @@
             // 
             this.lblusuarioAsig.AutoSize = true;
             this.lblusuarioAsig.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuarioAsig.Location = new System.Drawing.Point(52, 300);
+            this.lblusuarioAsig.Location = new System.Drawing.Point(52, 337);
             this.lblusuarioAsig.Name = "lblusuarioAsig";
             this.lblusuarioAsig.Size = new System.Drawing.Size(121, 21);
             this.lblusuarioAsig.TabIndex = 34;
             this.lblusuarioAsig.Text = "Usuario de red:";
             // 
+            // cmbCondicionEntrega
+            // 
+            this.cmbCondicionEntrega.FormattingEnabled = true;
+            this.cmbCondicionEntrega.Items.AddRange(new object[] {
+            "Nuevo",
+            "Usado"});
+            this.cmbCondicionEntrega.Location = new System.Drawing.Point(199, 256);
+            this.cmbCondicionEntrega.Name = "cmbCondicionEntrega";
+            this.cmbCondicionEntrega.Size = new System.Drawing.Size(192, 21);
+            this.cmbCondicionEntrega.TabIndex = 36;
+            this.cmbCondicionEntrega.ValueMember = "Id";
+            // 
+            // lblCondicionEntrega
+            // 
+            this.lblCondicionEntrega.AutoSize = true;
+            this.lblCondicionEntrega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCondicionEntrega.Location = new System.Drawing.Point(52, 256);
+            this.lblCondicionEntrega.Name = "lblCondicionEntrega";
+            this.lblCondicionEntrega.Size = new System.Drawing.Size(148, 21);
+            this.lblCondicionEntrega.TabIndex = 37;
+            this.lblCondicionEntrega.Text = "Condición Entrega:";
+            // 
+            // lblEstadoDevolucion
+            // 
+            this.lblEstadoDevolucion.AutoSize = true;
+            this.lblEstadoDevolucion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoDevolucion.Location = new System.Drawing.Point(50, 256);
+            this.lblEstadoDevolucion.Name = "lblEstadoDevolucion";
+            this.lblEstadoDevolucion.Size = new System.Drawing.Size(149, 21);
+            this.lblEstadoDevolucion.TabIndex = 38;
+            this.lblEstadoDevolucion.Text = "Estado Devolución:";
+            // 
+            // cmbEstadoDevolucion
+            // 
+            this.cmbEstadoDevolucion.FormattingEnabled = true;
+            this.cmbEstadoDevolucion.Items.AddRange(new object[] {
+            "Bueno",
+            "Con Falla"});
+            this.cmbEstadoDevolucion.Location = new System.Drawing.Point(201, 256);
+            this.cmbEstadoDevolucion.Name = "cmbEstadoDevolucion";
+            this.cmbEstadoDevolucion.Size = new System.Drawing.Size(192, 21);
+            this.cmbEstadoDevolucion.TabIndex = 39;
+            this.cmbEstadoDevolucion.ValueMember = "Id";
+            // 
             // FormSalida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 397);
+            this.ClientSize = new System.Drawing.Size(443, 479);
+            this.Controls.Add(this.cmbEstadoDevolucion);
+            this.Controls.Add(this.lblEstadoDevolucion);
+            this.Controls.Add(this.lblCondicionEntrega);
+            this.Controls.Add(this.cmbCondicionEntrega);
             this.Controls.Add(this.txtUsuarioAsig);
             this.Controls.Add(this.lblusuarioAsig);
             this.Controls.Add(this.txtObservacion);
@@ -298,5 +350,9 @@
         private System.Windows.Forms.Label lblObservacion;
         private System.Windows.Forms.TextBox txtUsuarioAsig;
         private System.Windows.Forms.Label lblusuarioAsig;
+        private System.Windows.Forms.ComboBox cmbCondicionEntrega;
+        private System.Windows.Forms.Label lblCondicionEntrega;
+        private System.Windows.Forms.Label lblEstadoDevolucion;
+        private System.Windows.Forms.ComboBox cmbEstadoDevolucion;
     }
 }

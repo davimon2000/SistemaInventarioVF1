@@ -9,25 +9,18 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AsignacionTableAdapter" GeneratorDataComponentClassName="AsignacionTableAdapter" Name="Asignacion" UserDataComponentName="AsignacionTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="InventarioActivosConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="InventarioActivosConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT 
-    a.Id,
-    r.CodInterno,
-    r.Serial,
-    a.Sede,
-    a.FechaAsignacion
-FROM dbo.Asignacion a
-INNER JOIN dbo.RegistroActivos r
-    ON a.IdActivo = r.Id</CommandText>
+                    <CommandText>SELECT        a.Id, r.CodInterno, r.Serial, a.FechaAsignacion
+FROM            Asignacion AS a INNER JOIN
+                         RegistroActivos AS r ON a.IdActivo = r.Id</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Sede" DataSetColumn="Sede" />
               <Mapping SourceColumn="FechaAsignacion" DataSetColumn="FechaAsignacion" />
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="CodInterno" DataSetColumn="CodInterno" />
@@ -64,26 +57,19 @@ WHERE r.CodInterno LIKE @Numero
   <xs:element name="AsignacionDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="AsignacionDS" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AsignacionDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Asignacion" msprop:Generator_RowClassName="AsignacionRow" msprop:Generator_RowEvHandlerName="AsignacionRowChangeEventHandler" msprop:Generator_RowDeletedName="AsignacionRowDeleted" msprop:Generator_RowDeletingName="AsignacionRowDeleting" msprop:Generator_RowEvArgName="AsignacionRowChangeEvent" msprop:Generator_TablePropName="Asignacion" msprop:Generator_RowChangedName="AsignacionRowChanged" msprop:Generator_UserTableName="Asignacion" msprop:Generator_RowChangingName="AsignacionRowChanging" msprop:Generator_TableClassName="AsignacionDataTable" msprop:Generator_TableVarName="tableAsignacion">
+        <xs:element name="Asignacion" msprop:Generator_RowEvHandlerName="AsignacionRowChangeEventHandler" msprop:Generator_RowDeletedName="AsignacionRowDeleted" msprop:Generator_RowDeletingName="AsignacionRowDeleting" msprop:Generator_RowEvArgName="AsignacionRowChangeEvent" msprop:Generator_TablePropName="Asignacion" msprop:Generator_RowChangedName="AsignacionRowChanged" msprop:Generator_UserTableName="Asignacion" msprop:Generator_RowChangingName="AsignacionRowChanging" msprop:Generator_RowClassName="AsignacionRow" msprop:Generator_TableClassName="AsignacionDataTable" msprop:Generator_TableVarName="tableAsignacion">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Sede" msprop:Generator_UserColumnName="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnVarNameInTable="columnSede" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="FechaAsignacion" msprop:Generator_UserColumnName="FechaAsignacion" msprop:Generator_ColumnPropNameInTable="FechaAsignacionColumn" msprop:Generator_ColumnPropNameInRow="FechaAsignacion" msprop:Generator_ColumnVarNameInTable="columnFechaAsignacion" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="CodInterno" msprop:Generator_ColumnPropNameInRow="CodInterno" msprop:Generator_ColumnPropNameInTable="CodInternoColumn" msprop:Generator_ColumnVarNameInTable="columnCodInterno" msprop:Generator_UserColumnName="CodInterno">
+              <xs:element name="FechaAsignacion" msprop:Generator_ColumnPropNameInTable="FechaAsignacionColumn" msprop:Generator_ColumnPropNameInRow="FechaAsignacion" msprop:Generator_UserColumnName="FechaAsignacion" msprop:Generator_ColumnVarNameInTable="columnFechaAsignacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="CodInterno" msprop:Generator_UserColumnName="CodInterno" msprop:Generator_ColumnPropNameInTable="CodInternoColumn" msprop:Generator_ColumnPropNameInRow="CodInterno" msprop:Generator_ColumnVarNameInTable="columnCodInterno">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Serial" msprop:Generator_ColumnPropNameInRow="Serial" msprop:Generator_ColumnPropNameInTable="SerialColumn" msprop:Generator_ColumnVarNameInTable="columnSerial" msprop:Generator_UserColumnName="Serial" minOccurs="0">
+              <xs:element name="Serial" msprop:Generator_UserColumnName="Serial" msprop:Generator_ColumnPropNameInTable="SerialColumn" msprop:Generator_ColumnPropNameInRow="Serial" msprop:Generator_ColumnVarNameInTable="columnSerial" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

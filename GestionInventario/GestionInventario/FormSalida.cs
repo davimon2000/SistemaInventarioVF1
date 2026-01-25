@@ -49,10 +49,10 @@ namespace GestionInventario
                 bool Disponible = true;
                  string observacion = txtObservacion.Text;
                 string usuarioAsig = txtUsuarioAsig.Text;
+                string CondicionEntrega = cmbCondicionEntrega.SelectedItem.ToString();
 
 
-
-                if (Sede == Form3Login.SedeIdUsuarioSistema)
+                if (Sede == Form3Login.SedeIdUsuarioSistema || Form3Login.RolUsuarioSistema == "Administrador")
                 {
 
 
@@ -284,9 +284,9 @@ namespace GestionInventario
                             // INSERT ASIGNACIÓN
                             string insertAsignar = @"
                         INSERT INTO Asignacion
-                        (IdActivo, UsuarioId, SedeId, FechaAsignacion, Observacion, UsuarioSistema)
+                        (IdActivo, UsuarioId, SedeId, FechaAsignacion, Observacion, UsuarioSistema, CondicionEntrega)
                         VALUES
-                        (@InventarioId, @UsuarioId, @SedeId, GETDATE(), @Obs, @UsuarioSistema)";
+                        (@InventarioId, @UsuarioId, @SedeId, GETDATE(), @Obs, @UsuarioSistema, @CondicionEntrega)";
 
                             using (SqlCommand cmdInsert = new SqlCommand(insertAsignar, conn))
                             {
@@ -295,10 +295,11 @@ namespace GestionInventario
                                 cmdInsert.Parameters.AddWithValue("@SedeId", Sede);
                                 cmdInsert.Parameters.AddWithValue("@Obs", txtObservacion.Text);
                                 cmdInsert.Parameters.AddWithValue("@UsuarioSistema", Form3Login.UsuarioActual);
+                                cmdInsert.Parameters.AddWithValue("@CondicionEntrega", CondicionEntrega);   
 
                                 cmdInsert.ExecuteNonQuery();
                             }
-
+                            MessageBox.Show("Activo asignado correctamente");
 
 
                         }
@@ -313,9 +314,9 @@ namespace GestionInventario
                             // INSERT DEVOLUCIÓN
                             string insertDevolver = @"
                         INSERT INTO Asignacion
-                        (IdActivo, UsuarioId, SedeId, FechaDevolucion, Observacion, UsuarioSistema)
+                        (IdActivo, UsuarioId, SedeId, FechaDevolucion, Observacion, UsuarioSistema, EstadoDevolucion)
                         VALUES
-                        (@InventarioId, NULL, @SedeId, GETDATE(), @Obs, @UsuarioSistema)";
+                        (@InventarioId, NULL, @SedeId, GETDATE(), @Obs, @UsuarioSistema, @EstadoDevolucion)";
 
                             using (SqlCommand cmdInsert = new SqlCommand(insertDevolver, conn))
                             {
@@ -323,6 +324,7 @@ namespace GestionInventario
                                 cmdInsert.Parameters.AddWithValue("@SedeId", Sede);
                                 cmdInsert.Parameters.AddWithValue("@Obs", txtObservacion.Text);
                                 cmdInsert.Parameters.AddWithValue("@UsuarioSistema", Form3Login.UsuarioActual);
+                                cmdInsert.Parameters.AddWithValue("@EstadoDevolucion", cmbEstadoDevolucion.SelectedItem.ToString());
 
                                 cmdInsert.ExecuteNonQuery();
                             }
@@ -361,10 +363,14 @@ namespace GestionInventario
             btnAsign.Visible = true;
             lblusuarioAsig.Visible = true;
             txtUsuarioAsig.Visible = true;
+            lblCondicionEntrega.Visible = true;
+            cmbCondicionEntrega.Visible = true;
 
             lblFechaDev.Visible = false;
             dtpFechaDev.Visible = false;
             btnDevolver.Visible = false;
+            lblEstadoDevolucion.Visible = false;
+            cmbEstadoDevolucion.Visible = false;
 
 
 
@@ -385,10 +391,14 @@ namespace GestionInventario
                 btnAsign.Visible = true;
                 lblusuarioAsig.Visible = true;
                 txtUsuarioAsig.Visible = true;
+                lblCondicionEntrega.Visible = true;
+                cmbCondicionEntrega.Visible = true;
 
                 lblFechaDev.Visible = false;
                 dtpFechaDev.Visible = false;
                 btnDevolver.Visible = false;
+                lblEstadoDevolucion.Visible = false;
+                cmbEstadoDevolucion.Visible = false;
             }
             else
             {
@@ -402,10 +412,15 @@ namespace GestionInventario
                 btnAsign.Visible = false;
                 lblusuarioAsig.Visible = false;
                 txtUsuarioAsig.Visible = false;
+                lblCondicionEntrega.Visible = false;
+                cmbCondicionEntrega.Visible = false;
 
                 lblFechaDev.Visible = true;
                 dtpFechaDev.Visible = true;
                 btnDevolver.Visible = true;
+                lblEstadoDevolucion.Visible = true;
+                cmbEstadoDevolucion.Visible = true;
+
             }
         }
 
@@ -487,6 +502,8 @@ namespace GestionInventario
             bool Disponible = true;
             string observacion = txtObservacion.Text;
             string usuarioAsig = txtUsuarioAsig.Text;
+            
+            String EstadoDevolucion = cmbEstadoDevolucion.SelectedItem.ToString();
 
 
             try

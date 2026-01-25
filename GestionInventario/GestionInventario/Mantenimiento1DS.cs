@@ -4,6 +4,9 @@
 
     partial class Mantenimiento1DS
     {
+        partial class Mantenimiento1DataTable
+        {
+        }
     }
 }
 

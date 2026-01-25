@@ -301,7 +301,7 @@ namespace GestionInventario
             //if (seleccionEstado != "Con Falla")
             //{
 
-            if (sedeId == Form3Login.SedeIdUsuarioSistema)
+            if (sedeId == Form3Login.SedeIdUsuarioSistema || Form3Login.RolUsuarioSistema == "Administrador")
             {
 
                 using (SqlConnection conn = new SqlConnection(connectionString))

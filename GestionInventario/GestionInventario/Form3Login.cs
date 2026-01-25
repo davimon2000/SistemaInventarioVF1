@@ -1,14 +1,17 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using GestionInventario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GestionInventario;
+
 
 
 namespace GestionInventario
@@ -17,6 +20,7 @@ namespace GestionInventario
     {
         public static string UsuarioActual = "";
         public static int SedeIdUsuarioSistema = 0;
+        public static string RolUsuarioSistema = "";
         public Form3Login()
         {
             InitializeComponent();
@@ -27,6 +31,13 @@ namespace GestionInventario
             string usuario = txtUsuario.Text.Trim();
             string contrasena = txtContrasena.Text.Trim();
             int sedeId = 0;
+            String rolUsuario ="";
+
+            //SqlDataReader dr;
+            //rolUsuario = dr["NombreRol"].ToString();
+            
+
+
 
             if (usuario == "" || contrasena == "")
             {
@@ -62,7 +73,7 @@ namespace GestionInventario
                         try
                         {
                             string querySede = @"
-        SELECT SedeId
+        SELECT SedeId, Rol
         FROM Usuarios
         WHERE Usuario = @Usuario";
 
@@ -80,6 +91,8 @@ namespace GestionInventario
 
                                 sedeId = Convert.ToInt32(result);
                                 SedeIdUsuarioSistema = sedeId;
+                                RolUsuarioSistema = "";
+                                //rolUsuario = "Usuario Sede";
                             }
 
                             //MessageBox.Show("El Id de sede es: " + sedeId);
@@ -91,8 +104,18 @@ namespace GestionInventario
 
                     }
 
+                    //Sesion.Usuario = usuario;
+                    //Sesion.SedeId = sedeId;
+                    //Sesion.Rol = rol;
+                    else
+                    {
+                        rolUsuario= "Administrador";
+                        RolUsuarioSistema = rolUsuario;
+                    }
 
-                    frm.Show();
+
+
+                        frm.Show();
 
 
                 }
@@ -103,7 +126,31 @@ namespace GestionInventario
             }
 
 
+            
+            //using (SqlConnection cn = new SqlConnection(conexion))
+            ////using (SqlCommand cmd = new SqlCommand(sql, cn))
+            //{
+            //    cn.Open();
+            //    string sql = @"
+            //    SELECT Rol
+            //    FROM Usuarios
+            //    WHERE Usuario = @Usuario";
+
+            //    using (SqlCommand cmd = new SqlCommand(sql, cn))
+            //    using (SqlDataReader dr = cmd.ExecuteReader())
+            //    {
+            //        if (dr.Read())
+            //        {
+            //            string rol = dr["Rol"].ToString();
+            //        }
+            //    }
+            //    cn.Close();
+            //}
+
         }
+
+
+        
 
 
 
@@ -112,4 +159,15 @@ namespace GestionInventario
 
         }
     }
+    //public static class Sesion
+    //{
+    //    public static string Usuario { get; set; }
+    //    public static int SedeId { get; set; }
+    //    public static string Rol { get; set; }
+
+    //    public static bool EsAdministrador
+    //    {
+    //        get { return Rol == "Administrador"; }
+    //    }
+    //}
 }
