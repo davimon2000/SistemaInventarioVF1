@@ -287,6 +287,8 @@ namespace GestionInventario {
             
             private global::System.Data.DataColumn columnSerial;
             
+            private global::System.Data.DataColumn columnSedeId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AsignacionDataTable() {
@@ -354,6 +356,14 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SedeIdColumn {
+                get {
+                    return this.columnSedeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AsignacionRow AddAsignacionRow(System.DateTime FechaAsignacion, string CodInterno, string Serial) {
+            public AsignacionRow AddAsignacionRow(System.DateTime FechaAsignacion, string CodInterno, string Serial, int SedeId) {
                 AsignacionRow rowAsignacionRow = ((AsignacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FechaAsignacion,
                         null,
                         CodInterno,
-                        Serial};
+                        Serial,
+                        SedeId};
                 rowAsignacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAsignacionRow);
                 return rowAsignacionRow;
@@ -429,6 +440,7 @@ namespace GestionInventario {
                 this.columnId = base.Columns["Id"];
                 this.columnCodInterno = base.Columns["CodInterno"];
                 this.columnSerial = base.Columns["Serial"];
+                this.columnSedeId = base.Columns["SedeId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,6 +454,8 @@ namespace GestionInventario {
                 base.Columns.Add(this.columnCodInterno);
                 this.columnSerial = new global::System.Data.DataColumn("Serial", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSerial);
+                this.columnSedeId = new global::System.Data.DataColumn("SedeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSedeId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -649,6 +663,22 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SedeId {
+                get {
+                    try {
+                        return ((int)(this[this.tableAsignacion.SedeIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SedeId\' de la tabla \'Asignacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAsignacion.SedeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsFechaAsignacionNull() {
                 return this.IsNull(this.tableAsignacion.FechaAsignacionColumn);
             }
@@ -669,6 +699,18 @@ namespace GestionInventario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSerialNull() {
                 this[this.tableAsignacion.SerialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSedeIdNull() {
+                return this.IsNull(this.tableAsignacion.SedeIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSedeIdNull() {
+                this[this.tableAsignacion.SedeIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -835,6 +877,7 @@ namespace GestionInventario.AsignacionDSTableAdapters {
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("CodInterno", "CodInterno");
             tableMapping.ColumnMappings.Add("Serial", "Serial");
+            tableMapping.ColumnMappings.Add("SedeId", "SedeId");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -851,15 +894,17 @@ namespace GestionInventario.AsignacionDSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        a.Id, r.CodInterno, r.Serial, a.FechaAsignacion\r\nFROM            As" +
-                "ignacion AS a INNER JOIN\r\n                         RegistroActivos AS r ON a.IdA" +
-                "ctivo = r.Id";
+            this._commandCollection[0].CommandText = "SELECT        a.Id, r.CodInterno, r.Serial, a.FechaAsignacion, a.SedeId\r\nFROM    " +
+                "        Asignacion AS a INNER JOIN\r\n                         RegistroActivos AS " +
+                "r ON a.IdActivo = r.Id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT \r\n    a.Id,\r\n    r.CodInterno,\r\n    r.Serial,\r\n    a.Sede,\r\n    a.FechaAsi" +
-                "gnacion\r\nFROM dbo.Asignacion a\r\nINNER JOIN dbo.RegistroActivos r\r\n    ON a.IdAct" +
-                "ivo = r.Id\r\nWHERE r.CodInterno LIKE @Numero\r\n   OR r.Serial LIKE @Numero";
+            this._commandCollection[1].CommandText = @"SELECT        a.Id, r.CodInterno, r.Serial, a.FechaAsignacion
+FROM            Asignacion AS a INNER JOIN
+                         RegistroActivos AS r ON a.IdActivo = r.Id
+WHERE        (r.CodInterno LIKE @Numero) OR
+                         (r.Serial LIKE @Numero)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "CodInterno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

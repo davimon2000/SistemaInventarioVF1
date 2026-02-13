@@ -285,6 +285,8 @@ namespace GestionInventario {
             
             private global::System.Data.DataColumn columnId;
             
+            private global::System.Data.DataColumn columnSedeId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AsignacionDataTable() {
@@ -344,6 +346,14 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SedeIdColumn {
+                get {
+                    return this.columnSedeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +389,13 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AsignacionRow AddAsignacionRow(System.DateTime FechaAsignacion, int IdActivo) {
+            public AsignacionRow AddAsignacionRow(System.DateTime FechaAsignacion, int IdActivo, int SedeId) {
                 AsignacionRow rowAsignacionRow = ((AsignacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FechaAsignacion,
                         IdActivo,
-                        null};
+                        null,
+                        SedeId};
                 rowAsignacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAsignacionRow);
                 return rowAsignacionRow;
@@ -417,6 +428,7 @@ namespace GestionInventario {
                 this.columnFechaAsignacion = base.Columns["FechaAsignacion"];
                 this.columnIdActivo = base.Columns["IdActivo"];
                 this.columnId = base.Columns["Id"];
+                this.columnSedeId = base.Columns["SedeId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,6 +440,8 @@ namespace GestionInventario {
                 base.Columns.Add(this.columnIdActivo);
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
+                this.columnSedeId = new global::System.Data.DataColumn("SedeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSedeId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -621,6 +635,22 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SedeId {
+                get {
+                    try {
+                        return ((int)(this[this.tableAsignacion.SedeIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SedeId\' de la tabla \'Asignacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAsignacion.SedeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsFechaAsignacionNull() {
                 return this.IsNull(this.tableAsignacion.FechaAsignacionColumn);
             }
@@ -641,6 +671,18 @@ namespace GestionInventario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetIdActivoNull() {
                 this[this.tableAsignacion.IdActivoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSedeIdNull() {
+                return this.IsNull(this.tableAsignacion.SedeIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSedeIdNull() {
+                this[this.tableAsignacion.SedeIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -806,36 +848,43 @@ namespace GestionInventario.AsigEditDSTableAdapters {
             tableMapping.ColumnMappings.Add("FechaAsignacion", "FechaAsignacion");
             tableMapping.ColumnMappings.Add("IdActivo", "IdActivo");
             tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("SedeId", "SedeId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Asignacion] WHERE (([Id] = @Original_Id) AND ((@IsNull_FechaAsignacion = 1 AND [FechaAsignacion] IS NULL) OR ([FechaAsignacion] = @Original_FechaAsignacion)) AND ((@IsNull_IdActivo = 1 AND [IdActivo] IS NULL) OR ([IdActivo] = @Original_IdActivo)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Asignacion] WHERE (([Id] = @Original_Id) AND ((@IsNull_FechaAsignacion = 1 AND [FechaAsignacion] IS NULL) OR ([FechaAsignacion] = @Original_FechaAsignacion)) AND ((@IsNull_IdActivo = 1 AND [IdActivo] IS NULL) OR ([IdActivo] = @Original_IdActivo)) AND ((@IsNull_SedeId = 1 AND [SedeId] IS NULL) OR ([SedeId] = @Original_SedeId)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaAsignacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaAsignacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaAsignacion", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaAsignacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SedeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SedeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Asignacion] ([FechaAsignacion], [IdActivo]) VALUES (@FechaAsignacion" +
-                ", @IdActivo);\r\nSELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = " +
-                "SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Asignacion] ([FechaAsignacion], [IdActivo], [SedeId]) VALUES (@Fecha" +
+                "Asignacion, @IdActivo, @SedeId);\r\nSELECT Id, FechaAsignacion, IdActivo, SedeId F" +
+                "ROM Asignacion WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaAsignacion", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaAsignacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SedeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Asignacion] SET [FechaAsignacion] = @FechaAsignacion, [IdActivo] = @IdActivo WHERE (([Id] = @Original_Id) AND ((@IsNull_FechaAsignacion = 1 AND [FechaAsignacion] IS NULL) OR ([FechaAsignacion] = @Original_FechaAsignacion)) AND ((@IsNull_IdActivo = 1 AND [IdActivo] IS NULL) OR ([IdActivo] = @Original_IdActivo)));
-SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Asignacion] SET [FechaAsignacion] = @FechaAsignacion, [IdActivo] = @IdActivo, [SedeId] = @SedeId WHERE (([Id] = @Original_Id) AND ((@IsNull_FechaAsignacion = 1 AND [FechaAsignacion] IS NULL) OR ([FechaAsignacion] = @Original_FechaAsignacion)) AND ((@IsNull_IdActivo = 1 AND [IdActivo] IS NULL) OR ([IdActivo] = @Original_IdActivo)) AND ((@IsNull_SedeId = 1 AND [SedeId] IS NULL) OR ([SedeId] = @Original_SedeId)));
+SELECT Id, FechaAsignacion, IdActivo, SedeId FROM Asignacion WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaAsignacion", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaAsignacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SedeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaAsignacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaAsignacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaAsignacion", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaAsignacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SedeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SedeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -852,7 +901,7 @@ SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Id, FechaAsignacion, IdActivo\r\nFROM            Asignacion";
+            this._commandCollection[0].CommandText = "SELECT        Id, FechaAsignacion, IdActivo, SedeId\r\nFROM            Asignacion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -913,7 +962,7 @@ SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, global::System.Nullable<global::System.DateTime> Original_FechaAsignacion, global::System.Nullable<int> Original_IdActivo) {
+        public virtual int Delete(int Original_Id, global::System.Nullable<global::System.DateTime> Original_FechaAsignacion, global::System.Nullable<int> Original_IdActivo, global::System.Nullable<int> Original_SedeId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_FechaAsignacion.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -930,6 +979,14 @@ SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SedeId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_SedeId.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -951,7 +1008,7 @@ SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> FechaAsignacion, global::System.Nullable<int> IdActivo) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> FechaAsignacion, global::System.Nullable<int> IdActivo, global::System.Nullable<int> SedeId) {
             if ((FechaAsignacion.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(FechaAsignacion.Value));
             }
@@ -963,6 +1020,12 @@ SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((SedeId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(SedeId.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -984,7 +1047,7 @@ SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> FechaAsignacion, global::System.Nullable<int> IdActivo, int Original_Id, global::System.Nullable<global::System.DateTime> Original_FechaAsignacion, global::System.Nullable<int> Original_IdActivo, int Id) {
+        public virtual int Update(global::System.Nullable<global::System.DateTime> FechaAsignacion, global::System.Nullable<int> IdActivo, global::System.Nullable<int> SedeId, int Original_Id, global::System.Nullable<global::System.DateTime> Original_FechaAsignacion, global::System.Nullable<int> Original_IdActivo, global::System.Nullable<int> Original_SedeId, int Id) {
             if ((FechaAsignacion.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(FechaAsignacion.Value));
             }
@@ -997,24 +1060,38 @@ SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
-            if ((Original_FechaAsignacion.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_FechaAsignacion.Value));
+            if ((SedeId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(SedeId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
+            if ((Original_FechaAsignacion.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_FechaAsignacion.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((Original_IdActivo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_IdActivo.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_IdActivo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id));
+            if ((Original_SedeId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_SedeId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1035,8 +1112,8 @@ SELECT Id, FechaAsignacion, IdActivo FROM Asignacion WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> FechaAsignacion, global::System.Nullable<int> IdActivo, int Original_Id, global::System.Nullable<global::System.DateTime> Original_FechaAsignacion, global::System.Nullable<int> Original_IdActivo) {
-            return this.Update(FechaAsignacion, IdActivo, Original_Id, Original_FechaAsignacion, Original_IdActivo, Original_Id);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> FechaAsignacion, global::System.Nullable<int> IdActivo, global::System.Nullable<int> SedeId, int Original_Id, global::System.Nullable<global::System.DateTime> Original_FechaAsignacion, global::System.Nullable<int> Original_IdActivo, global::System.Nullable<int> Original_SedeId) {
+            return this.Update(FechaAsignacion, IdActivo, SedeId, Original_Id, Original_FechaAsignacion, Original_IdActivo, Original_SedeId, Original_Id);
         }
     }
     

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EstadoYSedeView" targetNamespace="http://tempuri.org/EstadoYSedeView.xsd" xmlns:mstns="http://tempuri.org/EstadoYSedeView.xsd" xmlns="http://tempuri.org/EstadoYSedeView.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="InventarioActivosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="InventarioActivosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GestionInventario.Properties.Settings.GlobalReference.Default.InventarioActivosConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ResumenActivosPorSedeEstadoViewTableAdapter" GeneratorDataComponentClassName="ResumenActivosPorSedeEstadoViewTableAdapter" Name="ResumenActivosPorSedeEstadoView" UserDataComponentName="ResumenActivosPorSedeEstadoViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InventarioActivosConnectionString (Settings)" DbObjectName="InventarioActivos.dbo.ResumenActivosPorSedeEstadoView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Sede, EstadoActual, Cantidad FROM dbo.ResumenActivosPorSedeEstadoView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Sede" DataSetColumn="Sede" />
+              <Mapping SourceColumn="EstadoActual" DataSetColumn="EstadoActual" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EstadoYSedeView" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="EstadoYSedeView" msprop:Generator_DataSetName="EstadoYSedeView">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ResumenActivosPorSedeEstadoView" msprop:Generator_RowEvHandlerName="ResumenActivosPorSedeEstadoViewRowChangeEventHandler" msprop:Generator_RowDeletedName="ResumenActivosPorSedeEstadoViewRowDeleted" msprop:Generator_RowDeletingName="ResumenActivosPorSedeEstadoViewRowDeleting" msprop:Generator_RowEvArgName="ResumenActivosPorSedeEstadoViewRowChangeEvent" msprop:Generator_TablePropName="ResumenActivosPorSedeEstadoView" msprop:Generator_RowChangedName="ResumenActivosPorSedeEstadoViewRowChanged" msprop:Generator_RowChangingName="ResumenActivosPorSedeEstadoViewRowChanging" msprop:Generator_TableClassName="ResumenActivosPorSedeEstadoViewDataTable" msprop:Generator_RowClassName="ResumenActivosPorSedeEstadoViewRow" msprop:Generator_TableVarName="tableResumenActivosPorSedeEstadoView" msprop:Generator_UserTableName="ResumenActivosPorSedeEstadoView">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Sede" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_ColumnVarNameInTable="columnSede" msprop:Generator_UserColumnName="Sede" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EstadoActual" msprop:Generator_ColumnPropNameInRow="EstadoActual" msprop:Generator_ColumnPropNameInTable="EstadoActualColumn" msprop:Generator_ColumnVarNameInTable="columnEstadoActual" msprop:Generator_UserColumnName="EstadoActual" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

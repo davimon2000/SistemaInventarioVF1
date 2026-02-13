@@ -108,6 +108,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AsigEditDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AsignacionDS.cs">
+      <DependentUpon>AsignacionDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AsignacionDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +123,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ConsultaActivosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoYSedeView.cs">
+      <DependentUpon>EstadoYSedeView.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoYSedeView.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadoYSedeView.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -382,6 +393,17 @@
     </None>
     <None Include="ConsultaActivosDS.xss">
       <DependentUpon>ConsultaActivosDS.xsd</DependentUpon>
+    </None>
+    <None Include="EstadoYSedeView.xsc">
+      <DependentUpon>EstadoYSedeView.xsd</DependentUpon>
+    </None>
+    <None Include="EstadoYSedeView.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadoYSedeView.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EstadoYSedeView.xss">
+      <DependentUpon>EstadoYSedeView.xsd</DependentUpon>
     </None>
     <None Include="InventarioActivosDataSet.xsc">
       <DependentUpon>InventarioActivosDataSet.xsd</DependentUpon>

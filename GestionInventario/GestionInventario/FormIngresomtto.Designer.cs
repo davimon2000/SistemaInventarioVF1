@@ -50,13 +50,13 @@ namespace GestionInventario
             this.txtObservacionSalida = new System.Windows.Forms.TextBox();
             this.lblSedemtto = new System.Windows.Forms.Label();
             this.cmbSedemtto = new System.Windows.Forms.ComboBox();
-            this.sedesDS = new GestionInventario.SedesDS();
-            this.sedesDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sedesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sedesDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sedesDS = new GestionInventario.SedesDS();
             this.sedesTableAdapter = new GestionInventario.SedesDSTableAdapters.SedesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sedesDSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesDSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMantenimiento
@@ -253,20 +253,20 @@ namespace GestionInventario
             this.cmbSedemtto.TabIndex = 33;
             this.cmbSedemtto.ValueMember = "Id";
             // 
-            // sedesDS
+            // sedesBindingSource
             // 
-            this.sedesDS.DataSetName = "SedesDS";
-            this.sedesDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.sedesBindingSource.DataMember = "Sedes";
+            this.sedesBindingSource.DataSource = this.sedesDSBindingSource;
             // 
             // sedesDSBindingSource
             // 
             this.sedesDSBindingSource.DataSource = this.sedesDS;
             this.sedesDSBindingSource.Position = 0;
             // 
-            // sedesBindingSource
+            // sedesDS
             // 
-            this.sedesBindingSource.DataMember = "Sedes";
-            this.sedesBindingSource.DataSource = this.sedesDSBindingSource;
+            this.sedesDS.DataSetName = "SedesDS";
+            this.sedesDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sedesTableAdapter
             // 
@@ -298,9 +298,9 @@ namespace GestionInventario
             this.Name = "FormIngresomtto";
             this.Text = "FormIngresomtto";
             this.Load += new System.EventHandler(this.FormIngresomtto_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sedesDSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesDSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

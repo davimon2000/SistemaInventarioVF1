@@ -129,7 +129,7 @@ namespace GestionInventario
 
         private void btnIngresomtto_Click_1(object sender, EventArgs e)
         {
-            if (!UsuarioTienePermisoMtto(Form3Login.UsuarioActual) || Form3Login.RolUsuarioSistema =="Administrador")
+            if (!UsuarioTienePermisoMtto(Form3Login.UsuarioActual) )
             {
                 MessageBox.Show("No tienes permiso para acceder a Mantenimiento.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

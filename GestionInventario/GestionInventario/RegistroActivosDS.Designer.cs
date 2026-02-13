@@ -295,6 +295,8 @@ namespace GestionInventario {
             
             private global::System.Data.DataColumn columnEstadoRegistro;
             
+            private global::System.Data.DataColumn columnSedeRegistroId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public RegistroActivosDataTable() {
@@ -394,6 +396,14 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SedeRegistroIdColumn {
+                get {
+                    return this.columnSedeRegistroId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +439,7 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RegistroActivosRow AddRegistroActivosRow(int IdActivo, string CodInterno, string Serial, int Marca, System.DateTime FechaCompra, System.DateTime FechaRegistro, string EstadoRegistro) {
+            public RegistroActivosRow AddRegistroActivosRow(int IdActivo, string CodInterno, string Serial, int Marca, System.DateTime FechaCompra, System.DateTime FechaRegistro, string EstadoRegistro, int SedeRegistroId) {
                 RegistroActivosRow rowRegistroActivosRow = ((RegistroActivosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -439,7 +449,8 @@ namespace GestionInventario {
                         Marca,
                         FechaCompra,
                         FechaRegistro,
-                        EstadoRegistro};
+                        EstadoRegistro,
+                        SedeRegistroId};
                 rowRegistroActivosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRegistroActivosRow);
                 return rowRegistroActivosRow;
@@ -477,6 +488,7 @@ namespace GestionInventario {
                 this.columnFechaCompra = base.Columns["FechaCompra"];
                 this.columnFechaRegistro = base.Columns["FechaRegistro"];
                 this.columnEstadoRegistro = base.Columns["EstadoRegistro"];
+                this.columnSedeRegistroId = base.Columns["SedeRegistroId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -498,6 +510,8 @@ namespace GestionInventario {
                 base.Columns.Add(this.columnFechaRegistro);
                 this.columnEstadoRegistro = new global::System.Data.DataColumn("EstadoRegistro", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstadoRegistro);
+                this.columnSedeRegistroId = new global::System.Data.DataColumn("SedeRegistroId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSedeRegistroId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -762,6 +776,22 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SedeRegistroId {
+                get {
+                    try {
+                        return ((int)(this[this.tableRegistroActivos.SedeRegistroIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SedeRegistroId\' de la tabla \'RegistroActivos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRegistroActivos.SedeRegistroIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsSerialNull() {
                 return this.IsNull(this.tableRegistroActivos.SerialColumn);
             }
@@ -806,6 +836,18 @@ namespace GestionInventario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetEstadoRegistroNull() {
                 this[this.tableRegistroActivos.EstadoRegistroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSedeRegistroIdNull() {
+                return this.IsNull(this.tableRegistroActivos.SedeRegistroIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSedeRegistroIdNull() {
+                this[this.tableRegistroActivos.SedeRegistroIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -976,10 +1018,11 @@ namespace GestionInventario.RegistroActivosDSTableAdapters {
             tableMapping.ColumnMappings.Add("FechaCompra", "FechaCompra");
             tableMapping.ColumnMappings.Add("FechaRegistro", "FechaRegistro");
             tableMapping.ColumnMappings.Add("EstadoRegistro", "EstadoRegistro");
+            tableMapping.ColumnMappings.Add("SedeRegistroId", "SedeRegistroId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [RegistroActivos] WHERE (([Id] = @Original_Id) AND ([IdActivo] = @Original_IdActivo) AND ([CodInterno] = @Original_CodInterno) AND ((@IsNull_Serial = 1 AND [Serial] IS NULL) OR ([Serial] = @Original_Serial)) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_FechaCompra = 1 AND [FechaCompra] IS NULL) OR ([FechaCompra] = @Original_FechaCompra)) AND ([FechaRegistro] = @Original_FechaRegistro) AND ((@IsNull_EstadoRegistro = 1 AND [EstadoRegistro] IS NULL) OR ([EstadoRegistro] = @Original_EstadoRegistro)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [RegistroActivos] WHERE (([Id] = @Original_Id) AND ([IdActivo] = @Original_IdActivo) AND ([CodInterno] = @Original_CodInterno) AND ((@IsNull_Serial = 1 AND [Serial] IS NULL) OR ([Serial] = @Original_Serial)) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_FechaCompra = 1 AND [FechaCompra] IS NULL) OR ([FechaCompra] = @Original_FechaCompra)) AND ([FechaRegistro] = @Original_FechaRegistro) AND ((@IsNull_EstadoRegistro = 1 AND [EstadoRegistro] IS NULL) OR ([EstadoRegistro] = @Original_EstadoRegistro)) AND ((@IsNull_SedeRegistroId = 1 AND [SedeRegistroId] IS NULL) OR ([SedeRegistroId] = @Original_SedeRegistroId)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -993,10 +1036,12 @@ namespace GestionInventario.RegistroActivosDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaRegistro", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaRegistro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EstadoRegistro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoRegistro", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstadoRegistro", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoRegistro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SedeRegistroId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeRegistroId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SedeRegistroId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeRegistroId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [RegistroActivos] ([IdActivo], [CodInterno], [Serial], [Marca], [FechaCompra], [FechaRegistro], [EstadoRegistro]) VALUES (@IdActivo, @CodInterno, @Serial, @Marca, @FechaCompra, @FechaRegistro, @EstadoRegistro);
-SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, EstadoRegistro FROM RegistroActivos WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [RegistroActivos] ([IdActivo], [CodInterno], [Serial], [Marca], [FechaCompra], [FechaRegistro], [EstadoRegistro], [SedeRegistroId]) VALUES (@IdActivo, @CodInterno, @Serial, @Marca, @FechaCompra, @FechaRegistro, @EstadoRegistro, @SedeRegistroId);
+SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, EstadoRegistro, SedeRegistroId FROM RegistroActivos WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodInterno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodInterno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1005,10 +1050,11 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaCompra", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaCompra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaRegistro", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaRegistro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstadoRegistro", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoRegistro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SedeRegistroId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeRegistroId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [RegistroActivos] SET [IdActivo] = @IdActivo, [CodInterno] = @CodInterno, [Serial] = @Serial, [Marca] = @Marca, [FechaCompra] = @FechaCompra, [FechaRegistro] = @FechaRegistro, [EstadoRegistro] = @EstadoRegistro WHERE (([Id] = @Original_Id) AND ([IdActivo] = @Original_IdActivo) AND ([CodInterno] = @Original_CodInterno) AND ((@IsNull_Serial = 1 AND [Serial] IS NULL) OR ([Serial] = @Original_Serial)) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_FechaCompra = 1 AND [FechaCompra] IS NULL) OR ([FechaCompra] = @Original_FechaCompra)) AND ([FechaRegistro] = @Original_FechaRegistro) AND ((@IsNull_EstadoRegistro = 1 AND [EstadoRegistro] IS NULL) OR ([EstadoRegistro] = @Original_EstadoRegistro)));
-SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, EstadoRegistro FROM RegistroActivos WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [RegistroActivos] SET [IdActivo] = @IdActivo, [CodInterno] = @CodInterno, [Serial] = @Serial, [Marca] = @Marca, [FechaCompra] = @FechaCompra, [FechaRegistro] = @FechaRegistro, [EstadoRegistro] = @EstadoRegistro, [SedeRegistroId] = @SedeRegistroId WHERE (([Id] = @Original_Id) AND ([IdActivo] = @Original_IdActivo) AND ([CodInterno] = @Original_CodInterno) AND ((@IsNull_Serial = 1 AND [Serial] IS NULL) OR ([Serial] = @Original_Serial)) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_FechaCompra = 1 AND [FechaCompra] IS NULL) OR ([FechaCompra] = @Original_FechaCompra)) AND ([FechaRegistro] = @Original_FechaRegistro) AND ((@IsNull_EstadoRegistro = 1 AND [EstadoRegistro] IS NULL) OR ([EstadoRegistro] = @Original_EstadoRegistro)) AND ((@IsNull_SedeRegistroId = 1 AND [SedeRegistroId] IS NULL) OR ([SedeRegistroId] = @Original_SedeRegistroId)));
+SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, EstadoRegistro, SedeRegistroId FROM RegistroActivos WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodInterno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodInterno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1017,6 +1063,7 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaCompra", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaCompra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaRegistro", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaRegistro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstadoRegistro", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoRegistro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SedeRegistroId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeRegistroId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdActivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdActivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodInterno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodInterno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1029,6 +1076,8 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaRegistro", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaRegistro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EstadoRegistro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoRegistro", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstadoRegistro", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoRegistro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SedeRegistroId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeRegistroId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SedeRegistroId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeRegistroId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1046,13 +1095,13 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro" +
-                ", EstadoRegistro\r\nFROM            RegistroActivos";
+                ", EstadoRegistro, SedeRegistroId\r\nFROM            RegistroActivos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT CodInterno, EstadoRegistro, FechaCompra, FechaRegistro, Id, IdActivo, Marc" +
-                "a, Serial FROM RegistroActivos WHERE (CodInterno LIKE @Numero) OR (Serial LIKE @" +
-                "Numero)";
+                "a, SedeRegistroId, Serial FROM RegistroActivos WHERE (CodInterno LIKE @Numero) O" +
+                "R (Serial LIKE @Numero)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "CodInterno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1150,7 +1199,7 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_IdActivo, string Original_CodInterno, string Original_Serial, global::System.Nullable<int> Original_Marca, global::System.Nullable<global::System.DateTime> Original_FechaCompra, System.DateTime Original_FechaRegistro, string Original_EstadoRegistro) {
+        public virtual int Delete(int Original_Id, int Original_IdActivo, string Original_CodInterno, string Original_Serial, global::System.Nullable<int> Original_Marca, global::System.Nullable<global::System.DateTime> Original_FechaCompra, System.DateTime Original_FechaRegistro, string Original_EstadoRegistro, global::System.Nullable<int> Original_SedeRegistroId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_IdActivo));
             if ((Original_CodInterno == null)) {
@@ -1192,6 +1241,14 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_EstadoRegistro));
             }
+            if ((Original_SedeRegistroId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_SedeRegistroId.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1212,7 +1269,7 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IdActivo, string CodInterno, string Serial, global::System.Nullable<int> Marca, global::System.Nullable<global::System.DateTime> FechaCompra, System.DateTime FechaRegistro, string EstadoRegistro) {
+        public virtual int Insert(int IdActivo, string CodInterno, string Serial, global::System.Nullable<int> Marca, global::System.Nullable<global::System.DateTime> FechaCompra, System.DateTime FechaRegistro, string EstadoRegistro, global::System.Nullable<int> SedeRegistroId) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IdActivo));
             if ((CodInterno == null)) {
                 throw new global::System.ArgumentNullException("CodInterno");
@@ -1245,6 +1302,12 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(EstadoRegistro));
             }
+            if ((SedeRegistroId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(SedeRegistroId.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1273,6 +1336,7 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
                     global::System.Nullable<global::System.DateTime> FechaCompra, 
                     System.DateTime FechaRegistro, 
                     string EstadoRegistro, 
+                    global::System.Nullable<int> SedeRegistroId, 
                     int Original_Id, 
                     int Original_IdActivo, 
                     string Original_CodInterno, 
@@ -1281,6 +1345,7 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
                     global::System.Nullable<global::System.DateTime> Original_FechaCompra, 
                     System.DateTime Original_FechaRegistro, 
                     string Original_EstadoRegistro, 
+                    global::System.Nullable<int> Original_SedeRegistroId, 
                     int Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IdActivo));
             if ((CodInterno == null)) {
@@ -1314,48 +1379,62 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(EstadoRegistro));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_IdActivo));
+            if ((SedeRegistroId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(SedeRegistroId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_IdActivo));
             if ((Original_CodInterno == null)) {
                 throw new global::System.ArgumentNullException("Original_CodInterno");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_CodInterno));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_CodInterno));
             }
             if ((Original_Serial == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Serial));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Serial));
             }
             if ((Original_Marca.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Marca.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Marca.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_FechaCompra.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_FechaCompra.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_FechaCompra.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_FechaRegistro));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_FechaRegistro));
             if ((Original_EstadoRegistro == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_EstadoRegistro));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_EstadoRegistro));
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Id));
+            if ((Original_SedeRegistroId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_SedeRegistroId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1376,8 +1455,25 @@ SELECT Id, IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, Esta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IdActivo, string CodInterno, string Serial, global::System.Nullable<int> Marca, global::System.Nullable<global::System.DateTime> FechaCompra, System.DateTime FechaRegistro, string EstadoRegistro, int Original_Id, int Original_IdActivo, string Original_CodInterno, string Original_Serial, global::System.Nullable<int> Original_Marca, global::System.Nullable<global::System.DateTime> Original_FechaCompra, System.DateTime Original_FechaRegistro, string Original_EstadoRegistro) {
-            return this.Update(IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, EstadoRegistro, Original_Id, Original_IdActivo, Original_CodInterno, Original_Serial, Original_Marca, Original_FechaCompra, Original_FechaRegistro, Original_EstadoRegistro, Original_Id);
+        public virtual int Update(
+                    int IdActivo, 
+                    string CodInterno, 
+                    string Serial, 
+                    global::System.Nullable<int> Marca, 
+                    global::System.Nullable<global::System.DateTime> FechaCompra, 
+                    System.DateTime FechaRegistro, 
+                    string EstadoRegistro, 
+                    global::System.Nullable<int> SedeRegistroId, 
+                    int Original_Id, 
+                    int Original_IdActivo, 
+                    string Original_CodInterno, 
+                    string Original_Serial, 
+                    global::System.Nullable<int> Original_Marca, 
+                    global::System.Nullable<global::System.DateTime> Original_FechaCompra, 
+                    System.DateTime Original_FechaRegistro, 
+                    string Original_EstadoRegistro, 
+                    global::System.Nullable<int> Original_SedeRegistroId) {
+            return this.Update(IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, EstadoRegistro, SedeRegistroId, Original_Id, Original_IdActivo, Original_CodInterno, Original_Serial, Original_Marca, Original_FechaCompra, Original_FechaRegistro, Original_EstadoRegistro, Original_SedeRegistroId, Original_Id);
         }
     }
     

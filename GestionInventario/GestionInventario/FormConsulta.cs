@@ -242,6 +242,10 @@ namespace GestionInventario
                 else
                 {
                     MessageBox.Show("Es necesario ingresar como Administrador", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //cmbModo.SelectedIndex = 1;
+                    cmbModo.SelectedIndexChanged -= cmbModo_SelectedIndexChanged;
+                    cmbModo.SelectedIndex = 0;
+                    cmbModo.SelectedIndexChanged += cmbModo_SelectedIndexChanged;
                     return;
                 }
 

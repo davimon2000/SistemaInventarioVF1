@@ -525,9 +525,9 @@ namespace GestionInventario
 
                         string insert = @"
                 INSERT INTO Asignacion
-                (IdActivo, UsuarioId, SedeId, FechaDevolucion, Observacion, UsuarioSistema)
+                (IdActivo, UsuarioId, SedeId, FechaDevolucion, Observacion, UsuarioSistema, EstadoDevolucion)
                 VALUES
-                (@Inv, NULL, @Sede, GETDATE(), @Obs, @UsuarioSistema)";
+                (@Inv, NULL, @Sede, GETDATE(), @Obs, @UsuarioSistema, @EstadoDevolucion)";
 
                         using (SqlCommand cmd = new SqlCommand(insert, conn))
                         {
@@ -535,6 +535,7 @@ namespace GestionInventario
                             cmd.Parameters.AddWithValue("@Sede", Sede);
                             cmd.Parameters.AddWithValue("@Obs", txtObservacion.Text);
                             cmd.Parameters.AddWithValue("@UsuarioSistema", Form3Login.UsuarioActual);
+                            cmd.Parameters.AddWithValue("@EstadoDevolucion", EstadoDevolucion);
 
                             cmd.ExecuteNonQuery();
                         }

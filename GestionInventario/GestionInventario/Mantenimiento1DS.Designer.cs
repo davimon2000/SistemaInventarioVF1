@@ -340,6 +340,8 @@ namespace GestionInventario {
             
             private global::System.Data.DataColumn columnSerial;
             
+            private global::System.Data.DataColumn columnSedeSalidaID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MantenimientoDataTable() {
@@ -479,6 +481,14 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SedeSalidaIDColumn {
+                get {
+                    return this.columnSedeSalidaID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -514,7 +524,7 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MantenimientoRow AddMantenimientoRow(System.DateTime FechaIngresoMtto, string TipoFalla, string ObsIngreso, System.DateTime FechaSalidaMtto, string EstadoSalida, string ObsSalida, bool checkMtto, int NumIngreso, string UsuarioIngreso, string UsuarioSalida, string CodInterno, string Serial) {
+            public MantenimientoRow AddMantenimientoRow(System.DateTime FechaIngresoMtto, string TipoFalla, string ObsIngreso, System.DateTime FechaSalidaMtto, string EstadoSalida, string ObsSalida, bool checkMtto, int NumIngreso, string UsuarioIngreso, string UsuarioSalida, string CodInterno, string Serial, int SedeSalidaID) {
                 MantenimientoRow rowMantenimientoRow = ((MantenimientoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -529,7 +539,8 @@ namespace GestionInventario {
                         UsuarioIngreso,
                         UsuarioSalida,
                         CodInterno,
-                        Serial};
+                        Serial,
+                        SedeSalidaID};
                 rowMantenimientoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMantenimientoRow);
                 return rowMantenimientoRow;
@@ -572,6 +583,7 @@ namespace GestionInventario {
                 this.columnUsuarioSalida = base.Columns["UsuarioSalida"];
                 this.columnCodInterno = base.Columns["CodInterno"];
                 this.columnSerial = base.Columns["Serial"];
+                this.columnSedeSalidaID = base.Columns["SedeSalidaID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -603,6 +615,8 @@ namespace GestionInventario {
                 base.Columns.Add(this.columnCodInterno);
                 this.columnSerial = new global::System.Data.DataColumn("Serial", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSerial);
+                this.columnSedeSalidaID = new global::System.Data.DataColumn("SedeSalidaID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSedeSalidaID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -777,6 +791,8 @@ namespace GestionInventario {
             
             private global::System.Data.DataColumn columnUsuarioSalida;
             
+            private global::System.Data.DataColumn columnSedeSalidaID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Mantenimiento1DataTable() {
@@ -908,6 +924,14 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SedeSalidaIDColumn {
+                get {
+                    return this.columnSedeSalidaID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -943,7 +967,7 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Mantenimiento1Row AddMantenimiento1Row(int InventarioId, System.DateTime FechaIngresoMtto, string TipoFalla, string ObsIngreso, System.DateTime FechaSalidaMtto, string EstadoSalida, string ObsSalida, bool checkMtto, int NumIngreso, string UsuarioIngreso, string UsuarioSalida) {
+            public Mantenimiento1Row AddMantenimiento1Row(int InventarioId, System.DateTime FechaIngresoMtto, string TipoFalla, string ObsIngreso, System.DateTime FechaSalidaMtto, string EstadoSalida, string ObsSalida, bool checkMtto, int NumIngreso, string UsuarioIngreso, string UsuarioSalida, int SedeSalidaID) {
                 Mantenimiento1Row rowMantenimiento1Row = ((Mantenimiento1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -957,7 +981,8 @@ namespace GestionInventario {
                         checkMtto,
                         NumIngreso,
                         UsuarioIngreso,
-                        UsuarioSalida};
+                        UsuarioSalida,
+                        SedeSalidaID};
                 rowMantenimiento1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMantenimiento1Row);
                 return rowMantenimiento1Row;
@@ -999,6 +1024,7 @@ namespace GestionInventario {
                 this.columnNumIngreso = base.Columns["NumIngreso"];
                 this.columnUsuarioIngreso = base.Columns["UsuarioIngreso"];
                 this.columnUsuarioSalida = base.Columns["UsuarioSalida"];
+                this.columnSedeSalidaID = base.Columns["SedeSalidaID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1028,6 +1054,8 @@ namespace GestionInventario {
                 base.Columns.Add(this.columnUsuarioIngreso);
                 this.columnUsuarioSalida = new global::System.Data.DataColumn("UsuarioSalida", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsuarioSalida);
+                this.columnSedeSalidaID = new global::System.Data.DataColumn("SedeSalidaID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSedeSalidaID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1383,6 +1411,22 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SedeSalidaID {
+                get {
+                    try {
+                        return ((int)(this[this.tableMantenimiento.SedeSalidaIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SedeSalidaID\' de la tabla \'Mantenimiento\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMantenimiento.SedeSalidaIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsFechaIngresoMttoNull() {
                 return this.IsNull(this.tableMantenimiento.FechaIngresoMttoColumn);
             }
@@ -1511,6 +1555,18 @@ namespace GestionInventario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSerialNull() {
                 this[this.tableMantenimiento.SerialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSedeSalidaIDNull() {
+                return this.IsNull(this.tableMantenimiento.SedeSalidaIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSedeSalidaIDNull() {
+                this[this.tableMantenimiento.SedeSalidaIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1713,6 +1769,22 @@ namespace GestionInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SedeSalidaID {
+                get {
+                    try {
+                        return ((int)(this[this.tableMantenimiento1.SedeSalidaIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SedeSalidaID\' de la tabla \'Mantenimiento1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMantenimiento1.SedeSalidaIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsFechaIngresoMttoNull() {
                 return this.IsNull(this.tableMantenimiento1.FechaIngresoMttoColumn);
             }
@@ -1829,6 +1901,18 @@ namespace GestionInventario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetUsuarioSalidaNull() {
                 this[this.tableMantenimiento1.UsuarioSalidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSedeSalidaIDNull() {
+                return this.IsNull(this.tableMantenimiento1.SedeSalidaIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSedeSalidaIDNull() {
+                this[this.tableMantenimiento1.SedeSalidaIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2038,6 +2122,7 @@ namespace GestionInventario.Mantenimiento1DSTableAdapters {
             tableMapping.ColumnMappings.Add("UsuarioSalida", "UsuarioSalida");
             tableMapping.ColumnMappings.Add("CodInterno", "CodInterno");
             tableMapping.ColumnMappings.Add("Serial", "Serial");
+            tableMapping.ColumnMappings.Add("SedeSalidaID", "SedeSalidaID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2054,7 +2139,7 @@ namespace GestionInventario.Mantenimiento1DSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        m.Id, r.CodInterno, r.Serial, m.FechaIngresoMtto, m.TipoFalla, m.ObsIngreso, m.FechaSalidaMtto, m.EstadoSalida, m.ObsSalida, m.checkMtto, m.NumIngreso, m.UsuarioIngreso, m.UsuarioSalida
+            this._commandCollection[0].CommandText = @"SELECT        m.Id, r.CodInterno, r.Serial, m.FechaIngresoMtto, m.TipoFalla, m.ObsIngreso, m.FechaSalidaMtto, m.EstadoSalida, m.ObsSalida, m.checkMtto, m.NumIngreso, m.UsuarioIngreso, m.UsuarioSalida, m.SedeSalidaID
 FROM            Mantenimiento AS m INNER JOIN
                          RegistroActivos AS r ON m.InventarioId = r.Id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -2263,10 +2348,11 @@ WHERE r.CodInterno LIKE @Numero
             tableMapping.ColumnMappings.Add("NumIngreso", "NumIngreso");
             tableMapping.ColumnMappings.Add("UsuarioIngreso", "UsuarioIngreso");
             tableMapping.ColumnMappings.Add("UsuarioSalida", "UsuarioSalida");
+            tableMapping.ColumnMappings.Add("SedeSalidaID", "SedeSalidaID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Mantenimiento] WHERE (([Id] = @Original_Id) AND ([InventarioId] = @Original_InventarioId) AND ((@IsNull_FechaIngresoMtto = 1 AND [FechaIngresoMtto] IS NULL) OR ([FechaIngresoMtto] = @Original_FechaIngresoMtto)) AND ((@IsNull_TipoFalla = 1 AND [TipoFalla] IS NULL) OR ([TipoFalla] = @Original_TipoFalla)) AND ((@IsNull_ObsIngreso = 1 AND [ObsIngreso] IS NULL) OR ([ObsIngreso] = @Original_ObsIngreso)) AND ((@IsNull_FechaSalidaMtto = 1 AND [FechaSalidaMtto] IS NULL) OR ([FechaSalidaMtto] = @Original_FechaSalidaMtto)) AND ((@IsNull_EstadoSalida = 1 AND [EstadoSalida] IS NULL) OR ([EstadoSalida] = @Original_EstadoSalida)) AND ((@IsNull_ObsSalida = 1 AND [ObsSalida] IS NULL) OR ([ObsSalida] = @Original_ObsSalida)) AND ((@IsNull_checkMtto = 1 AND [checkMtto] IS NULL) OR ([checkMtto] = @Original_checkMtto)) AND ((@IsNull_NumIngreso = 1 AND [NumIngreso] IS NULL) OR ([NumIngreso] = @Original_NumIngreso)) AND ((@IsNull_UsuarioIngreso = 1 AND [UsuarioIngreso] IS NULL) OR ([UsuarioIngreso] = @Original_UsuarioIngreso)) AND ((@IsNull_UsuarioSalida = 1 AND [UsuarioSalida] IS NULL) OR ([UsuarioSalida] = @Original_UsuarioSalida)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Mantenimiento] WHERE (([Id] = @Original_Id) AND ([InventarioId] = @Original_InventarioId) AND ((@IsNull_FechaIngresoMtto = 1 AND [FechaIngresoMtto] IS NULL) OR ([FechaIngresoMtto] = @Original_FechaIngresoMtto)) AND ((@IsNull_TipoFalla = 1 AND [TipoFalla] IS NULL) OR ([TipoFalla] = @Original_TipoFalla)) AND ((@IsNull_ObsIngreso = 1 AND [ObsIngreso] IS NULL) OR ([ObsIngreso] = @Original_ObsIngreso)) AND ((@IsNull_FechaSalidaMtto = 1 AND [FechaSalidaMtto] IS NULL) OR ([FechaSalidaMtto] = @Original_FechaSalidaMtto)) AND ((@IsNull_EstadoSalida = 1 AND [EstadoSalida] IS NULL) OR ([EstadoSalida] = @Original_EstadoSalida)) AND ((@IsNull_ObsSalida = 1 AND [ObsSalida] IS NULL) OR ([ObsSalida] = @Original_ObsSalida)) AND ((@IsNull_checkMtto = 1 AND [checkMtto] IS NULL) OR ([checkMtto] = @Original_checkMtto)) AND ((@IsNull_NumIngreso = 1 AND [NumIngreso] IS NULL) OR ([NumIngreso] = @Original_NumIngreso)) AND ((@IsNull_UsuarioIngreso = 1 AND [UsuarioIngreso] IS NULL) OR ([UsuarioIngreso] = @Original_UsuarioIngreso)) AND ((@IsNull_UsuarioSalida = 1 AND [UsuarioSalida] IS NULL) OR ([UsuarioSalida] = @Original_UsuarioSalida)) AND ((@IsNull_SedeSalidaID = 1 AND [SedeSalidaID] IS NULL) OR ([SedeSalidaID] = @Original_SedeSalidaID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InventarioId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InventarioId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2290,10 +2376,12 @@ WHERE r.CodInterno LIKE @Numero
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UsuarioIngreso", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioIngreso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UsuarioSalida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioSalida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UsuarioSalida", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioSalida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SedeSalidaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeSalidaID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SedeSalidaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeSalidaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Mantenimiento] ([InventarioId], [FechaIngresoMtto], [TipoFalla], [ObsIngreso], [FechaSalidaMtto], [EstadoSalida], [ObsSalida], [checkMtto], [NumIngreso], [UsuarioIngreso], [UsuarioSalida]) VALUES (@InventarioId, @FechaIngresoMtto, @TipoFalla, @ObsIngreso, @FechaSalidaMtto, @EstadoSalida, @ObsSalida, @checkMtto, @NumIngreso, @UsuarioIngreso, @UsuarioSalida);
-SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida FROM Mantenimiento WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Mantenimiento] ([InventarioId], [FechaIngresoMtto], [TipoFalla], [ObsIngreso], [FechaSalidaMtto], [EstadoSalida], [ObsSalida], [checkMtto], [NumIngreso], [UsuarioIngreso], [UsuarioSalida], [SedeSalidaID]) VALUES (@InventarioId, @FechaIngresoMtto, @TipoFalla, @ObsIngreso, @FechaSalidaMtto, @EstadoSalida, @ObsSalida, @checkMtto, @NumIngreso, @UsuarioIngreso, @UsuarioSalida, @SedeSalidaID);
+SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida, SedeSalidaID FROM Mantenimiento WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InventarioId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InventarioId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaIngresoMtto", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngresoMtto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2306,30 +2394,32 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumIngreso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumIngreso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuarioIngreso", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioIngreso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuarioSalida", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SedeSalidaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeSalidaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Mantenimiento] SET [InventarioId] = @InventarioId, [FechaIngresoMtt" +
-                "o] = @FechaIngresoMtto, [TipoFalla] = @TipoFalla, [ObsIngreso] = @ObsIngreso, [F" +
-                "echaSalidaMtto] = @FechaSalidaMtto, [EstadoSalida] = @EstadoSalida, [ObsSalida] " +
-                "= @ObsSalida, [checkMtto] = @checkMtto, [NumIngreso] = @NumIngreso, [UsuarioIngr" +
-                "eso] = @UsuarioIngreso, [UsuarioSalida] = @UsuarioSalida WHERE (([Id] = @Origina" +
-                "l_Id) AND ([InventarioId] = @Original_InventarioId) AND ((@IsNull_FechaIngresoMt" +
-                "to = 1 AND [FechaIngresoMtto] IS NULL) OR ([FechaIngresoMtto] = @Original_FechaI" +
-                "ngresoMtto)) AND ((@IsNull_TipoFalla = 1 AND [TipoFalla] IS NULL) OR ([TipoFalla" +
-                "] = @Original_TipoFalla)) AND ((@IsNull_ObsIngreso = 1 AND [ObsIngreso] IS NULL)" +
-                " OR ([ObsIngreso] = @Original_ObsIngreso)) AND ((@IsNull_FechaSalidaMtto = 1 AND" +
-                " [FechaSalidaMtto] IS NULL) OR ([FechaSalidaMtto] = @Original_FechaSalidaMtto)) " +
-                "AND ((@IsNull_EstadoSalida = 1 AND [EstadoSalida] IS NULL) OR ([EstadoSalida] = " +
-                "@Original_EstadoSalida)) AND ((@IsNull_ObsSalida = 1 AND [ObsSalida] IS NULL) OR" +
-                " ([ObsSalida] = @Original_ObsSalida)) AND ((@IsNull_checkMtto = 1 AND [checkMtto" +
-                "] IS NULL) OR ([checkMtto] = @Original_checkMtto)) AND ((@IsNull_NumIngreso = 1 " +
-                "AND [NumIngreso] IS NULL) OR ([NumIngreso] = @Original_NumIngreso)) AND ((@IsNul" +
-                "l_UsuarioIngreso = 1 AND [UsuarioIngreso] IS NULL) OR ([UsuarioIngreso] = @Origi" +
-                "nal_UsuarioIngreso)) AND ((@IsNull_UsuarioSalida = 1 AND [UsuarioSalida] IS NULL" +
-                ") OR ([UsuarioSalida] = @Original_UsuarioSalida)));\r\nSELECT Id, InventarioId, Fe" +
-                "chaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida," +
-                " checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida FROM Mantenimiento WHERE (" +
-                "Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Mantenimiento] SET [InventarioId] = @InventarioId, [FechaIngresoMtto] = @" +
+                "FechaIngresoMtto, [TipoFalla] = @TipoFalla, [ObsIngreso] = @ObsIngreso, [FechaSa" +
+                "lidaMtto] = @FechaSalidaMtto, [EstadoSalida] = @EstadoSalida, [ObsSalida] = @Obs" +
+                "Salida, [checkMtto] = @checkMtto, [NumIngreso] = @NumIngreso, [UsuarioIngreso] =" +
+                " @UsuarioIngreso, [UsuarioSalida] = @UsuarioSalida, [SedeSalidaID] = @SedeSalida" +
+                "ID WHERE (([Id] = @Original_Id) AND ([InventarioId] = @Original_InventarioId) AN" +
+                "D ((@IsNull_FechaIngresoMtto = 1 AND [FechaIngresoMtto] IS NULL) OR ([FechaIngre" +
+                "soMtto] = @Original_FechaIngresoMtto)) AND ((@IsNull_TipoFalla = 1 AND [TipoFall" +
+                "a] IS NULL) OR ([TipoFalla] = @Original_TipoFalla)) AND ((@IsNull_ObsIngreso = 1" +
+                " AND [ObsIngreso] IS NULL) OR ([ObsIngreso] = @Original_ObsIngreso)) AND ((@IsNu" +
+                "ll_FechaSalidaMtto = 1 AND [FechaSalidaMtto] IS NULL) OR ([FechaSalidaMtto] = @O" +
+                "riginal_FechaSalidaMtto)) AND ((@IsNull_EstadoSalida = 1 AND [EstadoSalida] IS N" +
+                "ULL) OR ([EstadoSalida] = @Original_EstadoSalida)) AND ((@IsNull_ObsSalida = 1 A" +
+                "ND [ObsSalida] IS NULL) OR ([ObsSalida] = @Original_ObsSalida)) AND ((@IsNull_ch" +
+                "eckMtto = 1 AND [checkMtto] IS NULL) OR ([checkMtto] = @Original_checkMtto)) AND" +
+                " ((@IsNull_NumIngreso = 1 AND [NumIngreso] IS NULL) OR ([NumIngreso] = @Original" +
+                "_NumIngreso)) AND ((@IsNull_UsuarioIngreso = 1 AND [UsuarioIngreso] IS NULL) OR " +
+                "([UsuarioIngreso] = @Original_UsuarioIngreso)) AND ((@IsNull_UsuarioSalida = 1 A" +
+                "ND [UsuarioSalida] IS NULL) OR ([UsuarioSalida] = @Original_UsuarioSalida)) AND " +
+                "((@IsNull_SedeSalidaID = 1 AND [SedeSalidaID] IS NULL) OR ([SedeSalidaID] = @Ori" +
+                "ginal_SedeSalidaID)));\r\nSELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, Ob" +
+                "sIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, Usuar" +
+                "ioIngreso, UsuarioSalida, SedeSalidaID FROM Mantenimiento WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InventarioId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InventarioId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaIngresoMtto", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngresoMtto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2342,6 +2432,7 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumIngreso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumIngreso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuarioIngreso", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioIngreso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuarioSalida", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SedeSalidaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeSalidaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InventarioId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InventarioId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaIngresoMtto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngresoMtto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2364,6 +2455,8 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UsuarioIngreso", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioIngreso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UsuarioSalida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioSalida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UsuarioSalida", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioSalida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SedeSalidaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeSalidaID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SedeSalidaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SedeSalidaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2380,9 +2473,9 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto" +
-                ", EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida " +
-                "FROM dbo.Mantenimiento";
+            this._commandCollection[0].CommandText = "SELECT        Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSal" +
+                "idaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, Usuario" +
+                "Salida, SedeSalidaID\r\nFROM            Mantenimiento";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2443,7 +2536,7 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_InventarioId, global::System.Nullable<global::System.DateTime> Original_FechaIngresoMtto, string Original_TipoFalla, string Original_ObsIngreso, global::System.Nullable<global::System.DateTime> Original_FechaSalidaMtto, string Original_EstadoSalida, string Original_ObsSalida, global::System.Nullable<bool> Original_checkMtto, global::System.Nullable<int> Original_NumIngreso, string Original_UsuarioIngreso, string Original_UsuarioSalida) {
+        public virtual int Delete(int Original_Id, int Original_InventarioId, global::System.Nullable<global::System.DateTime> Original_FechaIngresoMtto, string Original_TipoFalla, string Original_ObsIngreso, global::System.Nullable<global::System.DateTime> Original_FechaSalidaMtto, string Original_EstadoSalida, string Original_ObsSalida, global::System.Nullable<bool> Original_checkMtto, global::System.Nullable<int> Original_NumIngreso, string Original_UsuarioIngreso, string Original_UsuarioSalida, global::System.Nullable<int> Original_SedeSalidaID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_InventarioId));
             if ((Original_FechaIngresoMtto.HasValue == true)) {
@@ -2526,6 +2619,14 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
                 this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((string)(Original_UsuarioSalida));
             }
+            if ((Original_SedeSalidaID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((int)(Original_SedeSalidaID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2546,7 +2647,7 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int InventarioId, global::System.Nullable<global::System.DateTime> FechaIngresoMtto, string TipoFalla, string ObsIngreso, global::System.Nullable<global::System.DateTime> FechaSalidaMtto, string EstadoSalida, string ObsSalida, global::System.Nullable<bool> checkMtto, global::System.Nullable<int> NumIngreso, string UsuarioIngreso, string UsuarioSalida) {
+        public virtual int Insert(int InventarioId, global::System.Nullable<global::System.DateTime> FechaIngresoMtto, string TipoFalla, string ObsIngreso, global::System.Nullable<global::System.DateTime> FechaSalidaMtto, string EstadoSalida, string ObsSalida, global::System.Nullable<bool> checkMtto, global::System.Nullable<int> NumIngreso, string UsuarioIngreso, string UsuarioSalida, global::System.Nullable<int> SedeSalidaID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(InventarioId));
             if ((FechaIngresoMtto.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(FechaIngresoMtto.Value));
@@ -2608,6 +2709,12 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = ((string)(UsuarioSalida));
             }
+            if ((SedeSalidaID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(SedeSalidaID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2640,6 +2747,7 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
                     global::System.Nullable<int> NumIngreso, 
                     string UsuarioIngreso, 
                     string UsuarioSalida, 
+                    global::System.Nullable<int> SedeSalidaID, 
                     int Original_Id, 
                     int Original_InventarioId, 
                     global::System.Nullable<global::System.DateTime> Original_FechaIngresoMtto, 
@@ -2652,6 +2760,7 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
                     global::System.Nullable<int> Original_NumIngreso, 
                     string Original_UsuarioIngreso, 
                     string Original_UsuarioSalida, 
+                    global::System.Nullable<int> Original_SedeSalidaID, 
                     int Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(InventarioId));
             if ((FechaIngresoMtto.HasValue == true)) {
@@ -2714,89 +2823,103 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(UsuarioSalida));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_InventarioId));
-            if ((Original_FechaIngresoMtto.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_FechaIngresoMtto.Value));
+            if ((SedeSalidaID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(SedeSalidaID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_InventarioId));
+            if ((Original_FechaIngresoMtto.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_FechaIngresoMtto.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_TipoFalla == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_TipoFalla));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_TipoFalla));
             }
             if ((Original_ObsIngreso == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ObsIngreso));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_ObsIngreso));
             }
             if ((Original_FechaSalidaMtto.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_FechaSalidaMtto.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_FechaSalidaMtto.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_EstadoSalida == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_EstadoSalida));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_EstadoSalida));
             }
             if ((Original_ObsSalida == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_ObsSalida));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_ObsSalida));
             }
             if ((Original_checkMtto.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((bool)(Original_checkMtto.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((bool)(Original_checkMtto.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((Original_NumIngreso.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_NumIngreso.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_NumIngreso.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             if ((Original_UsuarioIngreso == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_UsuarioIngreso));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_UsuarioIngreso));
             }
             if ((Original_UsuarioSalida == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_UsuarioSalida));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_UsuarioSalida));
             }
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Id));
+            if ((Original_SedeSalidaID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_SedeSalidaID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2829,6 +2952,7 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
                     global::System.Nullable<int> NumIngreso, 
                     string UsuarioIngreso, 
                     string UsuarioSalida, 
+                    global::System.Nullable<int> SedeSalidaID, 
                     int Original_Id, 
                     int Original_InventarioId, 
                     global::System.Nullable<global::System.DateTime> Original_FechaIngresoMtto, 
@@ -2840,8 +2964,9 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
                     global::System.Nullable<bool> Original_checkMtto, 
                     global::System.Nullable<int> Original_NumIngreso, 
                     string Original_UsuarioIngreso, 
-                    string Original_UsuarioSalida) {
-            return this.Update(InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida, Original_Id, Original_InventarioId, Original_FechaIngresoMtto, Original_TipoFalla, Original_ObsIngreso, Original_FechaSalidaMtto, Original_EstadoSalida, Original_ObsSalida, Original_checkMtto, Original_NumIngreso, Original_UsuarioIngreso, Original_UsuarioSalida, Original_Id);
+                    string Original_UsuarioSalida, 
+                    global::System.Nullable<int> Original_SedeSalidaID) {
+            return this.Update(InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida, SedeSalidaID, Original_Id, Original_InventarioId, Original_FechaIngresoMtto, Original_TipoFalla, Original_ObsIngreso, Original_FechaSalidaMtto, Original_EstadoSalida, Original_ObsSalida, Original_checkMtto, Original_NumIngreso, Original_UsuarioIngreso, Original_UsuarioSalida, Original_SedeSalidaID, Original_Id);
         }
     }
     
