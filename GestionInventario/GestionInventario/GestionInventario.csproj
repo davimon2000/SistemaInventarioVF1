@@ -103,6 +103,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActivosViewDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AsigEditDS.cs">
+      <DependentUpon>AsigEditDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AsigEditDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

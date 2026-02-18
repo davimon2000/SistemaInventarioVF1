@@ -921,5 +921,15 @@ namespace GestionInventario
                 );
             }
         }
+
+        private void asignacionDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void asignacionDataGridViewEdit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

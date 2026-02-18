@@ -84,7 +84,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartActivos.Series.Add(series1);
-            this.chartActivos.Size = new System.Drawing.Size(675, 250);
+            this.chartActivos.Size = new System.Drawing.Size(678, 268);
             this.chartActivos.TabIndex = 13;
             this.chartActivos.Text = "chart1";
             this.chartActivos.Click += new System.EventHandler(this.chart1_Click);
@@ -117,7 +117,7 @@
             this.dgvEstado.DataSource = this.resumenActivosPorSedeEstadoViewBindingSource;
             this.dgvEstado.Location = new System.Drawing.Point(38, 78);
             this.dgvEstado.Name = "dgvEstado";
-            this.dgvEstado.Size = new System.Drawing.Size(675, 186);
+            this.dgvEstado.Size = new System.Drawing.Size(678, 204);
             this.dgvEstado.TabIndex = 22;
             this.dgvEstado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -158,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(773, 562);
+            this.ClientSize = new System.Drawing.Size(776, 580);
             this.Controls.Add(this.dgvEstado);
             this.Controls.Add(this.chartActivos);
             this.Controls.Add(this.lblRegistro);
