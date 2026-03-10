@@ -181,6 +181,14 @@ namespace GestionInventario
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
+        private void btnEnvio_Click(object sender, EventArgs e)
+        {
+            FormEnvio frm = FormEnvio.ventana_unica();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.BringToFront();
+        }
     }
 
 }

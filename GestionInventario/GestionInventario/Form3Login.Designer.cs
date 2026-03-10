@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3Login));
             this.lblMantenimiento = new System.Windows.Forms.Label();
             this.LabelUsuario = new System.Windows.Forms.Label();
             this.labelContraseña = new System.Windows.Forms.Label();
@@ -104,6 +105,7 @@
             this.Controls.Add(this.labelContraseña);
             this.Controls.Add(this.LabelUsuario);
             this.Controls.Add(this.lblMantenimiento);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3Login";
             this.Text = "Form3Login";
             this.Load += new System.EventHandler(this.Form3Login_Load);

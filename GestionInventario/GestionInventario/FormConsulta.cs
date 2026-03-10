@@ -931,5 +931,13 @@ namespace GestionInventario
         {
 
         }
+
+        private void txtUsuariobb_TextChanged(object sender, EventArgs e)
+        {
+            asignacionTableAdapter.FillByUsuariobb(
+        asignacionDS.Asignacion,
+        "%" + txtUsuariobb.Text + "%"
+    );
+        }
     }
 }

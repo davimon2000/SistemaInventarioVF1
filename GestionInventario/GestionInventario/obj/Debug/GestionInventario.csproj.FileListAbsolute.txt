@@ -166,3 +166,4 @@ C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInven
 C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInventario\obj\Debug\GestionI.14355B1F.Up2Date
 C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInventario\obj\Debug\GestionInventario.exe
 C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInventario\obj\Debug\GestionInventario.pdb
+C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInventario\obj\Debug\GestionInventario.FormEnvio.resources

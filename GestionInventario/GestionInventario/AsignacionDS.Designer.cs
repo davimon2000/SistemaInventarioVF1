@@ -1082,7 +1082,7 @@ namespace GestionInventario.AsignacionDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        a.Id, r.CodInterno, r.Serial, a.FechaAsignacion, a.SedeId, a.FechaDevolucion, a.EstadoDevolucion, u.UsuarioRed, a.CondicionEntrega
@@ -1100,6 +1100,15 @@ WHERE        (r.CodInterno LIKE @Numero) OR
                          (r.Serial LIKE @Numero)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "CodInterno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        a.Id, r.CodInterno, r.Serial, a.FechaAsignacion, a.SedeId, a.FechaDevolucion, a.EstadoDevolucion, u.UsuarioRed, a.CondicionEntrega
+FROM            Asignacion AS a LEFT OUTER JOIN
+                         RegistroActivos AS r ON a.IdActivo = r.Id LEFT OUTER JOIN
+                         UsuariosAD AS u ON a.UsuarioId = u.Id
+WHERE        (u.UsuarioRed LIKE @Usuariobb)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuariobb", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioRed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1156,6 +1165,42 @@ WHERE        (r.CodInterno LIKE @Numero) OR
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Numero));
+            }
+            AsignacionDS.AsignacionDataTable dataTable = new AsignacionDS.AsignacionDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUsuariobb(AsignacionDS.AsignacionDataTable dataTable, string Usuariobb) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Usuariobb == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Usuariobb));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AsignacionDS.AsignacionDataTable GetDataByUsuariobb(string Usuariobb) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Usuariobb == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Usuariobb));
             }
             AsignacionDS.AsignacionDataTable dataTable = new AsignacionDS.AsignacionDataTable();
             this.Adapter.Fill(dataTable);

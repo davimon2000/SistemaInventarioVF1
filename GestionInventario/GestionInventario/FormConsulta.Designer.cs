@@ -193,6 +193,8 @@ namespace GestionInventario
             this.CondicionEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtUsuariobb = new System.Windows.Forms.TextBox();
+            this.UsuarioTxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBindingSource)).BeginInit();
@@ -1025,6 +1027,7 @@ namespace GestionInventario
             this.bindingNavigatorAsigEdit.BindingSource = this.asignacionBindingSource1;
             this.bindingNavigatorAsigEdit.CountItem = this.bindingNavigatorCountItem4;
             this.bindingNavigatorAsigEdit.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.bindingNavigatorAsigEdit.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigatorAsigEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem4,
             this.bindingNavigatorMovePreviousItem4,
@@ -1046,7 +1049,7 @@ namespace GestionInventario
             this.bindingNavigatorAsigEdit.MovePreviousItem = this.bindingNavigatorMovePreviousItem4;
             this.bindingNavigatorAsigEdit.Name = "bindingNavigatorAsigEdit";
             this.bindingNavigatorAsigEdit.PositionItem = this.bindingNavigatorPositionItem4;
-            this.bindingNavigatorAsigEdit.Size = new System.Drawing.Size(951, 25);
+            this.bindingNavigatorAsigEdit.Size = new System.Drawing.Size(286, 25);
             this.bindingNavigatorAsigEdit.TabIndex = 43;
             this.bindingNavigatorAsigEdit.Text = "bindingNavigator1";
             // 
@@ -1454,9 +1457,9 @@ namespace GestionInventario
             this.FechaDevolucion,
             this.EstadoDevolucion});
             this.asignacionDataGridView.DataSource = this.asignacionBindingSource;
-            this.asignacionDataGridView.Location = new System.Drawing.Point(71, 253);
+            this.asignacionDataGridView.Location = new System.Drawing.Point(71, 180);
             this.asignacionDataGridView.Name = "asignacionDataGridView";
-            this.asignacionDataGridView.Size = new System.Drawing.Size(741, 144);
+            this.asignacionDataGridView.Size = new System.Drawing.Size(741, 217);
             this.asignacionDataGridView.TabIndex = 34;
             this.asignacionDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asignacionDataGridView_CellContentClick);
             // 
@@ -1504,11 +1507,32 @@ namespace GestionInventario
             this.EstadoDevolucion.HeaderText = "EstadoDevolucion";
             this.EstadoDevolucion.Name = "EstadoDevolucion";
             // 
+            // txtUsuariobb
+            // 
+            this.txtUsuariobb.Location = new System.Drawing.Point(559, 145);
+            this.txtUsuariobb.Name = "txtUsuariobb";
+            this.txtUsuariobb.Size = new System.Drawing.Size(197, 20);
+            this.txtUsuariobb.TabIndex = 45;
+            this.txtUsuariobb.TextChanged += new System.EventHandler(this.txtUsuariobb_TextChanged);
+            // 
+            // UsuarioTxt
+            // 
+            this.UsuarioTxt.AutoSize = true;
+            this.UsuarioTxt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.UsuarioTxt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.UsuarioTxt.Location = new System.Drawing.Point(419, 142);
+            this.UsuarioTxt.Name = "UsuarioTxt";
+            this.UsuarioTxt.Size = new System.Drawing.Size(69, 21);
+            this.UsuarioTxt.TabIndex = 44;
+            this.UsuarioTxt.Text = "Usuario:";
+            // 
             // FormConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 586);
+            this.Controls.Add(this.txtUsuariobb);
+            this.Controls.Add(this.UsuarioTxt);
             this.Controls.Add(this.bindingNavigatorAsigEdit);
             this.Controls.Add(this.asignacionDataGridViewEdit);
             this.Controls.Add(this.bindingNavigatormttoedit);
@@ -1743,5 +1767,7 @@ namespace GestionInventario
         private DataGridViewTextBoxColumn CondicionEntrega;
         private DataGridViewTextBoxColumn FechaDevolucion;
         private DataGridViewTextBoxColumn EstadoDevolucion;
+        private TextBox txtUsuariobb;
+        private Label UsuarioTxt;
     }
 }
