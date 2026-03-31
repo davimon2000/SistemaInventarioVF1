@@ -40,7 +40,7 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.lblTipooperacion = new System.Windows.Forms.Label();
             this.cmbTipooperacion = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnConfirmarrecepcion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             // 
             this.btnEnvio.BackColor = System.Drawing.Color.LightBlue;
             this.btnEnvio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnvio.Location = new System.Drawing.Point(141, 295);
+            this.btnEnvio.Location = new System.Drawing.Point(169, 296);
             this.btnEnvio.Name = "btnEnvio";
             this.btnEnvio.Size = new System.Drawing.Size(139, 32);
             this.btnEnvio.TabIndex = 48;
@@ -170,22 +170,23 @@
             this.cmbTipooperacion.ValueMember = "Id";
             this.cmbTipooperacion.SelectedIndexChanged += new System.EventHandler(this.cmbTipooperacion_SelectedIndexChanged);
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(314, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 55;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuscar.BackColor = System.Drawing.Color.LightBlue;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(314, 105);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(70, 32);
+            this.btnBuscar.TabIndex = 55;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnConfirmarrecepcion
             // 
             this.btnConfirmarrecepcion.BackColor = System.Drawing.Color.LightBlue;
             this.btnConfirmarrecepcion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarrecepcion.Location = new System.Drawing.Point(204, 334);
+            this.btnConfirmarrecepcion.Location = new System.Drawing.Point(151, 296);
             this.btnConfirmarrecepcion.Name = "btnConfirmarrecepcion";
             this.btnConfirmarrecepcion.Size = new System.Drawing.Size(180, 32);
             this.btnConfirmarrecepcion.TabIndex = 56;
@@ -198,7 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 378);
             this.Controls.Add(this.btnConfirmarrecepcion);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbTipooperacion);
             this.Controls.Add(this.lblTipooperacion);
             this.Controls.Add(this.txtEstado);
@@ -232,7 +233,7 @@
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label lblTipooperacion;
         private System.Windows.Forms.ComboBox cmbTipooperacion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnConfirmarrecepcion;
     }
 }

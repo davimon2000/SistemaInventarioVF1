@@ -63,5 +63,10 @@ namespace GestionInventario
         {
             cmbTipooperacion.SelectedItem = "Recepción"; // Establecer el valor predeterminado del ComboBox
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
