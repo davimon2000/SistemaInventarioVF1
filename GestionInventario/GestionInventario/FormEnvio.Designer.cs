@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnEnvio = new System.Windows.Forms.Button();
             this.lblEnvio = new System.Windows.Forms.Label();
             this.lblCodEnvio = new System.Windows.Forms.Label();
@@ -42,6 +43,11 @@
             this.cmbTipooperacion = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnConfirmarrecepcion = new System.Windows.Forms.Button();
+            this.sedesDS = new GestionInventario.SedesDS();
+            this.sedesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sedesTableAdapter = new GestionInventario.SedesDSTableAdapters.SedesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnvio
@@ -54,6 +60,7 @@
             this.btnEnvio.TabIndex = 48;
             this.btnEnvio.Text = "Confirmar Envío";
             this.btnEnvio.UseVisualStyleBackColor = false;
+            this.btnEnvio.Click += new System.EventHandler(this.btnEnvio_Click);
             // 
             // lblEnvio
             // 
@@ -78,6 +85,7 @@
             // 
             // cmbSedeEnvio
             // 
+            this.cmbSedeEnvio.DataSource = this.sedesBindingSource;
             this.cmbSedeEnvio.DisplayMember = "NombreSede";
             this.cmbSedeEnvio.FormattingEnabled = true;
             this.cmbSedeEnvio.Location = new System.Drawing.Point(189, 201);
@@ -186,12 +194,26 @@
             // 
             this.btnConfirmarrecepcion.BackColor = System.Drawing.Color.LightBlue;
             this.btnConfirmarrecepcion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarrecepcion.Location = new System.Drawing.Point(151, 296);
+            this.btnConfirmarrecepcion.Location = new System.Drawing.Point(157, 334);
             this.btnConfirmarrecepcion.Name = "btnConfirmarrecepcion";
             this.btnConfirmarrecepcion.Size = new System.Drawing.Size(180, 32);
             this.btnConfirmarrecepcion.TabIndex = 56;
             this.btnConfirmarrecepcion.Text = "Confirmar Recepcion";
             this.btnConfirmarrecepcion.UseVisualStyleBackColor = false;
+            // 
+            // sedesDS
+            // 
+            this.sedesDS.DataSetName = "SedesDS";
+            this.sedesDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sedesBindingSource
+            // 
+            this.sedesBindingSource.DataMember = "Sedes";
+            this.sedesBindingSource.DataSource = this.sedesDS;
+            // 
+            // sedesTableAdapter
+            // 
+            this.sedesTableAdapter.ClearBeforeFill = true;
             // 
             // FormEnvio
             // 
@@ -215,6 +237,8 @@
             this.Name = "FormEnvio";
             this.Text = "FormEnvio";
             this.Load += new System.EventHandler(this.FormEnvio_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +259,8 @@
         private System.Windows.Forms.ComboBox cmbTipooperacion;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnConfirmarrecepcion;
+        private SedesDS sedesDS;
+        private System.Windows.Forms.BindingSource sedesBindingSource;
+        private SedesDSTableAdapters.SedesTableAdapter sedesTableAdapter;
     }
 }

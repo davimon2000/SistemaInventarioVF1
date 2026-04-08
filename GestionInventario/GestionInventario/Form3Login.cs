@@ -24,8 +24,14 @@ namespace GestionInventario
         public Form3Login()
         {
             InitializeComponent();
-        }
 
+        }
+        private string ObtenerConexion()
+        {
+            string servidor = "LPT140112\\SQLEXPRESS";
+
+            return $"Server={servidor};Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+        }
         private void btnIngresarLogin_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text.Trim();
@@ -44,7 +50,8 @@ namespace GestionInventario
                 MessageBox.Show("Por favor ingrese usuario y contraseña");
                 return;
             }
-            string conexion = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+           // string conexion = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+            String conexion = ObtenerConexion();
             using (SqlConnection cn = new SqlConnection(conexion))
             {
                 cn.Open();
