@@ -189,6 +189,14 @@ namespace GestionInventario
             frm.Show();
             frm.BringToFront();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormMiusuario frm = FormMiusuario.ventana_unica();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.BringToFront();
+        }
     }
 
 }

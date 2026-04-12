@@ -195,6 +195,12 @@
     <Compile Include="FormMarcas.Designer.cs">
       <DependentUpon>FormMarcas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMiusuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMiusuario.Designer.cs">
+      <DependentUpon>FormMiusuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMarcas.resx">
       <DependentUpon>FormMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMiusuario.resx">
+      <DependentUpon>FormMiusuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevo.resx">
       <DependentUpon>FormNuevo.cs</DependentUpon>

@@ -35,6 +35,8 @@ namespace GestionInventario
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMDI));
             this.pnlMenuVertical = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.btnEnvio = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.picIndicadores = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -55,9 +57,14 @@ namespace GestionInventario
             this.btnRegistro = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnIngresomtto = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.btnEnvio = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.pnlMenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIndicadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -65,12 +72,19 @@ namespace GestionInventario
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenuVertical
             // 
             this.pnlMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.pnlMenuVertical.Controls.Add(this.pictureBox9);
+            this.pnlMenuVertical.Controls.Add(this.button3);
+            this.pnlMenuVertical.Controls.Add(this.panel9);
+            this.pnlMenuVertical.Controls.Add(this.pictureBox8);
+            this.pnlMenuVertical.Controls.Add(this.button2);
+            this.pnlMenuVertical.Controls.Add(this.panel8);
             this.pnlMenuVertical.Controls.Add(this.pictureBox7);
             this.pnlMenuVertical.Controls.Add(this.btnEnvio);
             this.pnlMenuVertical.Controls.Add(this.panel6);
@@ -95,6 +109,22 @@ namespace GestionInventario
             this.pnlMenuVertical.Controls.Add(this.btnIngresomtto);
             resources.ApplyResources(this.pnlMenuVertical, "pnlMenuVertical");
             this.pnlMenuVertical.Name = "pnlMenuVertical";
+            // 
+            // pictureBox7
+            // 
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.TabStop = false;
+            // 
+            // btnEnvio
+            // 
+            this.btnEnvio.FlatAppearance.BorderSize = 0;
+            this.btnEnvio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.btnEnvio, "btnEnvio");
+            this.btnEnvio.ForeColor = System.Drawing.Color.White;
+            this.btnEnvio.Name = "btnEnvio";
+            this.btnEnvio.UseVisualStyleBackColor = true;
+            this.btnEnvio.Click += new System.EventHandler(this.btnEnvio_Click);
             // 
             // panel6
             // 
@@ -240,21 +270,48 @@ namespace GestionInventario
             this.btnIngresomtto.UseVisualStyleBackColor = true;
             this.btnIngresomtto.Click += new System.EventHandler(this.btnIngresomtto_Click_1);
             // 
-            // pictureBox7
+            // pictureBox8
             // 
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.TabStop = false;
+            resources.ApplyResources(this.pictureBox8, "pictureBox8");
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.TabStop = false;
             // 
-            // btnEnvio
+            // button2
             // 
-            this.btnEnvio.FlatAppearance.BorderSize = 0;
-            this.btnEnvio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            resources.ApplyResources(this.btnEnvio, "btnEnvio");
-            this.btnEnvio.ForeColor = System.Drawing.Color.White;
-            this.btnEnvio.Name = "btnEnvio";
-            this.btnEnvio.UseVisualStyleBackColor = true;
-            this.btnEnvio.Click += new System.EventHandler(this.btnEnvio_Click);
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.panel8, "panel8");
+            this.panel8.Name = "panel8";
+            // 
+            // pictureBox9
+            // 
+            resources.ApplyResources(this.pictureBox9, "pictureBox9");
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.panel9, "panel9");
+            this.panel9.Name = "panel9";
             // 
             // FormMDI
             // 
@@ -266,6 +323,7 @@ namespace GestionInventario
             this.Name = "FormMDI";
             this.Load += new System.EventHandler(this.FormMDI_Load);
             this.pnlMenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIndicadores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -273,7 +331,8 @@ namespace GestionInventario
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,5 +362,11 @@ namespace GestionInventario
         private Panel panel6;
         private PictureBox pictureBox7;
         private Button btnEnvio;
+        private PictureBox pictureBox9;
+        private Button button3;
+        private Panel panel9;
+        private PictureBox pictureBox8;
+        private Button button2;
+        private Panel panel8;
     }
 }
