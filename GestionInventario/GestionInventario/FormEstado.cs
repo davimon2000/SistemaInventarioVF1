@@ -38,6 +38,8 @@ namespace GestionInventario
 
         private void FormEstado_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'inventarioActivosDataSet3.vw_ResumenActivosPorSedeEstado' Puede moverla o quitarla según sea necesario.
+            this.vw_ResumenActivosPorSedeEstadoTableAdapter.Fill(this.inventarioActivosDataSet3.vw_ResumenActivosPorSedeEstado);
             // TODO: esta línea de código carga datos en la tabla 'estadoYSedeView.ResumenActivosPorSedeEstadoView' Puede moverla o quitarla según sea necesario.
             this.resumenActivosPorSedeEstadoViewTableAdapter.Fill(this.estadoYSedeView.ResumenActivosPorSedeEstadoView);
             // TODO: esta línea de código carga datos en la tabla 'inventarioActivosDataSet2.Marcas' Puede moverla o quitarla según sea necesario.
@@ -344,7 +346,7 @@ ORDER BY s.NombreSede, ea.Estado;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT Sede, EstadoActual, Cantidad FROM ResumenActivosPorSedeEstadoView";
+                string query = "SELECT Sede, EstadoActual, Cantidad FROM vw_ResumenActivosPorSedeEstado";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();

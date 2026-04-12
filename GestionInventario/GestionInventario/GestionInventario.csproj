@@ -246,6 +246,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InventarioActivosDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InventarioActivosDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioActivosDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento1DS.cs">
       <DependentUpon>Mantenimiento1DS.xsd</DependentUpon>
     </Compile>
@@ -449,6 +454,17 @@
     </None>
     <None Include="InventarioActivosDataSet2.xss">
       <DependentUpon>InventarioActivosDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioActivosDataSet3.xsc">
+      <DependentUpon>InventarioActivosDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioActivosDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventarioActivosDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InventarioActivosDataSet3.xss">
+      <DependentUpon>InventarioActivosDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Mantenimiento1DS.xsc">
       <DependentUpon>Mantenimiento1DS.xsd</DependentUpon>

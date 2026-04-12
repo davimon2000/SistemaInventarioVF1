@@ -175,9 +175,6 @@ namespace GestionInventario
                         {
                             InventarioId = Convert.ToInt32(result);
 
-
-
-
                             string queryCheckAsign = @"SELECT TOP 1 EstadoDevolucion
                             FROM Asignacion
                             WHERE IdActivo = @IdActivo
@@ -189,14 +186,44 @@ namespace GestionInventario
                                 cmdCheckAsign.Parameters.AddWithValue("@IdActivo", InventarioId);
                                 object checkResultAsign = cmdCheckAsign.ExecuteScalar();
 
-                                conn.Close();
+                                //conn.Close();
 
 
                                 //if (checkResultAsign != null && checkResultAsign != DBNull.Value )
                                 if(checkResultAsign == null)
-                                { 
+                                {
 
-                                string queryCheck = @"
+                                    //VALIDAR QUE NO ESTÉ EN TRANSITO
+
+
+                                    string queryValidarEnvio = @"
+                                            SELECT 1
+                                            FROM Envio
+                                            WHERE IdActivo = @IdActivo
+                                            AND FechaRecepcion IS NULL";
+
+                                    using (SqlCommand cmdValidarEnvio = new SqlCommand(queryValidarEnvio, conn))
+                                    {
+                                        cmdValidarEnvio.Parameters.AddWithValue("@IdActivo", InventarioId);
+
+                                        object enTransito = cmdValidarEnvio.ExecuteScalar();
+
+                                        if (enTransito != null)
+                                        {
+                                            MessageBox.Show("El activo está en tránsito y no puede ingresar a mantenimiento",
+                                                            "Validación",
+                                                            MessageBoxButtons.OK,
+                                                            MessageBoxIcon.Warning);
+                                            return; // 🚨 SE DETIENE TODO AQUÍ
+                                        }
+                                    }
+
+
+                                    conn.Close();
+
+
+
+                                    string queryCheck = @"
                         SELECT TOP 1 checkMtto
                         FROM Mantenimiento
                         WHERE InventarioId = @InventarioId

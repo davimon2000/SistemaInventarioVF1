@@ -125,5 +125,60 @@ namespace GestionInventario
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void btnConfirmarrecepcion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+
+                    string queryId = "SELECT Id FROM RegistroActivos WHERE CodInterno = @Numero";
+                    using (SqlCommand cmdd = new SqlCommand(queryId, conn))
+                    {
+                        cmdd.Parameters.AddWithValue("@Numero", txtCodEnvio.Text);
+                        object result = cmdd.ExecuteScalar();
+
+                        //conn.Close();
+                        //conn.Open();
+                        if (result == null)
+                        {
+                            MessageBox.Show("El activo no se encuentra registrado.");
+                            return;
+                        }
+                        //else
+                        //{//ABRE ABC
+
+                        int idActivo = Convert.ToInt32(result);
+
+
+
+
+                        string query = @"UPDATE Envio
+                             SET FechaRecepcion = @FechaRecepcion
+                             WHERE IdActivo = @IdActivo
+                             AND FechaRecepcion IS NULL";
+
+                        SqlCommand cmd = new SqlCommand(query, conn);
+
+                        cmd.Parameters.AddWithValue("@IdActivo", idActivo);
+                        cmd.Parameters.AddWithValue("@FechaRecepcion", DateTime.Now);
+
+                        int filas = cmd.ExecuteNonQuery();
+
+                        if (filas > 0)
+                            MessageBox.Show("Recepción confirmada correctamente");
+                        else
+                            MessageBox.Show("No hay envíos pendientes para este activo");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

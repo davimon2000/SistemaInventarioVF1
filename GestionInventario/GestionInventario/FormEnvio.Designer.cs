@@ -33,6 +33,8 @@
             this.lblEnvio = new System.Windows.Forms.Label();
             this.lblCodEnvio = new System.Windows.Forms.Label();
             this.cmbSedeEnvio = new System.Windows.Forms.ComboBox();
+            this.sedesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sedesDS = new GestionInventario.SedesDS();
             this.lblFechaEnvio = new System.Windows.Forms.Label();
             this.dtpFechaEnvio = new System.Windows.Forms.DateTimePicker();
             this.txtCodEnvio = new System.Windows.Forms.TextBox();
@@ -43,11 +45,9 @@
             this.cmbTipooperacion = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnConfirmarrecepcion = new System.Windows.Forms.Button();
-            this.sedesDS = new GestionInventario.SedesDS();
-            this.sedesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sedesTableAdapter = new GestionInventario.SedesDSTableAdapters.SedesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnvio
@@ -93,6 +93,16 @@
             this.cmbSedeEnvio.Size = new System.Drawing.Size(195, 21);
             this.cmbSedeEnvio.TabIndex = 51;
             this.cmbSedeEnvio.ValueMember = "Id";
+            // 
+            // sedesBindingSource
+            // 
+            this.sedesBindingSource.DataMember = "Sedes";
+            this.sedesBindingSource.DataSource = this.sedesDS;
+            // 
+            // sedesDS
+            // 
+            this.sedesDS.DataSetName = "SedesDS";
+            this.sedesDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblFechaEnvio
             // 
@@ -200,16 +210,7 @@
             this.btnConfirmarrecepcion.TabIndex = 56;
             this.btnConfirmarrecepcion.Text = "Confirmar Recepcion";
             this.btnConfirmarrecepcion.UseVisualStyleBackColor = false;
-            // 
-            // sedesDS
-            // 
-            this.sedesDS.DataSetName = "SedesDS";
-            this.sedesDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sedesBindingSource
-            // 
-            this.sedesBindingSource.DataMember = "Sedes";
-            this.sedesBindingSource.DataSource = this.sedesDS;
+            this.btnConfirmarrecepcion.Click += new System.EventHandler(this.btnConfirmarrecepcion_Click);
             // 
             // sedesTableAdapter
             // 
@@ -237,8 +238,8 @@
             this.Name = "FormEnvio";
             this.Text = "FormEnvio";
             this.Load += new System.EventHandler(this.FormEnvio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
