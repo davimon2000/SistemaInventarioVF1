@@ -36,6 +36,8 @@
             this.lblUsuarioRed = new System.Windows.Forms.Label();
             this.lblUsuarioRedInd = new System.Windows.Forms.Label();
             this.btnRestablecer = new System.Windows.Forms.Button();
+            this.txtNuevaPass = new System.Windows.Forms.TextBox();
+            this.txtConfirmarPass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNomIndicador
@@ -111,19 +113,38 @@
             // btnRestablecer
             // 
             this.btnRestablecer.BackColor = System.Drawing.Color.LightGray;
-            this.btnRestablecer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestablecer.Location = new System.Drawing.Point(92, 222);
+            this.btnRestablecer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestablecer.Location = new System.Drawing.Point(120, 309);
             this.btnRestablecer.Name = "btnRestablecer";
-            this.btnRestablecer.Size = new System.Drawing.Size(194, 32);
+            this.btnRestablecer.Size = new System.Drawing.Size(167, 32);
             this.btnRestablecer.TabIndex = 49;
-            this.btnRestablecer.Text = "Restablecer contraseña";
+            this.btnRestablecer.Text = "Restablecer";
             this.btnRestablecer.UseVisualStyleBackColor = false;
+            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
+            // 
+            // txtNuevaPass
+            // 
+            this.txtNuevaPass.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtNuevaPass.Location = new System.Drawing.Point(33, 264);
+            this.txtNuevaPass.Name = "txtNuevaPass";
+            this.txtNuevaPass.Size = new System.Drawing.Size(167, 29);
+            this.txtNuevaPass.TabIndex = 50;
+            // 
+            // txtConfirmarPass
+            // 
+            this.txtConfirmarPass.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtConfirmarPass.Location = new System.Drawing.Point(206, 264);
+            this.txtConfirmarPass.Name = "txtConfirmarPass";
+            this.txtConfirmarPass.Size = new System.Drawing.Size(167, 29);
+            this.txtConfirmarPass.TabIndex = 51;
             // 
             // FormMiusuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 315);
+            this.ClientSize = new System.Drawing.Size(417, 364);
+            this.Controls.Add(this.txtConfirmarPass);
+            this.Controls.Add(this.txtNuevaPass);
             this.Controls.Add(this.btnRestablecer);
             this.Controls.Add(this.lblUsuarioRed);
             this.Controls.Add(this.lblUsuarioRedInd);
@@ -149,5 +170,7 @@
         private System.Windows.Forms.Label lblUsuarioRed;
         private System.Windows.Forms.Label lblUsuarioRedInd;
         private System.Windows.Forms.Button btnRestablecer;
+        private System.Windows.Forms.TextBox txtNuevaPass;
+        private System.Windows.Forms.TextBox txtConfirmarPass;
     }
 }

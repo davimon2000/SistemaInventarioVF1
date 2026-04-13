@@ -303,6 +303,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SedesDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad.cs" />
     <Compile Include="TecnicosDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

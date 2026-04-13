@@ -197,6 +197,11 @@ namespace GestionInventario
             frm.Show();
             frm.BringToFront();
         }
+
+        private void pnlMenuVertical_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

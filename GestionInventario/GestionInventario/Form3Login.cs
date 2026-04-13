@@ -36,7 +36,9 @@ namespace GestionInventario
         {
             string usuario = txtUsuario.Text.Trim();
             string contrasena = txtContrasena.Text.Trim();
+            string hash = Seguridad.ObtenerSHA256(txtContrasena.Text);
             int sedeId = 0;
+            bool primerIngreso ;
             String rolUsuario ="";
 
             //SqlDataReader dr;
@@ -55,10 +57,10 @@ namespace GestionInventario
             using (SqlConnection cn = new SqlConnection(conexion))
             {
                 cn.Open();
-                string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario=@usuario AND Contrasena=@contrasena";
+                string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario=@usuario AND PasswordHash=@contrasena";
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contrasena", contrasena);
+                cmd.Parameters.AddWithValue("@contrasena", hash);
 
                 int existe = (int)cmd.ExecuteScalar();
                 if (existe > 0)
@@ -121,9 +123,49 @@ namespace GestionInventario
                     }
 
 
+                        //frm.Show();
 
-                        frm.Show();
+                    using (SqlConnection cnn = new SqlConnection(conexion))
+                    {
+                        cnn.Open();
+                        string queryPrimerIngreso = @"
+        SELECT PrimerIngreso
+        FROM Usuarios
+        WHERE Usuario = @Usuario";
 
+                        using (SqlCommand cmdPrimerIngreso = new SqlCommand(queryPrimerIngreso, cnn))
+                        {
+                            cmdPrimerIngreso.Parameters.AddWithValue("@Usuario", usuario);
+
+                            object result = cmdPrimerIngreso.ExecuteScalar();
+
+
+                            //if (result == null)
+
+                            //primerIngreso = true;
+
+                            primerIngreso = Convert.ToBoolean(result);
+
+
+
+
+
+                            if (primerIngreso == true)
+                            {
+                                MessageBox.Show("Debe cambiar su contraseña");
+
+                                FormMiusuario frmUsuario = new FormMiusuario();
+                                //frmUsuario.Usuario = usuarioLogueado;
+                                frmUsuario.ModoForzado = true; // 🔥 clave
+                                frmUsuario.ShowDialog();
+
+                                return;
+
+                            }
+
+                            frm.Show();
+                        }
+                    }
 
                 }
                 else
