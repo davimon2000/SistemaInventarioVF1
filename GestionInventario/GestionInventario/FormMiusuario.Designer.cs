@@ -38,6 +38,8 @@
             this.btnRestablecer = new System.Windows.Forms.Button();
             this.txtNuevaPass = new System.Windows.Forms.TextBox();
             this.txtConfirmarPass = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNomIndicador
@@ -129,6 +131,7 @@
             this.txtNuevaPass.Name = "txtNuevaPass";
             this.txtNuevaPass.Size = new System.Drawing.Size(167, 29);
             this.txtNuevaPass.TabIndex = 50;
+            this.txtNuevaPass.UseSystemPasswordChar = true;
             // 
             // txtConfirmarPass
             // 
@@ -138,11 +141,33 @@
             this.txtConfirmarPass.Size = new System.Drawing.Size(167, 29);
             this.txtConfirmarPass.TabIndex = 51;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 21);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Nueva Contraseña:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(202, 231);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(173, 21);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "Confirmar Contraseña:";
+            // 
             // FormMiusuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 364);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtConfirmarPass);
             this.Controls.Add(this.txtNuevaPass);
             this.Controls.Add(this.btnRestablecer);
@@ -172,5 +197,7 @@
         private System.Windows.Forms.Button btnRestablecer;
         private System.Windows.Forms.TextBox txtNuevaPass;
         private System.Windows.Forms.TextBox txtConfirmarPass;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

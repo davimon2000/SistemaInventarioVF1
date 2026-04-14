@@ -168,3 +168,4 @@ C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInven
 C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInventario\obj\Debug\GestionInventario.pdb
 C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInventario\obj\Debug\GestionInventario.FormEnvio.resources
 C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInventario\obj\Debug\GestionInventario.FormMiusuario.resources
+C:\Users\BB12388\Documents\ProyectoSistemaGestion\GestionInventario\GestionInventario\obj\Debug\GestionInventario.FormCreacionUsuario.resources

@@ -26,7 +26,7 @@ namespace GestionInventario
             InitializeComponent();
 
         }
-        private string ObtenerConexion()
+        public string ObtenerConexion()
         {
             string servidor = "LPT140112\\SQLEXPRESS";
 
@@ -43,7 +43,7 @@ namespace GestionInventario
 
             //SqlDataReader dr;
             //rolUsuario = dr["NombreRol"].ToString();
-            
+
 
 
 
@@ -52,12 +52,15 @@ namespace GestionInventario
                 MessageBox.Show("Por favor ingrese usuario y contraseña");
                 return;
             }
-           // string conexion = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
-            String conexion = ObtenerConexion();
+            // string conexion = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+            //String conexion = ObtenerConexion();
+            String conexion = Conexion.cadena;
             using (SqlConnection cn = new SqlConnection(conexion))
             {
                 cn.Open();
+                
                 string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario=@usuario AND PasswordHash=@contrasena";
+               // string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario=@usuario";
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@contrasena", hash);

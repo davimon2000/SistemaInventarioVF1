@@ -119,6 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AsignacionDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="conexion.cs" />
     <Compile Include="ConsultaActivosDS.cs">
       <DependentUpon>ConsultaActivosDS.xsd</DependentUpon>
     </Compile>
@@ -152,6 +153,12 @@
     </Compile>
     <Compile Include="FormActivos.Designer.cs">
       <DependentUpon>FormActivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreacionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreacionUsuario.Designer.cs">
+      <DependentUpon>FormCreacionUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEnvio.cs">
       <SubType>Form</SubType>
@@ -323,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsulta.resx">
       <DependentUpon>FormConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreacionUsuario.resx">
+      <DependentUpon>FormCreacionUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEnvio.resx">
       <DependentUpon>FormEnvio.cs</DependentUpon>

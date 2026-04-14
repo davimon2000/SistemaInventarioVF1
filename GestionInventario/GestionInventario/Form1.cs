@@ -202,6 +202,21 @@ namespace GestionInventario
         {
 
         }
+
+        private void btnCreacionUsuarios_Click(object sender, EventArgs e)
+        {
+            if (Form3Login.UsuarioActual == "Administrador")
+            {
+                FormCreacionUsuario frm = FormCreacionUsuario.ventana_unica();
+                frm.MdiParent = this;
+                frm.Show();
+                frm.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("No tienes permiso para acceder a Creacion Usuarios.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 
 }
