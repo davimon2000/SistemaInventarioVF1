@@ -1552,7 +1552,7 @@ namespace GestionInventario
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblRegistro);
             this.Name = "FormConsulta";
-            this.Text = "FormConsulta";
+            this.Text = "Consulta";
             this.Load += new System.EventHandler(this.FormConsulta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activosViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewDS)).EndInit();

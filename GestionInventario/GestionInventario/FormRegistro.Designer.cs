@@ -69,10 +69,6 @@ namespace GestionInventario
             this.sedesDS = new GestionInventario.SedesDS();
             this.label2 = new System.Windows.Forms.Label();
             this.sedesTableAdapter = new GestionInventario.SedesDSTableAdapters.SedesTableAdapter();
-            this.lblObservacion = new System.Windows.Forms.Label();
-            this.txtObservacion = new System.Windows.Forms.TextBox();
-            this.lblTipoFallaMtto = new System.Windows.Forms.Label();
-            this.cmbTipoFalla = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource1)).BeginInit();
@@ -382,54 +378,6 @@ namespace GestionInventario
             // 
             this.sedesTableAdapter.ClearBeforeFill = true;
             // 
-            // lblObservacion
-            // 
-            this.lblObservacion.AutoSize = true;
-            this.lblObservacion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservacion.Location = new System.Drawing.Point(358, 447);
-            this.lblObservacion.Name = "lblObservacion";
-            this.lblObservacion.Size = new System.Drawing.Size(147, 21);
-            this.lblObservacion.TabIndex = 32;
-            this.lblObservacion.Text = "Observación Mtto:";
-            this.lblObservacion.Visible = false;
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.Location = new System.Drawing.Point(351, 401);
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(202, 29);
-            this.txtObservacion.TabIndex = 33;
-            this.txtObservacion.Visible = false;
-            // 
-            // lblTipoFallaMtto
-            // 
-            this.lblTipoFallaMtto.AutoSize = true;
-            this.lblTipoFallaMtto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoFallaMtto.Location = new System.Drawing.Point(385, 377);
-            this.lblTipoFallaMtto.Name = "lblTipoFallaMtto";
-            this.lblTipoFallaMtto.Size = new System.Drawing.Size(104, 21);
-            this.lblTipoFallaMtto.TabIndex = 22;
-            this.lblTipoFallaMtto.Text = "Tipo de falla:";
-            this.lblTipoFallaMtto.Visible = false;
-            // 
-            // cmbTipoFalla
-            // 
-            this.cmbTipoFalla.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoFalla.FormattingEnabled = true;
-            this.cmbTipoFalla.Items.AddRange(new object[] {
-            "Cable",
-            "Microfono",
-            "Balaca",
-            "Boton",
-            "Base",
-            "Pitillo",
-            "Tarjeta"});
-            this.cmbTipoFalla.Location = new System.Drawing.Point(349, 339);
-            this.cmbTipoFalla.Name = "cmbTipoFalla";
-            this.cmbTipoFalla.Size = new System.Drawing.Size(204, 25);
-            this.cmbTipoFalla.TabIndex = 21;
-            this.cmbTipoFalla.Visible = false;
-            // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -437,10 +385,6 @@ namespace GestionInventario
             this.ClientSize = new System.Drawing.Size(485, 566);
             this.Controls.Add(this.cmbSedeReg);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtObservacion);
-            this.Controls.Add(this.lblObservacion);
-            this.Controls.Add(this.lblTipoFallaMtto);
-            this.Controls.Add(this.cmbTipoFalla);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cmbActivo);
             this.Controls.Add(this.lblActivo);
@@ -524,9 +468,5 @@ namespace GestionInventario
         private SedesDS sedesDS;
         private BindingSource sedesBindingSource;
         private SedesDSTableAdapters.SedesTableAdapter sedesTableAdapter;
-        private Label lblObservacion;
-        private TextBox txtObservacion;
-        private Label lblTipoFallaMtto;
-        private ComboBox cmbTipoFalla;
     }
 }

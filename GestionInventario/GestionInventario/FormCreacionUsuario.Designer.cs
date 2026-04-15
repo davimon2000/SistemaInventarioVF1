@@ -210,7 +210,7 @@
             this.Controls.Add(this.lblMiusuario);
             this.Controls.Add(this.lblNomIndicador);
             this.Name = "FormCreacionUsuario";
-            this.Text = "Creacion Usuarios";
+            this.Text = "Creación de Usuarios";
             this.Load += new System.EventHandler(this.FormCreacionUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

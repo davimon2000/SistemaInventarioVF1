@@ -236,7 +236,7 @@
             this.Controls.Add(this.lblCodEnvio);
             this.Controls.Add(this.lblEnvio);
             this.Name = "FormEnvio";
-            this.Text = "FormEnvio";
+            this.Text = "Envio";
             this.Load += new System.EventHandler(this.FormEnvio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesDS)).EndInit();

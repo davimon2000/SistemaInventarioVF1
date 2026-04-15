@@ -107,7 +107,7 @@
             this.Controls.Add(this.lblMantenimiento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3Login";
-            this.Text = "Form3Login";
+            this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.Form3Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

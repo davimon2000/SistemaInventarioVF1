@@ -80,7 +80,10 @@ namespace GestionInventario
         
     }
 
-       
+        private void FormMDI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
 
         private void btnCerrar_Click_1(object sender, EventArgs e)
         {
@@ -90,7 +93,8 @@ namespace GestionInventario
 
         private bool UsuarioTienePermisoMtto(string usuario)
         {
-            string connectionString = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+           // string connectionString = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+           String connectionString = Conexion.cadena;
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -216,6 +220,16 @@ namespace GestionInventario
             {
                 MessageBox.Show("No tienes permiso para acceder a Creacion Usuarios.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void CerrarImg_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

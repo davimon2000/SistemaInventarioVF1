@@ -26,12 +26,12 @@ namespace GestionInventario
             InitializeComponent();
 
         }
-        public string ObtenerConexion()
-        {
-            string servidor = "LPT140112\\SQLEXPRESS";
+        //public string ObtenerConexion()
+        //{
+        //    string servidor = "LPT140112\\SQLEXPRESS";
 
-            return $"Server={servidor};Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
-        }
+        //    return $"Server={servidor};Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+        //}
         private void btnIngresarLogin_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text.Trim();
@@ -167,6 +167,8 @@ namespace GestionInventario
                             }
 
                             frm.Show();
+                            //this.Close();
+                            
                         }
                     }
 

@@ -16,8 +16,8 @@ namespace GestionInventario
     public partial class FormConsulta : Form
     {
 
-        string connectionString = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
-
+        //string connectionString = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+        string connectionString = Conexion.cadena;
         private static FormConsulta instancia = null;
         public static FormConsulta ventana_unica()
         {

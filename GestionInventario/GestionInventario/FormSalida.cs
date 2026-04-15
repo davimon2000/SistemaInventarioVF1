@@ -14,7 +14,8 @@ namespace GestionInventario
 {
     public partial class FormSalida : Form
     {
-        string connectionString = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+        //string connectionString = "Server=LPT140112\\SQLEXPRESS;Database=InventarioActivos;User Id=inventarioUser;Password=Inventario2025++;";
+        string connectionString = Conexion.cadena;
         private static FormSalida instancia = null;
         public static FormSalida ventana_unica()
         {

@@ -61,6 +61,7 @@ namespace GestionInventario
             this.btnRegistro = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnIngresomtto = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.pnlMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -76,6 +77,7 @@ namespace GestionInventario
             // pnlMenuVertical
             // 
             this.pnlMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.pnlMenuVertical.Controls.Add(this.btnSalir);
             this.pnlMenuVertical.Controls.Add(this.pictureBox9);
             this.pnlMenuVertical.Controls.Add(this.btnCreacionUsuarios);
             this.pnlMenuVertical.Controls.Add(this.panel9);
@@ -236,6 +238,7 @@ namespace GestionInventario
             // 
             // btnSalida
             // 
+            this.btnSalida.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalida.FlatAppearance.BorderSize = 0;
             this.btnSalida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             resources.ApplyResources(this.btnSalida, "btnSalida");
@@ -294,6 +297,13 @@ namespace GestionInventario
             this.btnIngresomtto.UseVisualStyleBackColor = true;
             this.btnIngresomtto.Click += new System.EventHandler(this.btnIngresomtto_Click_1);
             // 
+            // btnSalir
+            // 
+            resources.ApplyResources(this.btnSalir, "btnSalir");
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FormMDI
             // 
             resources.ApplyResources(this, "$this");
@@ -346,5 +356,6 @@ namespace GestionInventario
         private PictureBox pictureBox8;
         private Button btnMiusuaio;
         private Panel panel8;
+        private Button btnSalir;
     }
 }

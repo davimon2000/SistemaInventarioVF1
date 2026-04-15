@@ -296,7 +296,7 @@ namespace GestionInventario
             this.Controls.Add(this.lblNumeroMtto);
             this.Controls.Add(this.lblMantenimiento);
             this.Name = "FormIngresomtto";
-            this.Text = "FormIngresomtto";
+            this.Text = "Mantenimiento";
             this.Load += new System.EventHandler(this.FormIngresomtto_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesDSBindingSource)).EndInit();

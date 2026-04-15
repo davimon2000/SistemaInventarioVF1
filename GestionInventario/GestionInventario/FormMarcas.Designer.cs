@@ -238,7 +238,7 @@
             this.Controls.Add(this.marcasDataGridView);
             this.Controls.Add(this.marcasBindingNavigator);
             this.Name = "FormMarcas";
-            this.Text = "FormMarcas";
+            this.Text = "Marcas";
             this.Load += new System.EventHandler(this.FormMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.marcasDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();

@@ -238,7 +238,7 @@
             this.Controls.Add(this.activosDataGridView);
             this.Controls.Add(this.activosBindingNavigator);
             this.Name = "FormActivos";
-            this.Text = "FormActivos";
+            this.Text = "Activos";
             this.Load += new System.EventHandler(this.FormActivos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activosDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource)).EndInit();

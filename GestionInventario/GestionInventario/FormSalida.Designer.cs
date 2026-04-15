@@ -248,6 +248,7 @@
             // 
             // cmbCondicionEntrega
             // 
+            this.cmbCondicionEntrega.DisplayMember = "Id";
             this.cmbCondicionEntrega.FormattingEnabled = true;
             this.cmbCondicionEntrega.Items.AddRange(new object[] {
             "Nuevo",
@@ -280,6 +281,7 @@
             // 
             // cmbEstadoDevolucion
             // 
+            this.cmbEstadoDevolucion.DisplayMember = "Id";
             this.cmbEstadoDevolucion.FormattingEnabled = true;
             this.cmbEstadoDevolucion.Items.AddRange(new object[] {
             "Bueno",
@@ -317,7 +319,7 @@
             this.Controls.Add(this.lblNumeroAsig);
             this.Controls.Add(this.lblAsignacion);
             this.Name = "FormSalida";
-            this.Text = "FormSalida";
+            this.Text = "Asignación y Devolución";
             this.Load += new System.EventHandler(this.FormSalida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedesDSBindingSource)).EndInit();
