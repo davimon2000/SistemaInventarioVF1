@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCreacionUsuario));
             this.lblUsuarioRedInd = new System.Windows.Forms.Label();
             this.lblSedeIndicador = new System.Windows.Forms.Label();
             this.lblMiusuario = new System.Windows.Forms.Label();
@@ -209,6 +210,7 @@
             this.Controls.Add(this.lblSedeIndicador);
             this.Controls.Add(this.lblMiusuario);
             this.Controls.Add(this.lblNomIndicador);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCreacionUsuario";
             this.Text = "Creación de Usuarios";
             this.Load += new System.EventHandler(this.FormCreacionUsuario_Load);

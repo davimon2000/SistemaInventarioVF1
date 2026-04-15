@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSalida));
             this.lblAsignacion = new System.Windows.Forms.Label();
             this.txtNumAsig = new System.Windows.Forms.TextBox();
             this.lblNumeroAsig = new System.Windows.Forms.Label();
@@ -318,6 +319,7 @@
             this.Controls.Add(this.txtNumAsig);
             this.Controls.Add(this.lblNumeroAsig);
             this.Controls.Add(this.lblAsignacion);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormSalida";
             this.Text = "Asignación y Devolución";
             this.Load += new System.EventHandler(this.FormSalida_Load);

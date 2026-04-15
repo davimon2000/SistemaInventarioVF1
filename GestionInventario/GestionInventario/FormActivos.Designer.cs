@@ -237,6 +237,7 @@
             this.Controls.Add(this.lblMantenimiento);
             this.Controls.Add(this.activosDataGridView);
             this.Controls.Add(this.activosBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormActivos";
             this.Text = "Activos";
             this.Load += new System.EventHandler(this.FormActivos_Load);

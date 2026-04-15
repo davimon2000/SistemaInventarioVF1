@@ -1551,6 +1551,7 @@ namespace GestionInventario
             this.Controls.Add(this.txtNumeroConsulta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblRegistro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConsulta";
             this.Text = "Consulta";
             this.Load += new System.EventHandler(this.FormConsulta_Load);

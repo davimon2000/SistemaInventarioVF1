@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEstado));
             this.registroActivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblRegistro = new System.Windows.Forms.Label();
             this.chartActivos = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -42,21 +43,21 @@
             this.sedeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoActualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vwResumenActivosPorSedeEstadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventarioActivosDataSet3 = new GestionInventario.InventarioActivosDataSet3();
             this.resumenActivosPorSedeEstadoViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estadoYSedeView = new GestionInventario.EstadoYSedeView();
             this.resumenActivosPorSedeEstadoViewTableAdapter = new GestionInventario.EstadoYSedeViewTableAdapters.ResumenActivosPorSedeEstadoViewTableAdapter();
-            this.inventarioActivosDataSet3 = new GestionInventario.InventarioActivosDataSet3();
-            this.vwResumenActivosPorSedeEstadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vw_ResumenActivosPorSedeEstadoTableAdapter = new GestionInventario.InventarioActivosDataSet3TableAdapters.vw_ResumenActivosPorSedeEstadoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwResumenActivosPorSedeEstadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumenActivosPorSedeEstadoViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadoYSedeView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwResumenActivosPorSedeEstadoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // registroActivosBindingSource
@@ -79,16 +80,16 @@
             this.chartActivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea3.Name = "ChartArea1";
-            this.chartActivos.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartActivos.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartActivos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartActivos.Legends.Add(legend1);
             this.chartActivos.Location = new System.Drawing.Point(38, 312);
             this.chartActivos.Name = "chartActivos";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartActivos.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartActivos.Series.Add(series1);
             this.chartActivos.Size = new System.Drawing.Size(678, 268);
             this.chartActivos.TabIndex = 13;
             this.chartActivos.Text = "chart1";
@@ -144,6 +145,16 @@
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             // 
+            // vwResumenActivosPorSedeEstadoBindingSource
+            // 
+            this.vwResumenActivosPorSedeEstadoBindingSource.DataMember = "vw_ResumenActivosPorSedeEstado";
+            this.vwResumenActivosPorSedeEstadoBindingSource.DataSource = this.inventarioActivosDataSet3;
+            // 
+            // inventarioActivosDataSet3
+            // 
+            this.inventarioActivosDataSet3.DataSetName = "InventarioActivosDataSet3";
+            this.inventarioActivosDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // resumenActivosPorSedeEstadoViewBindingSource
             // 
             this.resumenActivosPorSedeEstadoViewBindingSource.DataMember = "ResumenActivosPorSedeEstadoView";
@@ -158,16 +169,6 @@
             // 
             this.resumenActivosPorSedeEstadoViewTableAdapter.ClearBeforeFill = true;
             // 
-            // inventarioActivosDataSet3
-            // 
-            this.inventarioActivosDataSet3.DataSetName = "InventarioActivosDataSet3";
-            this.inventarioActivosDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vwResumenActivosPorSedeEstadoBindingSource
-            // 
-            this.vwResumenActivosPorSedeEstadoBindingSource.DataMember = "vw_ResumenActivosPorSedeEstado";
-            this.vwResumenActivosPorSedeEstadoBindingSource.DataSource = this.inventarioActivosDataSet3;
-            // 
             // vw_ResumenActivosPorSedeEstadoTableAdapter
             // 
             this.vw_ResumenActivosPorSedeEstadoTableAdapter.ClearBeforeFill = true;
@@ -181,6 +182,7 @@
             this.Controls.Add(this.dgvEstado);
             this.Controls.Add(this.chartActivos);
             this.Controls.Add(this.lblRegistro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEstado";
             this.Text = "Estado";
             this.Load += new System.EventHandler(this.FormEstado_Load);
@@ -189,10 +191,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwResumenActivosPorSedeEstadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumenActivosPorSedeEstadoViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadoYSedeView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwResumenActivosPorSedeEstadoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

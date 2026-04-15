@@ -32,6 +32,7 @@ namespace GestionInventario
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresomtto));
             this.lblMantenimiento = new System.Windows.Forms.Label();
             this.txtNumMtto = new System.Windows.Forms.TextBox();
             this.lblNumeroMtto = new System.Windows.Forms.Label();
@@ -295,6 +296,7 @@ namespace GestionInventario
             this.Controls.Add(this.txtNumMtto);
             this.Controls.Add(this.lblNumeroMtto);
             this.Controls.Add(this.lblMantenimiento);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIngresomtto";
             this.Text = "Mantenimiento";
             this.Load += new System.EventHandler(this.FormIngresomtto_Load_1);

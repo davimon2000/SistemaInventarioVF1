@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEnvio));
             this.btnEnvio = new System.Windows.Forms.Button();
             this.lblEnvio = new System.Windows.Forms.Label();
             this.lblCodEnvio = new System.Windows.Forms.Label();
@@ -38,12 +39,9 @@
             this.lblFechaEnvio = new System.Windows.Forms.Label();
             this.dtpFechaEnvio = new System.Windows.Forms.DateTimePicker();
             this.txtCodEnvio = new System.Windows.Forms.TextBox();
-            this.lblEstadoEnvio = new System.Windows.Forms.Label();
             this.lblSedeEnvio = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.lblTipooperacion = new System.Windows.Forms.Label();
             this.cmbTipooperacion = new System.Windows.Forms.ComboBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnConfirmarrecepcion = new System.Windows.Forms.Button();
             this.sedesTableAdapter = new GestionInventario.SedesDSTableAdapters.SedesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.sedesBindingSource)).BeginInit();
@@ -54,7 +52,7 @@
             // 
             this.btnEnvio.BackColor = System.Drawing.Color.LightBlue;
             this.btnEnvio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnvio.Location = new System.Drawing.Point(169, 296);
+            this.btnEnvio.Location = new System.Drawing.Point(169, 268);
             this.btnEnvio.Name = "btnEnvio";
             this.btnEnvio.Size = new System.Drawing.Size(139, 32);
             this.btnEnvio.TabIndex = 48;
@@ -76,7 +74,7 @@
             // 
             this.lblCodEnvio.AutoSize = true;
             this.lblCodEnvio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodEnvio.Location = new System.Drawing.Point(57, 111);
+            this.lblCodEnvio.Location = new System.Drawing.Point(57, 123);
             this.lblCodEnvio.Name = "lblCodEnvio";
             this.lblCodEnvio.Size = new System.Drawing.Size(68, 21);
             this.lblCodEnvio.TabIndex = 35;
@@ -88,7 +86,7 @@
             this.cmbSedeEnvio.DataSource = this.sedesBindingSource;
             this.cmbSedeEnvio.DisplayMember = "NombreSede";
             this.cmbSedeEnvio.FormattingEnabled = true;
-            this.cmbSedeEnvio.Location = new System.Drawing.Point(189, 201);
+            this.cmbSedeEnvio.Location = new System.Drawing.Point(189, 170);
             this.cmbSedeEnvio.Name = "cmbSedeEnvio";
             this.cmbSedeEnvio.Size = new System.Drawing.Size(195, 21);
             this.cmbSedeEnvio.TabIndex = 51;
@@ -108,7 +106,7 @@
             // 
             this.lblFechaEnvio.AutoSize = true;
             this.lblFechaEnvio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEnvio.Location = new System.Drawing.Point(58, 238);
+            this.lblFechaEnvio.Location = new System.Drawing.Point(58, 207);
             this.lblFechaEnvio.Name = "lblFechaEnvio";
             this.lblFechaEnvio.Size = new System.Drawing.Size(56, 21);
             this.lblFechaEnvio.TabIndex = 37;
@@ -119,7 +117,7 @@
             // 
             this.dtpFechaEnvio.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaEnvio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEnvio.Location = new System.Drawing.Point(189, 238);
+            this.dtpFechaEnvio.Location = new System.Drawing.Point(189, 207);
             this.dtpFechaEnvio.Name = "dtpFechaEnvio";
             this.dtpFechaEnvio.Size = new System.Drawing.Size(195, 25);
             this.dtpFechaEnvio.TabIndex = 38;
@@ -128,44 +126,26 @@
             // txtCodEnvio
             // 
             this.txtCodEnvio.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtCodEnvio.Location = new System.Drawing.Point(189, 108);
+            this.txtCodEnvio.Location = new System.Drawing.Point(189, 120);
             this.txtCodEnvio.Name = "txtCodEnvio";
-            this.txtCodEnvio.Size = new System.Drawing.Size(119, 29);
+            this.txtCodEnvio.Size = new System.Drawing.Size(195, 29);
             this.txtCodEnvio.TabIndex = 36;
-            // 
-            // lblEstadoEnvio
-            // 
-            this.lblEstadoEnvio.AutoSize = true;
-            this.lblEstadoEnvio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoEnvio.Location = new System.Drawing.Point(58, 156);
-            this.lblEstadoEnvio.Name = "lblEstadoEnvio";
-            this.lblEstadoEnvio.Size = new System.Drawing.Size(63, 21);
-            this.lblEstadoEnvio.TabIndex = 46;
-            this.lblEstadoEnvio.Text = "Estado:";
             // 
             // lblSedeEnvio
             // 
             this.lblSedeEnvio.AutoSize = true;
             this.lblSedeEnvio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSedeEnvio.Location = new System.Drawing.Point(58, 198);
+            this.lblSedeEnvio.Location = new System.Drawing.Point(58, 167);
             this.lblSedeEnvio.Name = "lblSedeEnvio";
             this.lblSedeEnvio.Size = new System.Drawing.Size(116, 21);
             this.lblSedeEnvio.TabIndex = 50;
             this.lblSedeEnvio.Text = "Sede objetivo:";
             // 
-            // txtEstado
-            // 
-            this.txtEstado.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtEstado.Location = new System.Drawing.Point(189, 153);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(195, 29);
-            this.txtEstado.TabIndex = 52;
-            // 
             // lblTipooperacion
             // 
             this.lblTipooperacion.AutoSize = true;
             this.lblTipooperacion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipooperacion.Location = new System.Drawing.Point(58, 70);
+            this.lblTipooperacion.Location = new System.Drawing.Point(58, 82);
             this.lblTipooperacion.Name = "lblTipooperacion";
             this.lblTipooperacion.Size = new System.Drawing.Size(125, 21);
             this.lblTipooperacion.TabIndex = 53;
@@ -181,30 +161,18 @@
             this.cmbTipooperacion.Items.AddRange(new object[] {
             "Envío",
             "Recepción"});
-            this.cmbTipooperacion.Location = new System.Drawing.Point(189, 73);
+            this.cmbTipooperacion.Location = new System.Drawing.Point(189, 85);
             this.cmbTipooperacion.Name = "cmbTipooperacion";
             this.cmbTipooperacion.Size = new System.Drawing.Size(195, 21);
             this.cmbTipooperacion.TabIndex = 54;
             this.cmbTipooperacion.ValueMember = "Id";
             this.cmbTipooperacion.SelectedIndexChanged += new System.EventHandler(this.cmbTipooperacion_SelectedIndexChanged);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.LightBlue;
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(314, 105);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(70, 32);
-            this.btnBuscar.TabIndex = 55;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnConfirmarrecepcion
             // 
             this.btnConfirmarrecepcion.BackColor = System.Drawing.Color.LightBlue;
             this.btnConfirmarrecepcion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarrecepcion.Location = new System.Drawing.Point(157, 334);
+            this.btnConfirmarrecepcion.Location = new System.Drawing.Point(149, 268);
             this.btnConfirmarrecepcion.Name = "btnConfirmarrecepcion";
             this.btnConfirmarrecepcion.Size = new System.Drawing.Size(180, 32);
             this.btnConfirmarrecepcion.TabIndex = 56;
@@ -220,21 +188,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 378);
+            this.ClientSize = new System.Drawing.Size(437, 341);
             this.Controls.Add(this.btnConfirmarrecepcion);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbTipooperacion);
             this.Controls.Add(this.lblTipooperacion);
-            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.cmbSedeEnvio);
             this.Controls.Add(this.lblSedeEnvio);
             this.Controls.Add(this.btnEnvio);
-            this.Controls.Add(this.lblEstadoEnvio);
             this.Controls.Add(this.dtpFechaEnvio);
             this.Controls.Add(this.lblFechaEnvio);
             this.Controls.Add(this.txtCodEnvio);
             this.Controls.Add(this.lblCodEnvio);
             this.Controls.Add(this.lblEnvio);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEnvio";
             this.Text = "Envio";
             this.Load += new System.EventHandler(this.FormEnvio_Load);
@@ -253,12 +219,9 @@
         private System.Windows.Forms.Label lblFechaEnvio;
         private System.Windows.Forms.DateTimePicker dtpFechaEnvio;
         private System.Windows.Forms.TextBox txtCodEnvio;
-        private System.Windows.Forms.Label lblEstadoEnvio;
         private System.Windows.Forms.Label lblSedeEnvio;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label lblTipooperacion;
         private System.Windows.Forms.ComboBox cmbTipooperacion;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnConfirmarrecepcion;
         private SedesDS sedesDS;
         private System.Windows.Forms.BindingSource sedesBindingSource;

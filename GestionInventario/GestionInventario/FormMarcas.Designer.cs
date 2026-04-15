@@ -237,6 +237,7 @@
             this.Controls.Add(this.lblMantenimiento);
             this.Controls.Add(this.marcasDataGridView);
             this.Controls.Add(this.marcasBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMarcas";
             this.Text = "Marcas";
             this.Load += new System.EventHandler(this.FormMarcas_Load);
