@@ -80,6 +80,8 @@ namespace GestionInventario
                 txtObservacionSalida.Enabled = false;
                 lblSedemtto.Visible = false;
                 cmbSedemtto .Visible = false;
+                labelIngresomtto.Visible = true;
+                lblSalidaMantenimiento.Visible = false;
                 //btnTecnicos.Visible = false;
 
             }
@@ -106,6 +108,8 @@ namespace GestionInventario
                 btnSalidaMtto.Visible = true;
                 txtObservacionSalida.Visible = true;
                 txtObservacionSalida.Enabled = true;
+                labelIngresomtto.Visible = false;
+                lblSalidaMantenimiento.Visible = true;
                 //btnTecnicos.Visible = false;
             }
             
@@ -138,6 +142,7 @@ namespace GestionInventario
             cmbSedemtto.Visible = false;
 
             cmbConcepto.SelectedIndex = 0;
+            labelIngresomtto.Visible=false;
             
         }
 
@@ -262,8 +267,8 @@ namespace GestionInventario
 
                                                 using (SqlConnection conexion = new SqlConnection(connectionString))
                                                 {
-                                                    string query = @"INSERT INTO Mantenimiento (InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, NumIngreso, UsuarioIngreso, EstadoSalida)
-                             VALUES (@InventarioId, @FechaIngresoMtto, @TipoFalla, @ObsIngreso, @NumIngreso, @UsuarioIngreso, @EstadoSalida)";
+                                                    string query = @"INSERT INTO Mantenimiento (InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, NumIngreso, UsuarioIngresoId, EstadoSalida)
+                             VALUES (@InventarioId, @FechaIngresoMtto, @TipoFalla, @ObsIngreso, @NumIngreso, @UsuarioIngresoId, @EstadoSalida)";
 
                                                     using (SqlCommand cmdIngreso = new SqlCommand(query, conexion))
                                                     {
@@ -272,7 +277,7 @@ namespace GestionInventario
                                                         cmdIngreso.Parameters.AddWithValue("@TipoFalla", TipoFalla);
                                                         cmdIngreso.Parameters.AddWithValue("@ObsIngreso", ObsIngreso);
                                                         cmdIngreso.Parameters.AddWithValue("@NumIngreso", numeroIngreso);
-                                                        cmdIngreso.Parameters.AddWithValue("@UsuarioIngreso", Form3Login.UsuarioActual);
+                                                        cmdIngreso.Parameters.AddWithValue("@UsuarioIngresoId", Form3Login.IdUsuarioSistema);
                                                         cmdIngreso.Parameters.AddWithValue("@EstadoSalida", "EnMtto");
 
                                                         try
@@ -318,8 +323,8 @@ namespace GestionInventario
 
                                             using (SqlConnection conexion = new SqlConnection(connectionString))
                                             {
-                                                string query = @"INSERT INTO Mantenimiento (InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, NumIngreso, UsuarioIngreso, EstadoSalida)
-                             VALUES (@InventarioId, @FechaIngresoMtto, @TipoFalla, @ObsIngreso, @NumIngreso, @UsuarioIngres, @EstadoSalida)";
+                                                string query = @"INSERT INTO Mantenimiento (InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, NumIngreso, UsuarioIngresoId, EstadoSalida)
+                             VALUES (@InventarioId, @FechaIngresoMtto, @TipoFalla, @ObsIngreso, @NumIngreso, @UsuarioIngresoId, @EstadoSalida)";
 
                                                 using (SqlCommand cmdIngreso = new SqlCommand(query, conexion))
                                                 {
@@ -328,7 +333,7 @@ namespace GestionInventario
                                                     cmdIngreso.Parameters.AddWithValue("@TipoFalla", TipoFalla);
                                                     cmdIngreso.Parameters.AddWithValue("@ObsIngreso", ObsIngreso);
                                                     cmdIngreso.Parameters.AddWithValue("@NumIngreso", numeroIngreso);
-                                                    cmdIngreso.Parameters.AddWithValue("@UsuarioIngres", Form3Login.UsuarioActual);
+                                                    cmdIngreso.Parameters.AddWithValue("@UsuarioIngresoId", Form3Login.IdUsuarioSistema);
                                                     cmdIngreso.Parameters.AddWithValue("@EstadoSalida", "EnMtto");
                                                     try
                                                     {
@@ -491,7 +496,7 @@ namespace GestionInventario
                                 object resultCheck = cmdExist.ExecuteScalar();
                                 conn.Close();
                                     
-                                    if (resultCheck == null || resultCheck == DBNull.Value )
+                                    if (resultCheck != null || resultCheck != DBNull.Value )
                                 { //ABRE ABC
 
                                         //    string updatequery = @"
@@ -518,7 +523,7 @@ namespace GestionInventario
                             SET fechasalidamtto = @fechasalidamtto,
                                 estadosalida = @estadosalida,
                                 ObsSalida = @ObsSalida,
-                                UsuarioSalida = @UsuarioSalida,
+                                UsuarioSalidaId = @UsuarioSalidaId,
                                 checkMtto = @checkMtto,
                                 SedeSalidaID = @sedesalidamtto
 
@@ -538,7 +543,7 @@ namespace GestionInventario
                                                 cmdupdate.Parameters.AddWithValue("@ObsSalida", ObsSalida);
                                                 //cmdupdate.Parameters.AddWithValue("@tecnicoid", tecnicoid);
                                                 cmdupdate.Parameters.AddWithValue("@checkMtto", checkTrue);
-                                                cmdupdate.Parameters.AddWithValue("@UsuarioSalida", Form3Login.UsuarioActual);
+                                                cmdupdate.Parameters.AddWithValue("@UsuarioSalidaId", Form3Login.IdUsuarioSistema);
                                                 cmdupdate.Parameters.AddWithValue("@sedesalidamtto", SedeIdmtto);
                                                 
                                                 // manejo de parámetro nulo
@@ -638,6 +643,11 @@ namespace GestionInventario
         }
 
         private void cmbTipoFalla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

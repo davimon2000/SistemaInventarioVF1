@@ -415,8 +415,8 @@ namespace GestionInventario
                                         //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                         else
                                         {
-                                            string query = @"INSERT INTO RegistroActivos (IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, SedeRegistroId, EstadoRegistro, UsuarioSistema)
-                         VALUES (@IdActivo, @CodInterno, @Serial, @IdMarca, @FechaCompra, @FechaRegistro, @SedeRegistroId, @EstadoActual, @usuariosistema)";
+                                            string query = @"INSERT INTO RegistroActivos (IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, SedeRegistroId, EstadoRegistro, UsuarioSistemaId)
+                         VALUES (@IdActivo, @CodInterno, @Serial, @IdMarca, @FechaCompra, @FechaRegistro, @SedeRegistroId, @EstadoActual, @UsuarioSistemaId)";
 
                                             using (SqlCommand cmd = new SqlCommand(query, conexion))
                                             {
@@ -427,7 +427,7 @@ namespace GestionInventario
                                                 cmd.Parameters.AddWithValue("@FechaRegistro", fechaReg);
                                                 cmd.Parameters.AddWithValue("@SedeRegistroId", sedeId);
                                                 cmd.Parameters.AddWithValue("@EstadoActual", EstadoActual);
-                                                cmd.Parameters.AddWithValue("@usuariosistema", Form3Login.UsuarioActual);
+                                                cmd.Parameters.AddWithValue("@UsuarioSistemaId", Form3Login.IdUsuarioSistema);
                                                 // Manejo de parámetro nulo
                                                 if (fechaCompra.HasValue)
                                                     cmd.Parameters.AddWithValue("@FechaCompra", fechaCompra.Value);
@@ -460,8 +460,8 @@ namespace GestionInventario
                                 {
 
 
-                                    string query = @"INSERT INTO RegistroActivos (IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, SedeRegistroId, EstadoRegistro, UsuarioSistema)
-                         VALUES (@IdActivo, @CodInterno, @Serial, @IdMarca, @FechaCompra, @FechaRegistro, @SedeRegistroId, @EstadoActual, @usuariosistema)";
+                                    string query = @"INSERT INTO RegistroActivos (IdActivo, CodInterno, Serial, Marca, FechaCompra, FechaRegistro, SedeRegistroId, EstadoRegistro, UsuarioSistemaId)
+                         VALUES (@IdActivo, @CodInterno, @Serial, @IdMarca, @FechaCompra, @FechaRegistro, @SedeRegistroId, @EstadoActual, @UsuarioSistemaId)";
 
                                     using (SqlCommand cmd = new SqlCommand(query, conexion))
                                     {
@@ -472,7 +472,7 @@ namespace GestionInventario
                                         cmd.Parameters.AddWithValue("@FechaRegistro", fechaReg);
                                         cmd.Parameters.AddWithValue("@SedeRegistroId", sedeId);
                                         cmd.Parameters.AddWithValue("@EstadoActual", EstadoActual);
-                                        cmd.Parameters.AddWithValue("@usuariosistema", Form3Login.UsuarioActual);
+                                        cmd.Parameters.AddWithValue("@UsuarioSistemaId", Form3Login.IdUsuarioSistema);
                                         // Manejo de parámetro nulo
                                         if (fechaCompra.HasValue)
                                             cmd.Parameters.AddWithValue("@FechaCompra", fechaCompra.Value);

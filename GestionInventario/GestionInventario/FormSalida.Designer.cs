@@ -64,9 +64,10 @@
             // 
             this.lblAsignacion.AutoSize = true;
             this.lblAsignacion.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsignacion.Location = new System.Drawing.Point(163, 34);
+            this.lblAsignacion.Location = new System.Drawing.Point(237, 41);
+            this.lblAsignacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAsignacion.Name = "lblAsignacion";
-            this.lblAsignacion.Size = new System.Drawing.Size(129, 25);
+            this.lblAsignacion.Size = new System.Drawing.Size(159, 32);
             this.lblAsignacion.TabIndex = 5;
             this.lblAsignacion.Text = "ASIGNACIÓN";
             this.lblAsignacion.Click += new System.EventHandler(this.lblAsignacion_Click);
@@ -74,18 +75,20 @@
             // txtNumAsig
             // 
             this.txtNumAsig.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtNumAsig.Location = new System.Drawing.Point(198, 124);
+            this.txtNumAsig.Location = new System.Drawing.Point(264, 153);
+            this.txtNumAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNumAsig.Name = "txtNumAsig";
-            this.txtNumAsig.Size = new System.Drawing.Size(195, 29);
+            this.txtNumAsig.Size = new System.Drawing.Size(259, 34);
             this.txtNumAsig.TabIndex = 8;
             // 
             // lblNumeroAsig
             // 
             this.lblNumeroAsig.AutoSize = true;
             this.lblNumeroAsig.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroAsig.Location = new System.Drawing.Point(50, 132);
+            this.lblNumeroAsig.Location = new System.Drawing.Point(67, 162);
+            this.lblNumeroAsig.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroAsig.Name = "lblNumeroAsig";
-            this.lblNumeroAsig.Size = new System.Drawing.Size(74, 21);
+            this.lblNumeroAsig.Size = new System.Drawing.Size(92, 28);
             this.lblNumeroAsig.TabIndex = 7;
             this.lblNumeroAsig.Text = "Número:";
             // 
@@ -93,18 +96,20 @@
             // 
             this.dtpFechaAsig.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaAsig.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAsig.Location = new System.Drawing.Point(196, 175);
+            this.dtpFechaAsig.Location = new System.Drawing.Point(261, 215);
+            this.dtpFechaAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFechaAsig.Name = "dtpFechaAsig";
-            this.dtpFechaAsig.Size = new System.Drawing.Size(195, 25);
+            this.dtpFechaAsig.Size = new System.Drawing.Size(259, 30);
             this.dtpFechaAsig.TabIndex = 18;
             // 
             // lblFechaAsig
             // 
             this.lblFechaAsig.AutoSize = true;
             this.lblFechaAsig.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaAsig.Location = new System.Drawing.Point(50, 175);
+            this.lblFechaAsig.Location = new System.Drawing.Point(67, 215);
+            this.lblFechaAsig.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaAsig.Name = "lblFechaAsig";
-            this.lblFechaAsig.Size = new System.Drawing.Size(140, 21);
+            this.lblFechaAsig.Size = new System.Drawing.Size(174, 28);
             this.lblFechaAsig.TabIndex = 17;
             this.lblFechaAsig.Text = "Fecha Asignación:";
             // 
@@ -113,9 +118,10 @@
             this.cmbSedeAsig.DataSource = this.sedesBindingSource;
             this.cmbSedeAsig.DisplayMember = "NombreSede";
             this.cmbSedeAsig.FormattingEnabled = true;
-            this.cmbSedeAsig.Location = new System.Drawing.Point(196, 220);
+            this.cmbSedeAsig.Location = new System.Drawing.Point(261, 271);
+            this.cmbSedeAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSedeAsig.Name = "cmbSedeAsig";
-            this.cmbSedeAsig.Size = new System.Drawing.Size(195, 21);
+            this.cmbSedeAsig.Size = new System.Drawing.Size(259, 24);
             this.cmbSedeAsig.TabIndex = 20;
             this.cmbSedeAsig.ValueMember = "Id";
             // 
@@ -138,9 +144,10 @@
             // 
             this.lblSede.AutoSize = true;
             this.lblSede.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSede.Location = new System.Drawing.Point(50, 217);
+            this.lblSede.Location = new System.Drawing.Point(67, 267);
+            this.lblSede.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSede.Name = "lblSede";
-            this.lblSede.Size = new System.Drawing.Size(51, 21);
+            this.lblSede.Size = new System.Drawing.Size(62, 28);
             this.lblSede.TabIndex = 19;
             this.lblSede.Text = "Sede:";
             // 
@@ -148,9 +155,10 @@
             // 
             this.btnAsign.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnAsign.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsign.Location = new System.Drawing.Point(199, 379);
+            this.btnAsign.Location = new System.Drawing.Point(265, 466);
+            this.btnAsign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAsign.Name = "btnAsign";
-            this.btnAsign.Size = new System.Drawing.Size(98, 32);
+            this.btnAsign.Size = new System.Drawing.Size(131, 39);
             this.btnAsign.TabIndex = 23;
             this.btnAsign.Text = "ASIGNAR";
             this.btnAsign.UseVisualStyleBackColor = false;
@@ -160,9 +168,10 @@
             // 
             this.btnDevolver.BackColor = System.Drawing.Color.Tan;
             this.btnDevolver.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolver.Location = new System.Drawing.Point(214, 379);
+            this.btnDevolver.Location = new System.Drawing.Point(285, 466);
+            this.btnDevolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDevolver.Name = "btnDevolver";
-            this.btnDevolver.Size = new System.Drawing.Size(98, 32);
+            this.btnDevolver.Size = new System.Drawing.Size(131, 39);
             this.btnDevolver.TabIndex = 24;
             this.btnDevolver.Text = "DEVOLVER";
             this.btnDevolver.UseVisualStyleBackColor = false;
@@ -174,9 +183,10 @@
             this.cmbConceptoAsig.Items.AddRange(new object[] {
             "Asignacion",
             "Devolucion"});
-            this.cmbConceptoAsig.Location = new System.Drawing.Point(199, 88);
+            this.cmbConceptoAsig.Location = new System.Drawing.Point(265, 108);
+            this.cmbConceptoAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbConceptoAsig.Name = "cmbConceptoAsig";
-            this.cmbConceptoAsig.Size = new System.Drawing.Size(195, 21);
+            this.cmbConceptoAsig.Size = new System.Drawing.Size(259, 24);
             this.cmbConceptoAsig.TabIndex = 26;
             this.cmbConceptoAsig.SelectedIndexChanged += new System.EventHandler(this.cmbConceptoAsig_SelectedIndexChanged);
             // 
@@ -184,9 +194,10 @@
             // 
             this.lblConcepto.AutoSize = true;
             this.lblConcepto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConcepto.Location = new System.Drawing.Point(52, 88);
+            this.lblConcepto.Location = new System.Drawing.Point(69, 108);
+            this.lblConcepto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblConcepto.Name = "lblConcepto";
-            this.lblConcepto.Size = new System.Drawing.Size(86, 21);
+            this.lblConcepto.Size = new System.Drawing.Size(104, 28);
             this.lblConcepto.TabIndex = 25;
             this.lblConcepto.Text = "Concepto:";
             // 
@@ -194,18 +205,20 @@
             // 
             this.dtpFechaDev.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaDev.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDev.Location = new System.Drawing.Point(196, 175);
+            this.dtpFechaDev.Location = new System.Drawing.Point(261, 215);
+            this.dtpFechaDev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFechaDev.Name = "dtpFechaDev";
-            this.dtpFechaDev.Size = new System.Drawing.Size(195, 25);
+            this.dtpFechaDev.Size = new System.Drawing.Size(259, 30);
             this.dtpFechaDev.TabIndex = 28;
             // 
             // lblFechaDev
             // 
             this.lblFechaDev.AutoSize = true;
             this.lblFechaDev.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaDev.Location = new System.Drawing.Point(50, 175);
+            this.lblFechaDev.Location = new System.Drawing.Point(67, 215);
+            this.lblFechaDev.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaDev.Name = "lblFechaDev";
-            this.lblFechaDev.Size = new System.Drawing.Size(142, 21);
+            this.lblFechaDev.Size = new System.Drawing.Size(177, 28);
             this.lblFechaDev.TabIndex = 27;
             this.lblFechaDev.Text = "Fecha Devolución:";
             // 
@@ -215,35 +228,39 @@
             // 
             // txtObservacion
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(196, 297);
+            this.txtObservacion.Location = new System.Drawing.Point(261, 366);
+            this.txtObservacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(195, 20);
+            this.txtObservacion.Size = new System.Drawing.Size(259, 22);
             this.txtObservacion.TabIndex = 33;
             // 
             // lblObservacion
             // 
             this.lblObservacion.AutoSize = true;
             this.lblObservacion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservacion.Location = new System.Drawing.Point(50, 294);
+            this.lblObservacion.Location = new System.Drawing.Point(67, 362);
+            this.lblObservacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblObservacion.Name = "lblObservacion";
-            this.lblObservacion.Size = new System.Drawing.Size(106, 21);
+            this.lblObservacion.Size = new System.Drawing.Size(130, 28);
             this.lblObservacion.TabIndex = 32;
             this.lblObservacion.Text = "Observación:";
             // 
             // txtUsuarioAsig
             // 
-            this.txtUsuarioAsig.Location = new System.Drawing.Point(198, 340);
+            this.txtUsuarioAsig.Location = new System.Drawing.Point(264, 418);
+            this.txtUsuarioAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuarioAsig.Name = "txtUsuarioAsig";
-            this.txtUsuarioAsig.Size = new System.Drawing.Size(195, 20);
+            this.txtUsuarioAsig.Size = new System.Drawing.Size(259, 22);
             this.txtUsuarioAsig.TabIndex = 35;
             // 
             // lblusuarioAsig
             // 
             this.lblusuarioAsig.AutoSize = true;
             this.lblusuarioAsig.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuarioAsig.Location = new System.Drawing.Point(52, 337);
+            this.lblusuarioAsig.Location = new System.Drawing.Point(69, 415);
+            this.lblusuarioAsig.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblusuarioAsig.Name = "lblusuarioAsig";
-            this.lblusuarioAsig.Size = new System.Drawing.Size(121, 21);
+            this.lblusuarioAsig.Size = new System.Drawing.Size(151, 28);
             this.lblusuarioAsig.TabIndex = 34;
             this.lblusuarioAsig.Text = "Usuario de red:";
             // 
@@ -254,9 +271,10 @@
             this.cmbCondicionEntrega.Items.AddRange(new object[] {
             "Nuevo",
             "Usado"});
-            this.cmbCondicionEntrega.Location = new System.Drawing.Point(199, 256);
+            this.cmbCondicionEntrega.Location = new System.Drawing.Point(265, 315);
+            this.cmbCondicionEntrega.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCondicionEntrega.Name = "cmbCondicionEntrega";
-            this.cmbCondicionEntrega.Size = new System.Drawing.Size(192, 21);
+            this.cmbCondicionEntrega.Size = new System.Drawing.Size(255, 24);
             this.cmbCondicionEntrega.TabIndex = 36;
             this.cmbCondicionEntrega.ValueMember = "Id";
             // 
@@ -264,9 +282,10 @@
             // 
             this.lblCondicionEntrega.AutoSize = true;
             this.lblCondicionEntrega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCondicionEntrega.Location = new System.Drawing.Point(52, 256);
+            this.lblCondicionEntrega.Location = new System.Drawing.Point(69, 315);
+            this.lblCondicionEntrega.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCondicionEntrega.Name = "lblCondicionEntrega";
-            this.lblCondicionEntrega.Size = new System.Drawing.Size(148, 21);
+            this.lblCondicionEntrega.Size = new System.Drawing.Size(183, 28);
             this.lblCondicionEntrega.TabIndex = 37;
             this.lblCondicionEntrega.Text = "Condición Entrega:";
             // 
@@ -274,9 +293,10 @@
             // 
             this.lblEstadoDevolucion.AutoSize = true;
             this.lblEstadoDevolucion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoDevolucion.Location = new System.Drawing.Point(50, 256);
+            this.lblEstadoDevolucion.Location = new System.Drawing.Point(67, 315);
+            this.lblEstadoDevolucion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstadoDevolucion.Name = "lblEstadoDevolucion";
-            this.lblEstadoDevolucion.Size = new System.Drawing.Size(149, 21);
+            this.lblEstadoDevolucion.Size = new System.Drawing.Size(185, 28);
             this.lblEstadoDevolucion.TabIndex = 38;
             this.lblEstadoDevolucion.Text = "Estado Devolución:";
             // 
@@ -287,17 +307,18 @@
             this.cmbEstadoDevolucion.Items.AddRange(new object[] {
             "Bueno",
             "Con Falla"});
-            this.cmbEstadoDevolucion.Location = new System.Drawing.Point(201, 256);
+            this.cmbEstadoDevolucion.Location = new System.Drawing.Point(268, 315);
+            this.cmbEstadoDevolucion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbEstadoDevolucion.Name = "cmbEstadoDevolucion";
-            this.cmbEstadoDevolucion.Size = new System.Drawing.Size(192, 21);
+            this.cmbEstadoDevolucion.Size = new System.Drawing.Size(255, 24);
             this.cmbEstadoDevolucion.TabIndex = 39;
             this.cmbEstadoDevolucion.ValueMember = "Id";
             // 
             // FormSalida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 479);
+            this.ClientSize = new System.Drawing.Size(591, 590);
             this.Controls.Add(this.cmbEstadoDevolucion);
             this.Controls.Add(this.lblEstadoDevolucion);
             this.Controls.Add(this.lblCondicionEntrega);
@@ -320,6 +341,7 @@
             this.Controls.Add(this.lblNumeroAsig);
             this.Controls.Add(this.lblAsignacion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormSalida";
             this.Text = "Asignación y Devolución";
             this.Load += new System.EventHandler(this.FormSalida_Load);

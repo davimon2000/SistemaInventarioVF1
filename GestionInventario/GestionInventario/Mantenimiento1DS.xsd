@@ -12,9 +12,9 @@
               <DbSource ConnectionRef="InventarioActivosConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        m.Id, r.CodInterno, r.Serial, m.FechaIngresoMtto, m.TipoFalla, m.ObsIngreso, m.FechaSalidaMtto, m.EstadoSalida, m.ObsSalida, m.checkMtto, m.NumIngreso, m.UsuarioIngreso, m.UsuarioSalida, m.SedeSalidaID
-FROM            Mantenimiento AS m INNER JOIN
-                         RegistroActivos AS r ON m.InventarioId = r.Id</CommandText>
+                    <CommandText>SELECT m.Id, r.CodInterno, r.Serial, m.FechaIngresoMtto, m.TipoFalla, m.ObsIngreso, m.FechaSalidaMtto, m.EstadoSalida, m.ObsSalida, m.checkMtto, m.NumIngreso, m.SedeSalidaID
+FROM     Mantenimiento AS m INNER JOIN
+                  RegistroActivos AS r ON m.InventarioId = r.Id</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -30,8 +30,6 @@ FROM            Mantenimiento AS m INNER JOIN
               <Mapping SourceColumn="ObsSalida" DataSetColumn="ObsSalida" />
               <Mapping SourceColumn="checkMtto" DataSetColumn="checkMtto" />
               <Mapping SourceColumn="NumIngreso" DataSetColumn="NumIngreso" />
-              <Mapping SourceColumn="UsuarioIngreso" DataSetColumn="UsuarioIngreso" />
-              <Mapping SourceColumn="UsuarioSalida" DataSetColumn="UsuarioSalida" />
               <Mapping SourceColumn="CodInterno" DataSetColumn="CodInterno" />
               <Mapping SourceColumn="Serial" DataSetColumn="Serial" />
               <Mapping SourceColumn="SedeSalidaID" DataSetColumn="SedeSalidaID" />
@@ -58,101 +56,67 @@ WHERE r.CodInterno LIKE @Numero
               <DbSource ConnectionRef="InventarioActivosConnectionString (Settings)" DbObjectName="InventarioActivos.dbo.Mantenimiento" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [Mantenimiento] WHERE (([Id] = @Original_Id) AND ([InventarioId] = @Original_InventarioId) AND ((@IsNull_FechaIngresoMtto = 1 AND [FechaIngresoMtto] IS NULL) OR ([FechaIngresoMtto] = @Original_FechaIngresoMtto)) AND ((@IsNull_TipoFalla = 1 AND [TipoFalla] IS NULL) OR ([TipoFalla] = @Original_TipoFalla)) AND ((@IsNull_ObsIngreso = 1 AND [ObsIngreso] IS NULL) OR ([ObsIngreso] = @Original_ObsIngreso)) AND ((@IsNull_FechaSalidaMtto = 1 AND [FechaSalidaMtto] IS NULL) OR ([FechaSalidaMtto] = @Original_FechaSalidaMtto)) AND ((@IsNull_EstadoSalida = 1 AND [EstadoSalida] IS NULL) OR ([EstadoSalida] = @Original_EstadoSalida)) AND ((@IsNull_ObsSalida = 1 AND [ObsSalida] IS NULL) OR ([ObsSalida] = @Original_ObsSalida)) AND ((@IsNull_checkMtto = 1 AND [checkMtto] IS NULL) OR ([checkMtto] = @Original_checkMtto)) AND ((@IsNull_NumIngreso = 1 AND [NumIngreso] IS NULL) OR ([NumIngreso] = @Original_NumIngreso)) AND ((@IsNull_UsuarioIngreso = 1 AND [UsuarioIngreso] IS NULL) OR ([UsuarioIngreso] = @Original_UsuarioIngreso)) AND ((@IsNull_UsuarioSalida = 1 AND [UsuarioSalida] IS NULL) OR ([UsuarioSalida] = @Original_UsuarioSalida)) AND ((@IsNull_SedeSalidaID = 1 AND [SedeSalidaID] IS NULL) OR ([SedeSalidaID] = @Original_SedeSalidaID)))</CommandText>
+                    <CommandText>DELETE FROM [Mantenimiento] WHERE (([Id] = @Original_Id) AND ([InventarioId] = @Original_InventarioId) AND ([FechaIngresoMtto] = @Original_FechaIngresoMtto) AND ((@IsNull_TipoFalla = 1 AND [TipoFalla] IS NULL) OR ([TipoFalla] = @Original_TipoFalla)) AND ((@IsNull_ObsIngreso = 1 AND [ObsIngreso] IS NULL) OR ([ObsIngreso] = @Original_ObsIngreso)) AND ((@IsNull_FechaSalidaMtto = 1 AND [FechaSalidaMtto] IS NULL) OR ([FechaSalidaMtto] = @Original_FechaSalidaMtto)) AND ((@IsNull_EstadoSalida = 1 AND [EstadoSalida] IS NULL) OR ([EstadoSalida] = @Original_EstadoSalida)) AND ((@IsNull_ObsSalida = 1 AND [ObsSalida] IS NULL) OR ([ObsSalida] = @Original_ObsSalida)) AND ([checkMtto] = @Original_checkMtto) AND ((@IsNull_NumIngreso = 1 AND [NumIngreso] IS NULL) OR ([NumIngreso] = @Original_NumIngreso)) AND ((@IsNull_SedeSalidaID = 1 AND [SedeSalidaID] IS NULL) OR ([SedeSalidaID] = @Original_SedeSalidaID)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_InventarioId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InventarioId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FechaIngresoMtto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_FechaIngresoMtto" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaIngresoMtto" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TipoFalla" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TipoFalla" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TipoFalla" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoFalla" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ObsIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ObsIngreso" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ObsIngreso" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ObsIngreso" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FechaSalidaMtto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_FechaSalidaMtto" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaSalidaMtto" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EstadoSalida" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EstadoSalida" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EstadoSalida" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EstadoSalida" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ObsSalida" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ObsSalida" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ObsSalida" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ObsSalida" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_checkMtto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_checkMtto" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_checkMtto" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NumIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumIngreso" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_NumIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumIngreso" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_UsuarioIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UsuarioIngreso" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UsuarioIngreso" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UsuarioIngreso" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_UsuarioSalida" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UsuarioSalida" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UsuarioSalida" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UsuarioSalida" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SedeSalidaID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SedeSalidaID" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SedeSalidaID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SedeSalidaID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [Mantenimiento] ([InventarioId], [FechaIngresoMtto], [TipoFalla], [ObsIngreso], [FechaSalidaMtto], [EstadoSalida], [ObsSalida], [checkMtto], [NumIngreso], [UsuarioIngreso], [UsuarioSalida], [SedeSalidaID]) VALUES (@InventarioId, @FechaIngresoMtto, @TipoFalla, @ObsIngreso, @FechaSalidaMtto, @EstadoSalida, @ObsSalida, @checkMtto, @NumIngreso, @UsuarioIngreso, @UsuarioSalida, @SedeSalidaID);
-SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida, SedeSalidaID FROM Mantenimiento WHERE (Id = SCOPE_IDENTITY())</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@InventarioId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InventarioId" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@FechaIngresoMtto" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoFalla" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoFalla" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ObsIngreso" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ObsIngreso" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@FechaSalidaMtto" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EstadoSalida" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EstadoSalida" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ObsSalida" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ObsSalida" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@checkMtto" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@NumIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumIngreso" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UsuarioIngreso" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UsuarioIngreso" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UsuarioSalida" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UsuarioSalida" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SedeSalidaID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SedeSalidaID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida, SedeSalidaID
-FROM            Mantenimiento</CommandText>
+                    <CommandText>SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, SedeSalidaID
+FROM     Mantenimiento</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [Mantenimiento] SET [InventarioId] = @InventarioId, [FechaIngresoMtto] = @FechaIngresoMtto, [TipoFalla] = @TipoFalla, [ObsIngreso] = @ObsIngreso, [FechaSalidaMtto] = @FechaSalidaMtto, [EstadoSalida] = @EstadoSalida, [ObsSalida] = @ObsSalida, [checkMtto] = @checkMtto, [NumIngreso] = @NumIngreso, [UsuarioIngreso] = @UsuarioIngreso, [UsuarioSalida] = @UsuarioSalida, [SedeSalidaID] = @SedeSalidaID WHERE (([Id] = @Original_Id) AND ([InventarioId] = @Original_InventarioId) AND ((@IsNull_FechaIngresoMtto = 1 AND [FechaIngresoMtto] IS NULL) OR ([FechaIngresoMtto] = @Original_FechaIngresoMtto)) AND ((@IsNull_TipoFalla = 1 AND [TipoFalla] IS NULL) OR ([TipoFalla] = @Original_TipoFalla)) AND ((@IsNull_ObsIngreso = 1 AND [ObsIngreso] IS NULL) OR ([ObsIngreso] = @Original_ObsIngreso)) AND ((@IsNull_FechaSalidaMtto = 1 AND [FechaSalidaMtto] IS NULL) OR ([FechaSalidaMtto] = @Original_FechaSalidaMtto)) AND ((@IsNull_EstadoSalida = 1 AND [EstadoSalida] IS NULL) OR ([EstadoSalida] = @Original_EstadoSalida)) AND ((@IsNull_ObsSalida = 1 AND [ObsSalida] IS NULL) OR ([ObsSalida] = @Original_ObsSalida)) AND ((@IsNull_checkMtto = 1 AND [checkMtto] IS NULL) OR ([checkMtto] = @Original_checkMtto)) AND ((@IsNull_NumIngreso = 1 AND [NumIngreso] IS NULL) OR ([NumIngreso] = @Original_NumIngreso)) AND ((@IsNull_UsuarioIngreso = 1 AND [UsuarioIngreso] IS NULL) OR ([UsuarioIngreso] = @Original_UsuarioIngreso)) AND ((@IsNull_UsuarioSalida = 1 AND [UsuarioSalida] IS NULL) OR ([UsuarioSalida] = @Original_UsuarioSalida)) AND ((@IsNull_SedeSalidaID = 1 AND [SedeSalidaID] IS NULL) OR ([SedeSalidaID] = @Original_SedeSalidaID)));
-SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, UsuarioIngreso, UsuarioSalida, SedeSalidaID FROM Mantenimiento WHERE (Id = @Id)</CommandText>
+                    <CommandText>UPDATE [Mantenimiento] SET [InventarioId] = @InventarioId, [FechaIngresoMtto] = @FechaIngresoMtto, [TipoFalla] = @TipoFalla, [ObsIngreso] = @ObsIngreso, [FechaSalidaMtto] = @FechaSalidaMtto, [EstadoSalida] = @EstadoSalida, [ObsSalida] = @ObsSalida, [checkMtto] = @checkMtto, [NumIngreso] = @NumIngreso, [SedeSalidaID] = @SedeSalidaID WHERE (([Id] = @Original_Id) AND ([InventarioId] = @Original_InventarioId) AND ([FechaIngresoMtto] = @Original_FechaIngresoMtto) AND ((@IsNull_TipoFalla = 1 AND [TipoFalla] IS NULL) OR ([TipoFalla] = @Original_TipoFalla)) AND ((@IsNull_ObsIngreso = 1 AND [ObsIngreso] IS NULL) OR ([ObsIngreso] = @Original_ObsIngreso)) AND ((@IsNull_FechaSalidaMtto = 1 AND [FechaSalidaMtto] IS NULL) OR ([FechaSalidaMtto] = @Original_FechaSalidaMtto)) AND ((@IsNull_EstadoSalida = 1 AND [EstadoSalida] IS NULL) OR ([EstadoSalida] = @Original_EstadoSalida)) AND ((@IsNull_ObsSalida = 1 AND [ObsSalida] IS NULL) OR ([ObsSalida] = @Original_ObsSalida)) AND ([checkMtto] = @Original_checkMtto) AND ((@IsNull_NumIngreso = 1 AND [NumIngreso] IS NULL) OR ([NumIngreso] = @Original_NumIngreso)) AND ((@IsNull_SedeSalidaID = 1 AND [SedeSalidaID] IS NULL) OR ([SedeSalidaID] = @Original_SedeSalidaID)));
+SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtto, EstadoSalida, ObsSalida, checkMtto, NumIngreso, SedeSalidaID FROM Mantenimiento WHERE (Id = @Id)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@InventarioId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InventarioId" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@FechaIngresoMtto" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaIngresoMtto" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoFalla" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoFalla" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ObsIngreso" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ObsIngreso" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@FechaSalidaMtto" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaSalidaMtto" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EstadoSalida" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EstadoSalida" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ObsSalida" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ObsSalida" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@checkMtto" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@checkMtto" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@NumIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumIngreso" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UsuarioIngreso" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UsuarioIngreso" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UsuarioSalida" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UsuarioSalida" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SedeSalidaID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SedeSalidaID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_InventarioId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InventarioId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FechaIngresoMtto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_FechaIngresoMtto" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaIngresoMtto" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaIngresoMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TipoFalla" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TipoFalla" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TipoFalla" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoFalla" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ObsIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ObsIngreso" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ObsIngreso" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ObsIngreso" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FechaSalidaMtto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_FechaSalidaMtto" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaSalidaMtto" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaSalidaMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EstadoSalida" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EstadoSalida" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EstadoSalida" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EstadoSalida" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ObsSalida" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ObsSalida" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ObsSalida" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ObsSalida" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_checkMtto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_checkMtto" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_checkMtto" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="checkMtto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NumIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumIngreso" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_NumIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumIngreso" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_UsuarioIngreso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UsuarioIngreso" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UsuarioIngreso" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UsuarioIngreso" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_UsuarioSalida" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UsuarioSalida" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UsuarioSalida" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UsuarioSalida" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SedeSalidaID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SedeSalidaID" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SedeSalidaID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SedeSalidaID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="InventarioActivos.dbo.Mantenimiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -172,8 +136,6 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
               <Mapping SourceColumn="ObsSalida" DataSetColumn="ObsSalida" />
               <Mapping SourceColumn="checkMtto" DataSetColumn="checkMtto" />
               <Mapping SourceColumn="NumIngreso" DataSetColumn="NumIngreso" />
-              <Mapping SourceColumn="UsuarioIngreso" DataSetColumn="UsuarioIngreso" />
-              <Mapping SourceColumn="UsuarioSalida" DataSetColumn="UsuarioSalida" />
               <Mapping SourceColumn="SedeSalidaID" DataSetColumn="SedeSalidaID" />
             </Mappings>
             <Sources />
@@ -190,7 +152,7 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
-              <xs:element name="FechaIngresoMtto" msprop:Generator_ColumnPropNameInTable="FechaIngresoMttoColumn" msprop:Generator_ColumnPropNameInRow="FechaIngresoMtto" msprop:Generator_UserColumnName="FechaIngresoMtto" msprop:Generator_ColumnVarNameInTable="columnFechaIngresoMtto" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaIngresoMtto" msprop:Generator_ColumnPropNameInTable="FechaIngresoMttoColumn" msprop:Generator_ColumnPropNameInRow="FechaIngresoMtto" msprop:Generator_UserColumnName="FechaIngresoMtto" msprop:Generator_ColumnVarNameInTable="columnFechaIngresoMtto" type="xs:dateTime" />
               <xs:element name="TipoFalla" msprop:Generator_ColumnPropNameInTable="TipoFallaColumn" msprop:Generator_ColumnPropNameInRow="TipoFalla" msprop:Generator_UserColumnName="TipoFalla" msprop:Generator_ColumnVarNameInTable="columnTipoFalla" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -220,22 +182,8 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="checkMtto" msprop:Generator_ColumnPropNameInTable="checkMttoColumn" msprop:Generator_ColumnPropNameInRow="checkMtto" msprop:Generator_UserColumnName="checkMtto" msprop:Generator_ColumnVarNameInTable="columncheckMtto" type="xs:boolean" minOccurs="0" />
+              <xs:element name="checkMtto" msprop:Generator_ColumnPropNameInTable="checkMttoColumn" msprop:Generator_ColumnPropNameInRow="checkMtto" msprop:Generator_UserColumnName="checkMtto" msprop:Generator_ColumnVarNameInTable="columncheckMtto" type="xs:boolean" />
               <xs:element name="NumIngreso" msprop:Generator_ColumnPropNameInTable="NumIngresoColumn" msprop:Generator_ColumnPropNameInRow="NumIngreso" msprop:Generator_UserColumnName="NumIngreso" msprop:Generator_ColumnVarNameInTable="columnNumIngreso" type="xs:int" minOccurs="0" />
-              <xs:element name="UsuarioIngreso" msprop:Generator_ColumnPropNameInTable="UsuarioIngresoColumn" msprop:Generator_ColumnPropNameInRow="UsuarioIngreso" msprop:Generator_UserColumnName="UsuarioIngreso" msprop:Generator_ColumnVarNameInTable="columnUsuarioIngreso" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="UsuarioSalida" msprop:Generator_ColumnPropNameInTable="UsuarioSalidaColumn" msprop:Generator_ColumnPropNameInRow="UsuarioSalida" msprop:Generator_UserColumnName="UsuarioSalida" msprop:Generator_ColumnVarNameInTable="columnUsuarioSalida" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="CodInterno" msprop:Generator_ColumnPropNameInTable="CodInternoColumn" msprop:Generator_ColumnPropNameInRow="CodInterno" msprop:Generator_UserColumnName="CodInterno" msprop:Generator_ColumnVarNameInTable="columnCodInterno">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -250,62 +198,48 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SedeSalidaID" msprop:Generator_ColumnPropNameInRow="SedeSalidaID" msprop:Generator_ColumnPropNameInTable="SedeSalidaIDColumn" msprop:Generator_ColumnVarNameInTable="columnSedeSalidaID" msprop:Generator_UserColumnName="SedeSalidaID" type="xs:int" minOccurs="0" />
+              <xs:element name="SedeSalidaID" msprop:Generator_UserColumnName="SedeSalidaID" msprop:Generator_ColumnPropNameInTable="SedeSalidaIDColumn" msprop:Generator_ColumnPropNameInRow="SedeSalidaID" msprop:Generator_ColumnVarNameInTable="columnSedeSalidaID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Mantenimiento1" msprop:Generator_RowClassName="Mantenimiento1Row" msprop:Generator_RowEvHandlerName="Mantenimiento1RowChangeEventHandler" msprop:Generator_RowDeletedName="Mantenimiento1RowDeleted" msprop:Generator_RowDeletingName="Mantenimiento1RowDeleting" msprop:Generator_RowEvArgName="Mantenimiento1RowChangeEvent" msprop:Generator_TablePropName="Mantenimiento1" msprop:Generator_RowChangedName="Mantenimiento1RowChanged" msprop:Generator_UserTableName="Mantenimiento1" msprop:Generator_RowChangingName="Mantenimiento1RowChanging" msprop:Generator_TableClassName="Mantenimiento1DataTable" msprop:Generator_TableVarName="tableMantenimiento1">
+        <xs:element name="Mantenimiento1" msprop:Generator_RowEvHandlerName="Mantenimiento1RowChangeEventHandler" msprop:Generator_RowDeletedName="Mantenimiento1RowDeleted" msprop:Generator_RowDeletingName="Mantenimiento1RowDeleting" msprop:Generator_RowEvArgName="Mantenimiento1RowChangeEvent" msprop:Generator_TablePropName="Mantenimiento1" msprop:Generator_RowChangedName="Mantenimiento1RowChanged" msprop:Generator_UserTableName="Mantenimiento1" msprop:Generator_RowChangingName="Mantenimiento1RowChanging" msprop:Generator_RowClassName="Mantenimiento1Row" msprop:Generator_TableClassName="Mantenimiento1DataTable" msprop:Generator_TableVarName="tableMantenimiento1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
-              <xs:element name="InventarioId" msprop:Generator_UserColumnName="InventarioId" msprop:Generator_ColumnPropNameInTable="InventarioIdColumn" msprop:Generator_ColumnPropNameInRow="InventarioId" msprop:Generator_ColumnVarNameInTable="columnInventarioId" type="xs:int" />
-              <xs:element name="FechaIngresoMtto" msprop:Generator_UserColumnName="FechaIngresoMtto" msprop:Generator_ColumnPropNameInTable="FechaIngresoMttoColumn" msprop:Generator_ColumnPropNameInRow="FechaIngresoMtto" msprop:Generator_ColumnVarNameInTable="columnFechaIngresoMtto" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TipoFalla" msprop:Generator_UserColumnName="TipoFalla" msprop:Generator_ColumnPropNameInTable="TipoFallaColumn" msprop:Generator_ColumnPropNameInRow="TipoFalla" msprop:Generator_ColumnVarNameInTable="columnTipoFalla" minOccurs="0">
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="InventarioId" msprop:Generator_ColumnPropNameInTable="InventarioIdColumn" msprop:Generator_ColumnPropNameInRow="InventarioId" msprop:Generator_UserColumnName="InventarioId" msprop:Generator_ColumnVarNameInTable="columnInventarioId" type="xs:int" />
+              <xs:element name="FechaIngresoMtto" msprop:Generator_ColumnPropNameInTable="FechaIngresoMttoColumn" msprop:Generator_ColumnPropNameInRow="FechaIngresoMtto" msprop:Generator_UserColumnName="FechaIngresoMtto" msprop:Generator_ColumnVarNameInTable="columnFechaIngresoMtto" type="xs:dateTime" />
+              <xs:element name="TipoFalla" msprop:Generator_ColumnPropNameInTable="TipoFallaColumn" msprop:Generator_ColumnPropNameInRow="TipoFalla" msprop:Generator_UserColumnName="TipoFalla" msprop:Generator_ColumnVarNameInTable="columnTipoFalla" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ObsIngreso" msprop:Generator_UserColumnName="ObsIngreso" msprop:Generator_ColumnPropNameInTable="ObsIngresoColumn" msprop:Generator_ColumnPropNameInRow="ObsIngreso" msprop:Generator_ColumnVarNameInTable="columnObsIngreso" minOccurs="0">
+              <xs:element name="ObsIngreso" msprop:Generator_ColumnPropNameInTable="ObsIngresoColumn" msprop:Generator_ColumnPropNameInRow="ObsIngreso" msprop:Generator_UserColumnName="ObsIngreso" msprop:Generator_ColumnVarNameInTable="columnObsIngreso" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FechaSalidaMtto" msprop:Generator_UserColumnName="FechaSalidaMtto" msprop:Generator_ColumnPropNameInTable="FechaSalidaMttoColumn" msprop:Generator_ColumnPropNameInRow="FechaSalidaMtto" msprop:Generator_ColumnVarNameInTable="columnFechaSalidaMtto" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="EstadoSalida" msprop:Generator_UserColumnName="EstadoSalida" msprop:Generator_ColumnPropNameInTable="EstadoSalidaColumn" msprop:Generator_ColumnPropNameInRow="EstadoSalida" msprop:Generator_ColumnVarNameInTable="columnEstadoSalida" minOccurs="0">
+              <xs:element name="FechaSalidaMtto" msprop:Generator_ColumnPropNameInTable="FechaSalidaMttoColumn" msprop:Generator_ColumnPropNameInRow="FechaSalidaMtto" msprop:Generator_UserColumnName="FechaSalidaMtto" msprop:Generator_ColumnVarNameInTable="columnFechaSalidaMtto" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EstadoSalida" msprop:Generator_ColumnPropNameInTable="EstadoSalidaColumn" msprop:Generator_ColumnPropNameInRow="EstadoSalida" msprop:Generator_UserColumnName="EstadoSalida" msprop:Generator_ColumnVarNameInTable="columnEstadoSalida" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ObsSalida" msprop:Generator_UserColumnName="ObsSalida" msprop:Generator_ColumnPropNameInTable="ObsSalidaColumn" msprop:Generator_ColumnPropNameInRow="ObsSalida" msprop:Generator_ColumnVarNameInTable="columnObsSalida" minOccurs="0">
+              <xs:element name="ObsSalida" msprop:Generator_ColumnPropNameInTable="ObsSalidaColumn" msprop:Generator_ColumnPropNameInRow="ObsSalida" msprop:Generator_UserColumnName="ObsSalida" msprop:Generator_ColumnVarNameInTable="columnObsSalida" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="checkMtto" msprop:Generator_UserColumnName="checkMtto" msprop:Generator_ColumnPropNameInTable="checkMttoColumn" msprop:Generator_ColumnPropNameInRow="checkMtto" msprop:Generator_ColumnVarNameInTable="columncheckMtto" type="xs:boolean" minOccurs="0" />
-              <xs:element name="NumIngreso" msprop:Generator_UserColumnName="NumIngreso" msprop:Generator_ColumnPropNameInTable="NumIngresoColumn" msprop:Generator_ColumnPropNameInRow="NumIngreso" msprop:Generator_ColumnVarNameInTable="columnNumIngreso" type="xs:int" minOccurs="0" />
-              <xs:element name="UsuarioIngreso" msprop:Generator_UserColumnName="UsuarioIngreso" msprop:Generator_ColumnPropNameInTable="UsuarioIngresoColumn" msprop:Generator_ColumnPropNameInRow="UsuarioIngreso" msprop:Generator_ColumnVarNameInTable="columnUsuarioIngreso" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="UsuarioSalida" msprop:Generator_UserColumnName="UsuarioSalida" msprop:Generator_ColumnPropNameInTable="UsuarioSalidaColumn" msprop:Generator_ColumnPropNameInRow="UsuarioSalida" msprop:Generator_ColumnVarNameInTable="columnUsuarioSalida" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SedeSalidaID" msprop:Generator_ColumnPropNameInRow="SedeSalidaID" msprop:Generator_ColumnPropNameInTable="SedeSalidaIDColumn" msprop:Generator_ColumnVarNameInTable="columnSedeSalidaID" msprop:Generator_UserColumnName="SedeSalidaID" type="xs:int" minOccurs="0" />
+              <xs:element name="checkMtto" msprop:Generator_ColumnPropNameInTable="checkMttoColumn" msprop:Generator_ColumnPropNameInRow="checkMtto" msprop:Generator_UserColumnName="checkMtto" msprop:Generator_ColumnVarNameInTable="columncheckMtto" type="xs:boolean" />
+              <xs:element name="NumIngreso" msprop:Generator_ColumnPropNameInTable="NumIngresoColumn" msprop:Generator_ColumnPropNameInRow="NumIngreso" msprop:Generator_UserColumnName="NumIngreso" msprop:Generator_ColumnVarNameInTable="columnNumIngreso" type="xs:int" minOccurs="0" />
+              <xs:element name="SedeSalidaID" msprop:Generator_UserColumnName="SedeSalidaID" msprop:Generator_ColumnPropNameInTable="SedeSalidaIDColumn" msprop:Generator_ColumnPropNameInRow="SedeSalidaID" msprop:Generator_ColumnVarNameInTable="columnSedeSalidaID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

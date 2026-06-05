@@ -112,7 +112,7 @@ namespace GestionInventario
 
             String seleccion = cmbTabla.Text;
             String modo = cmbModo.Text;
-
+            //modo = "Vista";
 
 
 
@@ -938,6 +938,11 @@ namespace GestionInventario
         asignacionDS.Asignacion,
         "%" + txtUsuariobb.Text + "%"
     );
+        }
+
+        private void mantenimientoDataGridViewEdit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

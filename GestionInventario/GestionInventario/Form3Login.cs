@@ -21,6 +21,7 @@ namespace GestionInventario
         public static string UsuarioActual = "";
         public static int SedeIdUsuarioSistema = 0;
         public static string RolUsuarioSistema = "";
+        public static int IdUsuarioSistema;
         public Form3Login()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace GestionInventario
             int sedeId = 0;
             bool primerIngreso ;
             String rolUsuario ="";
-
+            //int IdUsuarioSistema;
             //SqlDataReader dr;
             //rolUsuario = dr["NombreRol"].ToString();
 
@@ -85,7 +86,7 @@ namespace GestionInventario
                         try
                         {
                             string querySede = @"
-        SELECT SedeId, Rol
+        SELECT SedeId, Rol, IdUsuario
         FROM Usuarios
         WHERE Usuario = @Usuario";
 
@@ -93,27 +94,29 @@ namespace GestionInventario
                             {
                                 cmdSede.Parameters.AddWithValue("@Usuario", usuario);
 
-                                object result = cmdSede.ExecuteScalar();
-
-                                if (result == null)
+                                using (SqlDataReader reader = cmdSede.ExecuteReader())
                                 {
-                                    MessageBox.Show("No se encontró la sede del usuario.");
-                                    return;
+                                    if (reader.Read())
+                                    {
+                                        sedeId = Convert.ToInt32(reader["SedeId"]);
+                                        SedeIdUsuarioSistema = sedeId;
+
+                                        RolUsuarioSistema = reader["Rol"].ToString();
+
+                                        IdUsuarioSistema = Convert.ToInt32(reader["IdUsuario"]);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No se encontró la información del usuario.");
+                                        return;
+                                    }
                                 }
-
-                                sedeId = Convert.ToInt32(result);
-                                SedeIdUsuarioSistema = sedeId;
-                                RolUsuarioSistema = "";
-                                //rolUsuario = "Usuario Sede";
                             }
-
-                            //MessageBox.Show("El Id de sede es: " + sedeId);
                         }
-                        catch(Exception ex)
-                         {
-                            MessageBox.Show("No fue posible validar sede de usuario");
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No fue posible validar la información del usuario.\n" + ex.Message);
                         }
-
                     }
 
                     //Sesion.Usuario = usuario;

@@ -226,7 +226,7 @@ namespace GestionInventario
 
                         // Consulta último estado de asignación
                         string queryAsignacion = @"
-                    SELECT TOP 1 UsuarioId, FechaDevolucion
+                    SELECT TOP 1 UsuarioAsignadoId, FechaDevolucion
                     FROM Asignacion
                     WHERE IdActivo = @InventarioId
                     ORDER BY Id DESC";
@@ -240,7 +240,7 @@ namespace GestionInventario
                                 if (dr.Read())
                                 {
                                     if (dr["FechaDevolucion"] == DBNull.Value &&
-                                        dr["UsuarioId"] != DBNull.Value)
+                                        dr["UsuarioAsignadoId"] != DBNull.Value)
                                     {
                                         estaAsignado = true;
                                     }
@@ -285,17 +285,17 @@ namespace GestionInventario
                             // INSERT ASIGNACIÓN
                             string insertAsignar = @"
                         INSERT INTO Asignacion
-                        (IdActivo, UsuarioId, SedeId, FechaAsignacion, Observacion, UsuarioSistema, CondicionEntrega)
+                        (IdActivo, UsuarioAsignadoId, SedeId, FechaAsignacion, Observacion, UsuarioSistemaAsignacionId, CondicionEntrega)
                         VALUES
-                        (@InventarioId, @UsuarioId, @SedeId, GETDATE(), @Obs, @UsuarioSistema, @CondicionEntrega)";
+                        (@InventarioId, @UsuarioAsignadoId, @SedeId, GETDATE(), @Obs, @UsuarioSistemaAsignacionId, @CondicionEntrega)";
 
                             using (SqlCommand cmdInsert = new SqlCommand(insertAsignar, conn))
                             {
                                 cmdInsert.Parameters.AddWithValue("@InventarioId", InventarioId);
-                                cmdInsert.Parameters.AddWithValue("@UsuarioId", usuarioId);
+                                cmdInsert.Parameters.AddWithValue("@UsuarioAsignadoId", usuarioId);
                                 cmdInsert.Parameters.AddWithValue("@SedeId", Sede);
                                 cmdInsert.Parameters.AddWithValue("@Obs", txtObservacion.Text);
-                                cmdInsert.Parameters.AddWithValue("@UsuarioSistema", Form3Login.UsuarioActual);
+                                cmdInsert.Parameters.AddWithValue("@UsuarioSistemaAsignacionId", Form3Login.IdUsuarioSistema);
                                 cmdInsert.Parameters.AddWithValue("@CondicionEntrega", CondicionEntrega);   
 
                                 cmdInsert.ExecuteNonQuery();
@@ -315,16 +315,16 @@ namespace GestionInventario
                             // INSERT DEVOLUCIÓN
                             string insertDevolver = @"
                         INSERT INTO Asignacion
-                        (IdActivo, UsuarioId, SedeId, FechaDevolucion, Observacion, UsuarioSistema, EstadoDevolucion)
+                        (IdActivo, UsuarioAsignadoId, SedeId, FechaDevolucion, Observacion, UsuarioSistemaDevolucionId, EstadoDevolucion)
                         VALUES
-                        (@InventarioId, NULL, @SedeId, GETDATE(), @Obs, @UsuarioSistema, @EstadoDevolucion)";
+                        (@InventarioId, NULL, @SedeId, GETDATE(), @Obs, @UsuarioSistemaDevolucionId, @EstadoDevolucion)";
 
                             using (SqlCommand cmdInsert = new SqlCommand(insertDevolver, conn))
                             {
                                 cmdInsert.Parameters.AddWithValue("@InventarioId", InventarioId);
                                 cmdInsert.Parameters.AddWithValue("@SedeId", Sede);
                                 cmdInsert.Parameters.AddWithValue("@Obs", txtObservacion.Text);
-                                cmdInsert.Parameters.AddWithValue("@UsuarioSistema", Form3Login.UsuarioActual);
+                                cmdInsert.Parameters.AddWithValue("@UsuarioSistemaDevolucionId", Form3Login.IdUsuarioSistema);
                                 cmdInsert.Parameters.AddWithValue("@EstadoDevolucion", cmbEstadoDevolucion.SelectedItem.ToString());
 
                                 cmdInsert.ExecuteNonQuery();
@@ -468,7 +468,7 @@ namespace GestionInventario
         private bool EstaAsignado(SqlConnection conn, int inventarioId)
         {
             string query = @"
-        SELECT TOP 1 UsuarioId, FechaDevolucion
+        SELECT TOP 1 UsuarioAsignadoId, FechaDevolucion
         FROM Asignacion
         WHERE IdActivo = @Id
         ORDER BY Id DESC";
@@ -481,7 +481,7 @@ namespace GestionInventario
                 {
                     if (dr.Read())
                     {
-                        return dr["UsuarioId"] != DBNull.Value &&
+                        return dr["UsuarioAsignadoId"] != DBNull.Value &&
                                dr["FechaDevolucion"] == DBNull.Value;
                     }
                 }
@@ -526,16 +526,16 @@ namespace GestionInventario
 
                         string insert = @"
                 INSERT INTO Asignacion
-                (IdActivo, UsuarioId, SedeId, FechaDevolucion, Observacion, UsuarioSistema, EstadoDevolucion)
+                (IdActivo, UsuarioAsignadoId, SedeId, FechaDevolucion, Observacion, UsuarioSistemaDevolucionId, EstadoDevolucion)
                 VALUES
-                (@Inv, NULL, @Sede, GETDATE(), @Obs, @UsuarioSistema, @EstadoDevolucion)";
+                (@Inv, NULL, @Sede, GETDATE(), @Obs, @UsuarioSistemaDevolucionId, @EstadoDevolucion)";
 
                         using (SqlCommand cmd = new SqlCommand(insert, conn))
                         {
                             cmd.Parameters.AddWithValue("@Inv", inventarioId);
                             cmd.Parameters.AddWithValue("@Sede", Sede);
                             cmd.Parameters.AddWithValue("@Obs", txtObservacion.Text);
-                            cmd.Parameters.AddWithValue("@UsuarioSistema", Form3Login.UsuarioActual);
+                            cmd.Parameters.AddWithValue("@UsuarioSistemaDevolucionId", Form3Login.IdUsuarioSistema);
                             cmd.Parameters.AddWithValue("@EstadoDevolucion", EstadoDevolucion);
 
                             cmd.ExecuteNonQuery();
