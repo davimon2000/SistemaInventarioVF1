@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\gestioninventario\\formconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|c:\\users\\david rodriguez\\sistemainventariovf1\\gestioninventario\\gestioninventario\\asignacionds.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\asignacionds.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|c:\\users\\david rodriguez\\sistemainventariovf1\\gestioninventario\\gestioninventario\\formconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\formconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -11,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\formconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|c:\\users\\david rodriguez\\sistemainventariovf1\\gestioninventario\\gestioninventario\\formsalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\gestioninventario\\formsalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\formsalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,16 +51,8 @@
       "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\formregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\gestioninventario\\mantenimiento1ds.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\mantenimiento1ds.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\gestioninventario\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\gestioninventario\\mttoeditds.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\mttoeditds.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\gestioninventario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -135,10 +131,6 @@
       "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\seguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\gestioninventario\\activosviewds.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\activosviewds.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\gestioninventario\\registroactivosds.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BCA767D-FF92-4140-A3B3-A45CB14F1992}|GestionInventario\\GestionInventario.csproj|solutionrelative:gestioninventario\\registroactivosds.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -170,7 +162,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -214,19 +206,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormSalida.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormSalida.cs",
-              "RelativeDocumentMoniker": "GestionInventario\\FormSalida.cs",
-              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormSalida.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GestionInventario\\FormSalida.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "AsignacionDS.xsd",
+              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\AsignacionDS.xsd",
+              "RelativeDocumentMoniker": "GestionInventario\\AsignacionDS.xsd",
+              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\AsignacionDS.xsd*",
+              "RelativeToolTip": "GestionInventario\\AsignacionDS.xsd*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2026-06-06T17:00:08.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormConsulta.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormConsulta.cs",
+              "RelativeDocumentMoniker": "GestionInventario\\FormConsulta.cs",
+              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormConsulta.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GestionInventario\\FormConsulta.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T21:17:25.517Z",
+              "WhenOpened": "2026-05-24T22:55:28.904Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "FormConsulta.cs",
+              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormConsulta.cs",
+              "RelativeDocumentMoniker": "GestionInventario\\FormConsulta.cs",
+              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormConsulta.cs",
+              "RelativeToolTip": "GestionInventario\\FormConsulta.cs",
+              "ViewState": "AgIAAH0BAAAAAAAAAADgv6gDAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-24T23:27:42.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FormSalida.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormSalida.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormSalida.cs",
@@ -239,32 +256,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormConsulta.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormConsulta.cs",
-              "RelativeDocumentMoniker": "GestionInventario\\FormConsulta.cs",
-              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormConsulta.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GestionInventario\\FormConsulta.cs [Dise\u00F1o]",
+              "DocumentIndex": 4,
+              "Title": "FormSalida.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormSalida.cs",
+              "RelativeDocumentMoniker": "GestionInventario\\FormSalida.cs",
+              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormSalida.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GestionInventario\\FormSalida.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T22:55:28.904Z",
+              "WhenOpened": "2026-05-24T21:17:25.517Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormConsulta.cs",
-              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormConsulta.cs",
-              "RelativeDocumentMoniker": "GestionInventario\\FormConsulta.cs",
-              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormConsulta.cs",
-              "RelativeToolTip": "GestionInventario\\FormConsulta.cs",
-              "ViewState": "AgIAAKADAAAAAAAAAAAcwCoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T23:27:42.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Form3Login.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Form3Login.cs",
               "RelativeDocumentMoniker": "GestionInventario\\Form3Login.cs",
@@ -272,24 +276,22 @@
               "RelativeToolTip": "GestionInventario\\Form3Login.cs",
               "ViewState": "AgIAAKkAAAAAAAAAAAAuwLgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T21:17:25.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T21:17:25.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Form3Login.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Form3Login.cs",
               "RelativeDocumentMoniker": "GestionInventario\\Form3Login.cs",
               "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Form3Login.cs [Dise\u00F1o]",
               "RelativeToolTip": "GestionInventario\\Form3Login.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T21:17:25.515Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-24T21:17:25.515Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "FormIngresomtto.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormIngresomtto.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormIngresomtto.cs",
@@ -297,24 +299,22 @@
               "RelativeToolTip": "GestionInventario\\FormIngresomtto.cs",
               "ViewState": "AgIAAC4BAAAAAAAAAAArwJsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-05T07:00:58.532Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T07:00:58.532Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "FormIngresomtto.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormIngresomtto.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormIngresomtto.cs",
               "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormIngresomtto.cs [Dise\u00F1o]",
               "RelativeToolTip": "GestionInventario\\FormIngresomtto.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T21:17:25.523Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-24T21:17:25.523Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "FormEnvio.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormEnvio.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormEnvio.cs",
@@ -322,24 +322,22 @@
               "RelativeToolTip": "GestionInventario\\FormEnvio.cs",
               "ViewState": "AgIAAF8AAAAAAAAAAAAjwEMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T21:17:25.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T21:17:25.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "FormEnvio.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormEnvio.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormEnvio.cs",
               "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormEnvio.cs [Dise\u00F1o]",
               "RelativeToolTip": "GestionInventario\\FormEnvio.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T21:17:25.523Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-24T21:17:25.523Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "FormRegistro.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormRegistro.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormRegistro.cs",
@@ -348,18 +346,6 @@
               "ViewState": "AgIAAB8CAAAAAAAAAAAIwM4BAADDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-24T21:17:25.527Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Mantenimiento1DS.xsd",
-              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Mantenimiento1DS.xsd",
-              "RelativeDocumentMoniker": "GestionInventario\\Mantenimiento1DS.xsd",
-              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Mantenimiento1DS.xsd",
-              "RelativeToolTip": "GestionInventario\\Mantenimiento1DS.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2026-05-24T22:47:56.804Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -376,18 +362,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "mttoeditDS.xsd",
-              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\mttoeditDS.xsd",
-              "RelativeDocumentMoniker": "GestionInventario\\mttoeditDS.xsd",
-              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\mttoeditDS.xsd",
-              "RelativeToolTip": "GestionInventario\\mttoeditDS.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2026-05-24T21:17:25.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Form1.cs",
               "RelativeDocumentMoniker": "GestionInventario\\Form1.cs",
@@ -398,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "FormAnalisis.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormAnalisis.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormAnalisis.cs",
@@ -409,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "FormActivos.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormActivos.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormActivos.cs",
@@ -420,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "FormRegistro.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormRegistro.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormRegistro.cs",
@@ -431,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "FormMiusuario.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormMiusuario.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormMiusuario.cs",
@@ -442,7 +416,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "FormMarcas.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormMarcas.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormMarcas.cs",
@@ -453,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "FormEstado.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormEstado.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormEstado.cs",
@@ -464,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "FormCreacionUsuario.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormCreacionUsuario.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormCreacionUsuario.cs",
@@ -475,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "FormMarcas.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormMarcas.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormMarcas.cs",
@@ -487,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 24,
               "Title": "FormTecnicos.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormTecnicos.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormTecnicos.cs",
@@ -498,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Form1.cs",
               "RelativeDocumentMoniker": "GestionInventario\\Form1.cs",
@@ -510,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "FormTecnicos.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormTecnicos.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormTecnicos.cs",
@@ -522,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "FormEstado.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormEstado.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormEstado.cs",
@@ -534,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "FormActivos.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormActivos.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormActivos.cs",
@@ -546,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 25,
               "Title": "FormMiusuario.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormMiusuario.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormMiusuario.cs",
@@ -558,7 +532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "FormCreacionUsuario.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormCreacionUsuario.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormCreacionUsuario.cs",
@@ -570,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "FormNuevo.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormNuevo.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormNuevo.cs",
@@ -581,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\App.config",
               "RelativeDocumentMoniker": "GestionInventario\\App.config",
@@ -594,7 +568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 31,
               "Title": "Seguridad.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Seguridad.cs",
               "RelativeDocumentMoniker": "GestionInventario\\Seguridad.cs",
@@ -606,24 +580,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ActivosViewDS.xsd",
-              "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\ActivosViewDS.xsd",
-              "RelativeDocumentMoniker": "GestionInventario\\ActivosViewDS.xsd",
-              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\ActivosViewDS.xsd",
-              "RelativeToolTip": "GestionInventario\\ActivosViewDS.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2026-05-24T21:17:25.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 32,
               "Title": "RegistroActivosDS.Designer.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\RegistroActivosDS.Designer.cs",
               "RelativeDocumentMoniker": "GestionInventario\\RegistroActivosDS.Designer.cs",
-              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\RegistroActivosDS.Designer.cs",
-              "RelativeToolTip": "GestionInventario\\RegistroActivosDS.Designer.cs",
+              "ToolTip": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\RegistroActivosDS.Designer.cs*",
+              "RelativeToolTip": "GestionInventario\\RegistroActivosDS.Designer.cs*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-24T21:17:25.531Z",
@@ -631,7 +593,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 33,
               "Title": "FormPrueba2.Designer.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\FormPrueba2.Designer.cs",
               "RelativeDocumentMoniker": "GestionInventario\\FormPrueba2.Designer.cs",
@@ -643,7 +605,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 34,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Program.cs",
               "RelativeDocumentMoniker": "GestionInventario\\Program.cs",
@@ -655,7 +617,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 35,
               "Title": "Form2.Designer.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Form2.Designer.cs",
               "RelativeDocumentMoniker": "GestionInventario\\Form2.Designer.cs",
@@ -667,7 +629,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 36,
               "Title": "Form2.resx",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Form2.resx",
               "RelativeDocumentMoniker": "GestionInventario\\Form2.resx",
@@ -678,7 +640,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 37,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\David Rodriguez\\SistemaInventarioVF1\\GestionInventario\\GestionInventario\\Form2.cs",
               "RelativeDocumentMoniker": "GestionInventario\\Form2.cs",

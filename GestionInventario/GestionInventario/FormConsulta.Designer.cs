@@ -40,21 +40,9 @@ namespace GestionInventario
             this.button1 = new System.Windows.Forms.Button();
             this.activosViewTableAdapter = new GestionInventario.ActivosViewDSTableAdapters.ActivosViewTableAdapter();
             this.tableAdapterManager = new GestionInventario.ActivosViewDSTableAdapters.TableAdapterManager();
-            this.mantenimientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.consultaActivosDS = new GestionInventario.ConsultaActivosDS();
-            this.registroActivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.editarTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager1 = new GestionInventario.ConsultaActivosDSTableAdapters.TableAdapterManager();
-            this.registroActivosTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.RegistroActivosTableAdapter();
-            this.editarTableTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.EditarTableTableAdapter();
-            this.mantenimientoTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.MantenimientoTableAdapter();
             this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.marcas1DS = new GestionInventario.Marcas1DS();
-            this.registroActivosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.registroActivosDS = new GestionInventario.RegistroActivosDS();
             this.marcasTableAdapter = new GestionInventario.Marcas1DSTableAdapters.MarcasTableAdapter();
-            this.registroActivosTableAdapter1 = new GestionInventario.RegistroActivosDSTableAdapters.RegistroActivosTableAdapter();
-            this.tableAdapterManager3 = new GestionInventario.RegistroActivosDSTableAdapters.TableAdapterManager();
             this.mantenimientoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mantenimientoDS = new GestionInventario.MantenimientoDS();
             this.mantenimientoTableAdapter1 = new GestionInventario.MantenimientoDSTableAdapters.MantenimientoTableAdapter();
@@ -70,6 +58,8 @@ namespace GestionInventario
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTabla = new System.Windows.Forms.ComboBox();
             this.bindingNavigatorRegistro = new System.Windows.Forms.BindingNavigator(this.components);
+            this.registroActivosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.registroActivosDS = new GestionInventario.RegistroActivosDS();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItemRegistro = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -148,26 +138,6 @@ namespace GestionInventario
             this.guardarToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.copiarToolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.registroActivosDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mantenimientoDataGridView = new System.Windows.Forms.DataGridView();
-            this.CodInterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mantenimientoDataGridViewEdit = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -191,16 +161,40 @@ namespace GestionInventario
             this.EstadoDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtUsuariobb = new System.Windows.Forms.TextBox();
             this.UsuarioTxt = new System.Windows.Forms.Label();
+            this.registroActivosDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioSistemaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodInterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mantenimientoDataGridView = new System.Windows.Forms.DataGridView();
+            this.registroActivosTableAdapter1 = new GestionInventario.RegistroActivosDSTableAdapters.RegistroActivosTableAdapter();
+            this.tableAdapterManager3 = new GestionInventario.RegistroActivosDSTableAdapters.TableAdapterManager();
+            this.mantenimientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.consultaActivosDS = new GestionInventario.ConsultaActivosDS();
+            this.registroActivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.editarTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager1 = new GestionInventario.ConsultaActivosDSTableAdapters.TableAdapterManager();
+            this.registroActivosTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.RegistroActivosTableAdapter();
+            this.editarTableTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.EditarTableTableAdapter();
+            this.mantenimientoTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.MantenimientoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consultaActivosDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editarTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcas1DS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registroActivosDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimiento1DS)).BeginInit();
@@ -209,6 +203,8 @@ namespace GestionInventario
             ((System.ComponentModel.ISupportInitialize)(this.asignacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorRegistro)).BeginInit();
             this.bindingNavigatorRegistro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registroActivosDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMtto)).BeginInit();
             this.bindingNavigatorMtto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorAsignacion)).BeginInit();
@@ -222,11 +218,15 @@ namespace GestionInventario
             ((System.ComponentModel.ISupportInitialize)(this.asignacionBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorAsigEdit)).BeginInit();
             this.bindingNavigatorAsigEdit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.registroActivosDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoDataGridViewEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataGridViewEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registroActivosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultaActivosDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editarTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegistro
@@ -275,7 +275,7 @@ namespace GestionInventario
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 617);
+            this.button1.Location = new System.Drawing.Point(44, 679);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 41);
@@ -294,47 +294,6 @@ namespace GestionInventario
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.UpdateOrder = GestionInventario.ActivosViewDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // mantenimientoBindingSource
-            // 
-            this.mantenimientoBindingSource.DataMember = "Mantenimiento";
-            this.mantenimientoBindingSource.DataSource = this.consultaActivosDS;
-            // 
-            // consultaActivosDS
-            // 
-            this.consultaActivosDS.DataSetName = "ConsultaActivosDS";
-            this.consultaActivosDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // registroActivosBindingSource
-            // 
-            this.registroActivosBindingSource.DataMember = "RegistroActivos";
-            this.registroActivosBindingSource.DataSource = this.consultaActivosDS;
-            // 
-            // editarTableBindingSource
-            // 
-            this.editarTableBindingSource.DataMember = "EditarTable";
-            this.editarTableBindingSource.DataSource = this.consultaActivosDS;
-            // 
-            // tableAdapterManager1
-            // 
-            this.tableAdapterManager1.AsignacionTableAdapter = null;
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.RegistroActivosTableAdapter = null;
-            this.tableAdapterManager1.TecnicosTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = GestionInventario.ConsultaActivosDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // registroActivosTableAdapter
-            // 
-            this.registroActivosTableAdapter.ClearBeforeFill = true;
-            // 
-            // editarTableTableAdapter
-            // 
-            this.editarTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // mantenimientoTableAdapter
-            // 
-            this.mantenimientoTableAdapter.ClearBeforeFill = true;
-            // 
             // marcasBindingSource
             // 
             this.marcasBindingSource.DataMember = "Marcas";
@@ -345,29 +304,9 @@ namespace GestionInventario
             this.marcas1DS.DataSetName = "Marcas1DS";
             this.marcas1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // registroActivosBindingSource1
-            // 
-            this.registroActivosBindingSource1.DataMember = "RegistroActivos";
-            this.registroActivosBindingSource1.DataSource = this.registroActivosDS;
-            // 
-            // registroActivosDS
-            // 
-            this.registroActivosDS.DataSetName = "RegistroActivosDS";
-            this.registroActivosDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // marcasTableAdapter
             // 
             this.marcasTableAdapter.ClearBeforeFill = true;
-            // 
-            // registroActivosTableAdapter1
-            // 
-            this.registroActivosTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager3
-            // 
-            this.tableAdapterManager3.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager3.RegistroActivosTableAdapter = this.registroActivosTableAdapter1;
-            this.tableAdapterManager3.UpdateOrder = GestionInventario.RegistroActivosDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // mantenimientoBindingSource1
             // 
@@ -449,7 +388,7 @@ namespace GestionInventario
             "Registro",
             "Mantenimiento",
             "Asignacion"});
-            this.cmbTabla.Location = new System.Drawing.Point(241, 127);
+            this.cmbTabla.Location = new System.Drawing.Point(241, 131);
             this.cmbTabla.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTabla.Name = "cmbTabla";
             this.cmbTabla.Size = new System.Drawing.Size(224, 24);
@@ -489,6 +428,16 @@ namespace GestionInventario
             this.bindingNavigatorRegistro.TabIndex = 37;
             this.bindingNavigatorRegistro.Text = "bindingNavigator1";
             this.bindingNavigatorRegistro.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems);
+            // 
+            // registroActivosBindingSource1
+            // 
+            this.registroActivosBindingSource1.DataMember = "RegistroActivos";
+            this.registroActivosBindingSource1.DataSource = this.registroActivosDS;
+            // 
+            // registroActivosDS
+            // 
+            this.registroActivosDS.DataSetName = "RegistroActivosDS";
+            this.registroActivosDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -533,7 +482,6 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -661,7 +609,6 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.AutoSize = false;
-            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -773,7 +720,6 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem2.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem2.AutoSize = false;
-            this.bindingNavigatorPositionItem2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem2.Name = "bindingNavigatorPositionItem2";
             this.bindingNavigatorPositionItem2.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem2.Text = "0";
@@ -951,7 +897,6 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem3.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem3.AutoSize = false;
-            this.bindingNavigatorPositionItem3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem3.Name = "bindingNavigatorPositionItem3";
             this.bindingNavigatorPositionItem3.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem3.Text = "0";
@@ -1105,7 +1050,6 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem4.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem4.AutoSize = false;
-            this.bindingNavigatorPositionItem4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem4.Name = "bindingNavigatorPositionItem4";
             this.bindingNavigatorPositionItem4.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem4.Text = "0";
@@ -1163,203 +1107,6 @@ namespace GestionInventario
             this.copiarToolStripButton4.Size = new System.Drawing.Size(29, 24);
             this.copiarToolStripButton4.Text = "&Copiar";
             // 
-            // registroActivosDataGridView
-            // 
-            this.registroActivosDataGridView.AutoGenerateColumns = false;
-            this.registroActivosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.registroActivosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.Usuario,
-            this.Id});
-            this.registroActivosDataGridView.DataSource = this.registroActivosBindingSource1;
-            this.registroActivosDataGridView.Location = new System.Drawing.Point(53, 268);
-            this.registroActivosDataGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.registroActivosDataGridView.Name = "registroActivosDataGridView";
-            this.registroActivosDataGridView.RowHeadersWidth = 51;
-            this.registroActivosDataGridView.Size = new System.Drawing.Size(1029, 221);
-            this.registroActivosDataGridView.TabIndex = 34;
-            this.registroActivosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.registroActivosDataGridView_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "CodInterno";
-            this.dataGridViewTextBoxColumn8.HeaderText = "CodInterno";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Serial";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Serial";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Marca";
-            this.dataGridViewTextBoxColumn10.DataSource = this.marcasBindingSource;
-            this.dataGridViewTextBoxColumn10.DisplayMember = "Marca";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn10.ValueMember = "Id";
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "FechaCompra";
-            this.dataGridViewTextBoxColumn11.HeaderText = "FechaCompra";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "FechaRegistro";
-            this.dataGridViewTextBoxColumn12.HeaderText = "FechaRegistro";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "EstadoRegistro";
-            this.dataGridViewTextBoxColumn13.HeaderText = "EstadoRegistro";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 125;
-            // 
-            // Usuario
-            // 
-            this.Usuario.DataPropertyName = "Usuario";
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Width = 125;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 125;
-            // 
-            // mantenimientoDataGridView
-            // 
-            this.mantenimientoDataGridView.AutoGenerateColumns = false;
-            this.mantenimientoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mantenimientoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodInterno,
-            this.Serial,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn18});
-            this.mantenimientoDataGridView.DataSource = this.mantenimientoBindingSource2;
-            this.mantenimientoDataGridView.Location = new System.Drawing.Point(44, 345);
-            this.mantenimientoDataGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.mantenimientoDataGridView.Name = "mantenimientoDataGridView";
-            this.mantenimientoDataGridView.RowHeadersWidth = 51;
-            this.mantenimientoDataGridView.Size = new System.Drawing.Size(1030, 206);
-            this.mantenimientoDataGridView.TabIndex = 34;
-            // 
-            // CodInterno
-            // 
-            this.CodInterno.DataPropertyName = "CodInterno";
-            this.CodInterno.HeaderText = "CodInterno";
-            this.CodInterno.MinimumWidth = 6;
-            this.CodInterno.Name = "CodInterno";
-            this.CodInterno.ReadOnly = true;
-            this.CodInterno.Width = 125;
-            // 
-            // Serial
-            // 
-            this.Serial.DataPropertyName = "Serial";
-            this.Serial.HeaderText = "Serial";
-            this.Serial.MinimumWidth = 6;
-            this.Serial.Name = "Serial";
-            this.Serial.ReadOnly = true;
-            this.Serial.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "FechaIngresoMtto";
-            this.dataGridViewTextBoxColumn3.HeaderText = "FechaIngresoMtto";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "TipoFalla";
-            this.dataGridViewTextBoxColumn4.HeaderText = "TipoFalla";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ObsIngreso";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ObsIngreso";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "FechaSalidaMtto";
-            this.dataGridViewTextBoxColumn6.HeaderText = "FechaSalidaMtto";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "EstadoSalida";
-            this.dataGridViewTextBoxColumn7.HeaderText = "EstadoSalida";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "ObsSalida";
-            this.dataGridViewTextBoxColumn16.HeaderText = "ObsSalida";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 125;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "checkMtto";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "checkMtto";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "NumIngreso";
-            this.dataGridViewTextBoxColumn18.HeaderText = "NumIngreso";
-            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Width = 125;
-            // 
             // mantenimientoDataGridViewEdit
             // 
             this.mantenimientoDataGridViewEdit.AutoGenerateColumns = false;
@@ -1380,7 +1127,7 @@ namespace GestionInventario
             this.mantenimientoDataGridViewEdit.Margin = new System.Windows.Forms.Padding(4);
             this.mantenimientoDataGridViewEdit.Name = "mantenimientoDataGridViewEdit";
             this.mantenimientoDataGridViewEdit.RowHeadersWidth = 51;
-            this.mantenimientoDataGridViewEdit.Size = new System.Drawing.Size(967, 105);
+            this.mantenimientoDataGridViewEdit.Size = new System.Drawing.Size(967, 146);
             this.mantenimientoDataGridViewEdit.TabIndex = 41;
             this.mantenimientoDataGridViewEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mantenimientoDataGridViewEdit_CellContentClick);
             // 
@@ -1486,7 +1233,7 @@ namespace GestionInventario
             this.asignacionDataGridViewEdit.Margin = new System.Windows.Forms.Padding(4);
             this.asignacionDataGridViewEdit.Name = "asignacionDataGridViewEdit";
             this.asignacionDataGridViewEdit.RowHeadersWidth = 51;
-            this.asignacionDataGridViewEdit.Size = new System.Drawing.Size(943, 37);
+            this.asignacionDataGridViewEdit.Size = new System.Drawing.Size(943, 112);
             this.asignacionDataGridViewEdit.TabIndex = 42;
             this.asignacionDataGridViewEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asignacionDataGridViewEdit_CellContentClick);
             // 
@@ -1592,6 +1339,254 @@ namespace GestionInventario
             this.UsuarioTxt.TabIndex = 44;
             this.UsuarioTxt.Text = "Usuario:";
             // 
+            // registroActivosDataGridView
+            // 
+            this.registroActivosDataGridView.AutoGenerateColumns = false;
+            this.registroActivosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.registroActivosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.UsuarioSistemaId});
+            this.registroActivosDataGridView.DataSource = this.registroActivosBindingSource1;
+            this.registroActivosDataGridView.Location = new System.Drawing.Point(53, 268);
+            this.registroActivosDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.registroActivosDataGridView.Name = "registroActivosDataGridView";
+            this.registroActivosDataGridView.RowHeadersWidth = 51;
+            this.registroActivosDataGridView.Size = new System.Drawing.Size(1029, 221);
+            this.registroActivosDataGridView.TabIndex = 34;
+            this.registroActivosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.registroActivosDataGridView_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "CodInterno";
+            this.dataGridViewTextBoxColumn8.HeaderText = "CodInterno";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Serial";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Serial";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Marca";
+            this.dataGridViewTextBoxColumn10.DataSource = this.marcasBindingSource;
+            this.dataGridViewTextBoxColumn10.DisplayMember = "Marca";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn10.ValueMember = "Id";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "FechaCompra";
+            this.dataGridViewTextBoxColumn11.HeaderText = "FechaCompra";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "FechaRegistro";
+            this.dataGridViewTextBoxColumn12.HeaderText = "FechaRegistro";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "EstadoRegistro";
+            this.dataGridViewTextBoxColumn13.HeaderText = "EstadoRegistro";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 125;
+            // 
+            // UsuarioSistemaId
+            // 
+            this.UsuarioSistemaId.DataPropertyName = "UsuarioSistemaId";
+            this.UsuarioSistemaId.HeaderText = "UsuarioSistemaId";
+            this.UsuarioSistemaId.MinimumWidth = 6;
+            this.UsuarioSistemaId.Name = "UsuarioSistemaId";
+            this.UsuarioSistemaId.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "NumIngreso";
+            this.dataGridViewTextBoxColumn18.HeaderText = "NumIngreso";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.Width = 125;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "checkMtto";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "checkMtto";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "ObsSalida";
+            this.dataGridViewTextBoxColumn16.HeaderText = "ObsSalida";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "EstadoSalida";
+            this.dataGridViewTextBoxColumn7.HeaderText = "EstadoSalida";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "FechaSalidaMtto";
+            this.dataGridViewTextBoxColumn6.HeaderText = "FechaSalidaMtto";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ObsIngreso";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ObsIngreso";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TipoFalla";
+            this.dataGridViewTextBoxColumn4.HeaderText = "TipoFalla";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "FechaIngresoMtto";
+            this.dataGridViewTextBoxColumn3.HeaderText = "FechaIngresoMtto";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // Serial
+            // 
+            this.Serial.DataPropertyName = "Serial";
+            this.Serial.HeaderText = "Serial";
+            this.Serial.MinimumWidth = 6;
+            this.Serial.Name = "Serial";
+            this.Serial.ReadOnly = true;
+            this.Serial.Width = 125;
+            // 
+            // CodInterno
+            // 
+            this.CodInterno.DataPropertyName = "CodInterno";
+            this.CodInterno.HeaderText = "CodInterno";
+            this.CodInterno.MinimumWidth = 6;
+            this.CodInterno.Name = "CodInterno";
+            this.CodInterno.ReadOnly = true;
+            this.CodInterno.Width = 125;
+            // 
+            // mantenimientoDataGridView
+            // 
+            this.mantenimientoDataGridView.AutoGenerateColumns = false;
+            this.mantenimientoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mantenimientoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodInterno,
+            this.Serial,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn18});
+            this.mantenimientoDataGridView.DataSource = this.mantenimientoBindingSource2;
+            this.mantenimientoDataGridView.Location = new System.Drawing.Point(44, 345);
+            this.mantenimientoDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.mantenimientoDataGridView.Name = "mantenimientoDataGridView";
+            this.mantenimientoDataGridView.RowHeadersWidth = 51;
+            this.mantenimientoDataGridView.Size = new System.Drawing.Size(1030, 206);
+            this.mantenimientoDataGridView.TabIndex = 34;
+            // 
+            // registroActivosTableAdapter1
+            // 
+            this.registroActivosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager3
+            // 
+            this.tableAdapterManager3.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager3.RegistroActivosTableAdapter = this.registroActivosTableAdapter1;
+            this.tableAdapterManager3.UpdateOrder = GestionInventario.RegistroActivosDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // mantenimientoBindingSource
+            // 
+            this.mantenimientoBindingSource.DataMember = "Mantenimiento";
+            this.mantenimientoBindingSource.DataSource = this.consultaActivosDS;
+            // 
+            // consultaActivosDS
+            // 
+            this.consultaActivosDS.DataSetName = "ConsultaActivosDS";
+            this.consultaActivosDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // registroActivosBindingSource
+            // 
+            this.registroActivosBindingSource.DataMember = "RegistroActivos";
+            this.registroActivosBindingSource.DataSource = this.consultaActivosDS;
+            // 
+            // editarTableBindingSource
+            // 
+            this.editarTableBindingSource.DataMember = "EditarTable";
+            this.editarTableBindingSource.DataSource = this.consultaActivosDS;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.AsignacionTableAdapter = null;
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.RegistroActivosTableAdapter = null;
+            this.tableAdapterManager1.TecnicosTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = GestionInventario.ConsultaActivosDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // registroActivosTableAdapter
+            // 
+            this.registroActivosTableAdapter.ClearBeforeFill = true;
+            // 
+            // editarTableTableAdapter
+            // 
+            this.editarTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // mantenimientoTableAdapter
+            // 
+            this.mantenimientoTableAdapter.ClearBeforeFill = true;
+            // 
             // FormConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1624,14 +1619,8 @@ namespace GestionInventario
             this.Load += new System.EventHandler(this.FormConsulta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activosViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consultaActivosDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editarTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcas1DS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registroActivosDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimiento1DS)).EndInit();
@@ -1641,6 +1630,8 @@ namespace GestionInventario
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorRegistro)).EndInit();
             this.bindingNavigatorRegistro.ResumeLayout(false);
             this.bindingNavigatorRegistro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registroActivosDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMtto)).EndInit();
             this.bindingNavigatorMtto.ResumeLayout(false);
             this.bindingNavigatorMtto.PerformLayout();
@@ -1658,11 +1649,15 @@ namespace GestionInventario
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorAsigEdit)).EndInit();
             this.bindingNavigatorAsigEdit.ResumeLayout(false);
             this.bindingNavigatorAsigEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.registroActivosDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoDataGridViewEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataGridViewEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registroActivosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultaActivosDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editarTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1789,16 +1784,6 @@ namespace GestionInventario
         private ToolStripButton guardarToolStripButton1;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton copiarToolStripButton4;
-        private DataGridView registroActivosDataGridView;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewComboBoxColumn dataGridViewTextBoxColumn10;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private DataGridViewTextBoxColumn Usuario;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridView mantenimientoDataGridView;
         private DataGridView mantenimientoDataGridViewEdit;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
@@ -1823,15 +1808,25 @@ namespace GestionInventario
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
         private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
-        private DataGridViewTextBoxColumn CodInterno;
-        private DataGridViewTextBoxColumn Serial;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private DataGridView registroActivosDataGridView;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn Serial;
+        private DataGridViewTextBoxColumn CodInterno;
+        private DataGridView mantenimientoDataGridView;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewComboBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private DataGridViewTextBoxColumn UsuarioSistemaId;
     }
 }

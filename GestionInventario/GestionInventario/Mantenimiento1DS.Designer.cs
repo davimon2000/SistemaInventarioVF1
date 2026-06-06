@@ -1906,11 +1906,11 @@ FROM     Mantenimiento AS m INNER JOIN
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        m.Id, r.CodInterno, r.Serial, m.FechaIngresoMtto, m.TipoFalla, m.ObsIngreso, m.FechaSalidaMtto, m.EstadoSalida, m.ObsSalida, m.checkMtto, m.NumIngreso, m.UsuarioIngreso, m.UsuarioSalida
-FROM            Mantenimiento AS m INNER JOIN
-                         RegistroActivos AS r ON m.InventarioId = r.Id
-WHERE r.CodInterno LIKE @Numero
-   OR r.Serial LIKE @Numero";
+            this._commandCollection[1].CommandText = @"SELECT m.Id, r.CodInterno, r.Serial, m.FechaIngresoMtto, m.TipoFalla, m.ObsIngreso, m.FechaSalidaMtto, m.EstadoSalida, m.ObsSalida, m.checkMtto, m.NumIngreso, m.UsuarioIngresoId, m.UsuarioSalidaId
+FROM     Mantenimiento AS m INNER JOIN
+                  RegistroActivos AS r ON m.InventarioId = r.Id
+WHERE  (r.CodInterno LIKE @Numero) OR
+                  (r.Serial LIKE @Numero)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "CodInterno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

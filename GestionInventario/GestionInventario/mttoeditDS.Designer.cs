@@ -1136,8 +1136,8 @@ SELECT Id, InventarioId, FechaIngresoMtto, TipoFalla, ObsIngreso, FechaSalidaMtt
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT EstadoSalida, FechaIngresoMtto, FechaSalidaMtto, Id, InventarioId, NumIngr" +
-                "eso, ObsIngreso, ObsSalida, TipoFalla, checkMtto FROM Mantenimiento WHERE (Inven" +
-                "tarioId LIKE @BUSQUEDAID)";
+                "eso, ObsIngreso, ObsSalida, TipoFalla, checkMtto\r\nFROM     Mantenimiento\r\nWHERE " +
+                " (InventarioId LIKE @BUSQUEDAID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BUSQUEDAID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "InventarioId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
