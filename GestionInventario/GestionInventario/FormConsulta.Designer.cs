@@ -275,7 +275,7 @@ namespace GestionInventario
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(41, 539);
+            this.button1.Location = new System.Drawing.Point(44, 617);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 41);
@@ -485,7 +485,7 @@ namespace GestionInventario
             this.bindingNavigatorRegistro.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorRegistro.Name = "bindingNavigatorRegistro";
             this.bindingNavigatorRegistro.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorRegistro.Size = new System.Drawing.Size(1268, 31);
+            this.bindingNavigatorRegistro.Size = new System.Drawing.Size(1268, 27);
             this.bindingNavigatorRegistro.TabIndex = 37;
             this.bindingNavigatorRegistro.Text = "bindingNavigator1";
             this.bindingNavigatorRegistro.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems);
@@ -503,7 +503,7 @@ namespace GestionInventario
             this.bindingNavigatorDeleteItemRegistro.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItemRegistro.Image")));
             this.bindingNavigatorDeleteItemRegistro.Name = "bindingNavigatorDeleteItemRegistro";
             this.bindingNavigatorDeleteItemRegistro.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItemRegistro.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorDeleteItemRegistro.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItemRegistro.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
@@ -616,14 +616,14 @@ namespace GestionInventario
             this.bindingNavigatorSeparator5,
             this.copiarToolStripButton1,
             this.toolStripSeparator3});
-            this.bindingNavigatorMtto.Location = new System.Drawing.Point(0, 31);
+            this.bindingNavigatorMtto.Location = new System.Drawing.Point(0, 27);
             this.bindingNavigatorMtto.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigatorMtto.MoveLastItem = this.bindingNavigatorMoveLastItem1;
             this.bindingNavigatorMtto.MoveNextItem = this.bindingNavigatorMoveNextItem1;
             this.bindingNavigatorMtto.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigatorMtto.Name = "bindingNavigatorMtto";
             this.bindingNavigatorMtto.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigatorMtto.Size = new System.Drawing.Size(1268, 31);
+            this.bindingNavigatorMtto.Size = new System.Drawing.Size(1268, 27);
             this.bindingNavigatorMtto.TabIndex = 38;
             this.bindingNavigatorMtto.Text = "bindingNavigator2";
             // 
@@ -728,14 +728,14 @@ namespace GestionInventario
             this.bindingNavigatorSeparator8,
             this.copiarToolStripButton2,
             this.toolStripSeparator5});
-            this.bindingNavigatorAsignacion.Location = new System.Drawing.Point(0, 62);
+            this.bindingNavigatorAsignacion.Location = new System.Drawing.Point(0, 54);
             this.bindingNavigatorAsignacion.MoveFirstItem = this.bindingNavigatorMoveFirstItem2;
             this.bindingNavigatorAsignacion.MoveLastItem = this.bindingNavigatorMoveLastItem2;
             this.bindingNavigatorAsignacion.MoveNextItem = this.bindingNavigatorMoveNextItem2;
             this.bindingNavigatorAsignacion.MovePreviousItem = this.bindingNavigatorMovePreviousItem2;
             this.bindingNavigatorAsignacion.Name = "bindingNavigatorAsignacion";
             this.bindingNavigatorAsignacion.PositionItem = this.bindingNavigatorPositionItem2;
-            this.bindingNavigatorAsignacion.Size = new System.Drawing.Size(1268, 31);
+            this.bindingNavigatorAsignacion.Size = new System.Drawing.Size(1268, 27);
             this.bindingNavigatorAsignacion.TabIndex = 39;
             this.bindingNavigatorAsignacion.Text = "bindingNavigator1";
             // 
@@ -896,14 +896,14 @@ namespace GestionInventario
             this.guardarToolStripButton3,
             this.toolStripSeparator6,
             this.copiarToolStripButton3});
-            this.bindingNavigatormttoedit.Location = new System.Drawing.Point(0, 93);
+            this.bindingNavigatormttoedit.Location = new System.Drawing.Point(0, 81);
             this.bindingNavigatormttoedit.MoveFirstItem = this.bindingNavigatorMoveFirstItem3;
             this.bindingNavigatormttoedit.MoveLastItem = this.bindingNavigatorMoveLastItem3;
             this.bindingNavigatormttoedit.MoveNextItem = this.bindingNavigatorMoveNextItem3;
             this.bindingNavigatormttoedit.MovePreviousItem = this.bindingNavigatorMovePreviousItem3;
             this.bindingNavigatormttoedit.Name = "bindingNavigatormttoedit";
             this.bindingNavigatormttoedit.PositionItem = this.bindingNavigatorPositionItem3;
-            this.bindingNavigatormttoedit.Size = new System.Drawing.Size(1268, 31);
+            this.bindingNavigatormttoedit.Size = new System.Drawing.Size(1268, 27);
             this.bindingNavigatormttoedit.TabIndex = 42;
             this.bindingNavigatormttoedit.Text = "bindingNavigator1";
             this.bindingNavigatormttoedit.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems_1);
@@ -1058,7 +1058,7 @@ namespace GestionInventario
             this.bindingNavigatorAsigEdit.MovePreviousItem = this.bindingNavigatorMovePreviousItem4;
             this.bindingNavigatorAsigEdit.Name = "bindingNavigatorAsigEdit";
             this.bindingNavigatorAsigEdit.PositionItem = this.bindingNavigatorPositionItem4;
-            this.bindingNavigatorAsigEdit.Size = new System.Drawing.Size(355, 31);
+            this.bindingNavigatorAsigEdit.Size = new System.Drawing.Size(355, 27);
             this.bindingNavigatorAsigEdit.TabIndex = 43;
             this.bindingNavigatorAsigEdit.Text = "bindingNavigator1";
             // 
@@ -1177,11 +1177,11 @@ namespace GestionInventario
             this.Usuario,
             this.Id});
             this.registroActivosDataGridView.DataSource = this.registroActivosBindingSource1;
-            this.registroActivosDataGridView.Location = new System.Drawing.Point(53, 222);
+            this.registroActivosDataGridView.Location = new System.Drawing.Point(53, 268);
             this.registroActivosDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.registroActivosDataGridView.Name = "registroActivosDataGridView";
             this.registroActivosDataGridView.RowHeadersWidth = 51;
-            this.registroActivosDataGridView.Size = new System.Drawing.Size(1029, 267);
+            this.registroActivosDataGridView.Size = new System.Drawing.Size(1029, 221);
             this.registroActivosDataGridView.TabIndex = 34;
             this.registroActivosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.registroActivosDataGridView_CellContentClick);
             // 
@@ -1271,11 +1271,11 @@ namespace GestionInventario
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn18});
             this.mantenimientoDataGridView.DataSource = this.mantenimientoBindingSource2;
-            this.mantenimientoDataGridView.Location = new System.Drawing.Point(53, 222);
+            this.mantenimientoDataGridView.Location = new System.Drawing.Point(44, 345);
             this.mantenimientoDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.mantenimientoDataGridView.Name = "mantenimientoDataGridView";
             this.mantenimientoDataGridView.RowHeadersWidth = 51;
-            this.mantenimientoDataGridView.Size = new System.Drawing.Size(1030, 267);
+            this.mantenimientoDataGridView.Size = new System.Drawing.Size(1030, 206);
             this.mantenimientoDataGridView.TabIndex = 34;
             // 
             // CodInterno
@@ -1376,11 +1376,11 @@ namespace GestionInventario
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewTextBoxColumn33});
             this.mantenimientoDataGridViewEdit.DataSource = this.mantenimientoBindingSource3;
-            this.mantenimientoDataGridViewEdit.Location = new System.Drawing.Point(116, 222);
+            this.mantenimientoDataGridViewEdit.Location = new System.Drawing.Point(116, 472);
             this.mantenimientoDataGridViewEdit.Margin = new System.Windows.Forms.Padding(4);
             this.mantenimientoDataGridViewEdit.Name = "mantenimientoDataGridViewEdit";
             this.mantenimientoDataGridViewEdit.RowHeadersWidth = 51;
-            this.mantenimientoDataGridViewEdit.Size = new System.Drawing.Size(967, 267);
+            this.mantenimientoDataGridViewEdit.Size = new System.Drawing.Size(967, 105);
             this.mantenimientoDataGridViewEdit.TabIndex = 41;
             this.mantenimientoDataGridViewEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mantenimientoDataGridViewEdit_CellContentClick);
             // 
@@ -1482,11 +1482,11 @@ namespace GestionInventario
             this.asignacionDataGridViewEdit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn38});
             this.asignacionDataGridViewEdit.DataSource = this.asignacionBindingSource1;
-            this.asignacionDataGridViewEdit.Location = new System.Drawing.Point(140, 382);
+            this.asignacionDataGridViewEdit.Location = new System.Drawing.Point(139, 559);
             this.asignacionDataGridViewEdit.Margin = new System.Windows.Forms.Padding(4);
             this.asignacionDataGridViewEdit.Name = "asignacionDataGridViewEdit";
             this.asignacionDataGridViewEdit.RowHeadersWidth = 51;
-            this.asignacionDataGridViewEdit.Size = new System.Drawing.Size(943, 107);
+            this.asignacionDataGridViewEdit.Size = new System.Drawing.Size(943, 37);
             this.asignacionDataGridViewEdit.TabIndex = 42;
             this.asignacionDataGridViewEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asignacionDataGridViewEdit_CellContentClick);
             // 
@@ -1505,11 +1505,11 @@ namespace GestionInventario
             this.FechaDevolucion,
             this.EstadoDevolucion});
             this.asignacionDataGridView.DataSource = this.asignacionBindingSource;
-            this.asignacionDataGridView.Location = new System.Drawing.Point(95, 222);
+            this.asignacionDataGridView.Location = new System.Drawing.Point(95, 400);
             this.asignacionDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.asignacionDataGridView.Name = "asignacionDataGridView";
             this.asignacionDataGridView.RowHeadersWidth = 51;
-            this.asignacionDataGridView.Size = new System.Drawing.Size(988, 267);
+            this.asignacionDataGridView.Size = new System.Drawing.Size(988, 196);
             this.asignacionDataGridView.TabIndex = 34;
             this.asignacionDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asignacionDataGridView_CellContentClick);
             // 

@@ -81,8 +81,8 @@ namespace GestionInventario
                     //conn.Open();
 
 
-                    if (usuario != "Administrador")
-                    {
+                    //if (usuario != "Administrador")
+                    //{
                         try
                         {
                             string querySede = @"
@@ -117,16 +117,21 @@ namespace GestionInventario
                         {
                             MessageBox.Show("No fue posible validar la información del usuario.\n" + ex.Message);
                         }
-                    }
+                    //}
 
-                    //Sesion.Usuario = usuario;
-                    //Sesion.SedeId = sedeId;
-                    //Sesion.Rol = rol;
-                    else
-                    {
-                        rolUsuario= "Administrador";
-                        RolUsuarioSistema = rolUsuario;
-                    }
+                    ////Sesion.Usuario = usuario;
+                    ////Sesion.SedeId = sedeId;
+                    ////Sesion.Rol = rol;
+                    //else
+                    //{
+                    //    rolUsuario= "Administrador";
+                    //    RolUsuarioSistema = rolUsuario;
+
+
+
+
+
+                    //}
 
 
                         //frm.Show();
