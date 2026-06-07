@@ -149,7 +149,6 @@ namespace GestionInventario
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asignacionDataGridViewEdit = new System.Windows.Forms.DataGridView();
             this.asignacionDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -191,6 +190,12 @@ namespace GestionInventario
             this.registroActivosTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.RegistroActivosTableAdapter();
             this.editarTableTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.EditarTableTableAdapter();
             this.mantenimientoTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.MantenimientoTableAdapter();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SedeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
@@ -424,7 +429,7 @@ namespace GestionInventario
             this.bindingNavigatorRegistro.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorRegistro.Name = "bindingNavigatorRegistro";
             this.bindingNavigatorRegistro.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorRegistro.Size = new System.Drawing.Size(1268, 27);
+            this.bindingNavigatorRegistro.Size = new System.Drawing.Size(1268, 31);
             this.bindingNavigatorRegistro.TabIndex = 37;
             this.bindingNavigatorRegistro.Text = "bindingNavigator1";
             this.bindingNavigatorRegistro.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems);
@@ -452,7 +457,7 @@ namespace GestionInventario
             this.bindingNavigatorDeleteItemRegistro.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItemRegistro.Image")));
             this.bindingNavigatorDeleteItemRegistro.Name = "bindingNavigatorDeleteItemRegistro";
             this.bindingNavigatorDeleteItemRegistro.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItemRegistro.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItemRegistro.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorDeleteItemRegistro.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
@@ -564,14 +569,14 @@ namespace GestionInventario
             this.bindingNavigatorSeparator5,
             this.copiarToolStripButton1,
             this.toolStripSeparator3});
-            this.bindingNavigatorMtto.Location = new System.Drawing.Point(0, 27);
+            this.bindingNavigatorMtto.Location = new System.Drawing.Point(0, 31);
             this.bindingNavigatorMtto.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigatorMtto.MoveLastItem = this.bindingNavigatorMoveLastItem1;
             this.bindingNavigatorMtto.MoveNextItem = this.bindingNavigatorMoveNextItem1;
             this.bindingNavigatorMtto.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigatorMtto.Name = "bindingNavigatorMtto";
             this.bindingNavigatorMtto.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigatorMtto.Size = new System.Drawing.Size(1268, 27);
+            this.bindingNavigatorMtto.Size = new System.Drawing.Size(1268, 31);
             this.bindingNavigatorMtto.TabIndex = 38;
             this.bindingNavigatorMtto.Text = "bindingNavigator2";
             // 
@@ -675,14 +680,14 @@ namespace GestionInventario
             this.bindingNavigatorSeparator8,
             this.copiarToolStripButton2,
             this.toolStripSeparator5});
-            this.bindingNavigatorAsignacion.Location = new System.Drawing.Point(0, 54);
+            this.bindingNavigatorAsignacion.Location = new System.Drawing.Point(0, 62);
             this.bindingNavigatorAsignacion.MoveFirstItem = this.bindingNavigatorMoveFirstItem2;
             this.bindingNavigatorAsignacion.MoveLastItem = this.bindingNavigatorMoveLastItem2;
             this.bindingNavigatorAsignacion.MoveNextItem = this.bindingNavigatorMoveNextItem2;
             this.bindingNavigatorAsignacion.MovePreviousItem = this.bindingNavigatorMovePreviousItem2;
             this.bindingNavigatorAsignacion.Name = "bindingNavigatorAsignacion";
             this.bindingNavigatorAsignacion.PositionItem = this.bindingNavigatorPositionItem2;
-            this.bindingNavigatorAsignacion.Size = new System.Drawing.Size(1268, 27);
+            this.bindingNavigatorAsignacion.Size = new System.Drawing.Size(1268, 31);
             this.bindingNavigatorAsignacion.TabIndex = 39;
             this.bindingNavigatorAsignacion.Text = "bindingNavigator1";
             // 
@@ -842,14 +847,14 @@ namespace GestionInventario
             this.guardarToolStripButton3,
             this.toolStripSeparator6,
             this.copiarToolStripButton3});
-            this.bindingNavigatormttoedit.Location = new System.Drawing.Point(0, 81);
+            this.bindingNavigatormttoedit.Location = new System.Drawing.Point(0, 93);
             this.bindingNavigatormttoedit.MoveFirstItem = this.bindingNavigatorMoveFirstItem3;
             this.bindingNavigatormttoedit.MoveLastItem = this.bindingNavigatorMoveLastItem3;
             this.bindingNavigatormttoedit.MoveNextItem = this.bindingNavigatorMoveNextItem3;
             this.bindingNavigatormttoedit.MovePreviousItem = this.bindingNavigatorMovePreviousItem3;
             this.bindingNavigatormttoedit.Name = "bindingNavigatormttoedit";
             this.bindingNavigatormttoedit.PositionItem = this.bindingNavigatorPositionItem3;
-            this.bindingNavigatormttoedit.Size = new System.Drawing.Size(1268, 27);
+            this.bindingNavigatormttoedit.Size = new System.Drawing.Size(1268, 31);
             this.bindingNavigatormttoedit.TabIndex = 42;
             this.bindingNavigatormttoedit.Text = "bindingNavigator1";
             this.bindingNavigatormttoedit.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems_1);
@@ -1003,7 +1008,7 @@ namespace GestionInventario
             this.bindingNavigatorAsigEdit.MovePreviousItem = this.bindingNavigatorMovePreviousItem4;
             this.bindingNavigatorAsigEdit.Name = "bindingNavigatorAsigEdit";
             this.bindingNavigatorAsigEdit.PositionItem = this.bindingNavigatorPositionItem4;
-            this.bindingNavigatorAsigEdit.Size = new System.Drawing.Size(355, 27);
+            this.bindingNavigatorAsigEdit.Size = new System.Drawing.Size(355, 31);
             this.bindingNavigatorAsigEdit.TabIndex = 43;
             this.bindingNavigatorAsigEdit.Text = "bindingNavigator1";
             // 
@@ -1212,14 +1217,6 @@ namespace GestionInventario
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             this.dataGridViewTextBoxColumn33.Width = 125;
             // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "FechaAsignacion";
-            this.dataGridViewTextBoxColumn38.HeaderText = "FechaAsignacion";
-            this.dataGridViewTextBoxColumn38.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            this.dataGridViewTextBoxColumn38.Width = 125;
-            // 
             // asignacionDataGridViewEdit
             // 
             this.asignacionDataGridViewEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1227,7 +1224,12 @@ namespace GestionInventario
             this.asignacionDataGridViewEdit.AutoGenerateColumns = false;
             this.asignacionDataGridViewEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.asignacionDataGridViewEdit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn38});
+            this.dataGridViewTextBoxColumn38,
+            this.IdActivo,
+            this.SedeId,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn19});
             this.asignacionDataGridViewEdit.DataSource = this.asignacionBindingSource1;
             this.asignacionDataGridViewEdit.Location = new System.Drawing.Point(139, 559);
             this.asignacionDataGridViewEdit.Margin = new System.Windows.Forms.Padding(4);
@@ -1587,6 +1589,54 @@ namespace GestionInventario
             // 
             this.mantenimientoTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "FechaAsignacion";
+            this.dataGridViewTextBoxColumn38.HeaderText = "FechaAsignacion";
+            this.dataGridViewTextBoxColumn38.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.Width = 125;
+            // 
+            // IdActivo
+            // 
+            this.IdActivo.DataPropertyName = "IdActivo";
+            this.IdActivo.HeaderText = "IdActivo";
+            this.IdActivo.MinimumWidth = 6;
+            this.IdActivo.Name = "IdActivo";
+            this.IdActivo.Width = 125;
+            // 
+            // SedeId
+            // 
+            this.SedeId.DataPropertyName = "SedeId";
+            this.SedeId.HeaderText = "SedeId";
+            this.SedeId.MinimumWidth = 6;
+            this.SedeId.Name = "SedeId";
+            this.SedeId.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "EstadoDevolucion";
+            this.dataGridViewTextBoxColumn14.HeaderText = "EstadoDevolucion";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "CondicionEntrega";
+            this.dataGridViewTextBoxColumn15.HeaderText = "CondicionEntrega";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "FechaDevolucion";
+            this.dataGridViewTextBoxColumn19.HeaderText = "FechaDevolucion";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Width = 125;
+            // 
             // FormConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1785,7 +1835,6 @@ namespace GestionInventario
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton copiarToolStripButton4;
         private DataGridView mantenimientoDataGridViewEdit;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
         private DataGridView asignacionDataGridViewEdit;
         private DataGridView asignacionDataGridView;
@@ -1828,5 +1877,11 @@ namespace GestionInventario
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private DataGridViewTextBoxColumn UsuarioSistemaId;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private DataGridViewTextBoxColumn IdActivo;
+        private DataGridViewTextBoxColumn SedeId;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
     }
 }

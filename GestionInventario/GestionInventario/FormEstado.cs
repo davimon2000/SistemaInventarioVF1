@@ -53,6 +53,7 @@ namespace GestionInventario
             //cmbGrafico.SelectedIndexChanged += cmbGrafico_SelectedIndexChanged;
             //cmbGraficoMarcas.SelectedIndexChanged += cmbGraficoMarcas_SelectedIndexChanged;
             CargarGrafico();
+            CargarTiposActivo();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -338,18 +339,90 @@ ORDER BY s.NombreSede, ea.Estado;
         {
 
         }
+        //private void CargarGrafico()
+        //{
+        //    chartActivos.Series.Clear();
+        //    chartActivos.ChartAreas[0].AxisX.Interval = 1;
+
+        //    //string conexion = "TU_CADENA_DE_CONEXION";
+
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        string query = "SELECT Sede, EstadoActual, Cantidad FROM vw_ResumenActivosPorSedeEstadov1";
+
+        //        SqlDataAdapter da = new SqlDataAdapter(query, conn);
+        //        DataTable dt = new DataTable();
+        //        da.Fill(dt);
+
+        //        var sedes = dt.AsEnumerable()
+        //                      .Select(r => r["Sede"].ToString())
+        //                      .Distinct()
+        //                      .ToList();
+
+        //        var estados = dt.AsEnumerable()
+        //                        .Select(r => r["EstadoActual"].ToString())
+        //                        .Distinct()
+        //                        .ToList();
+
+        //        // Crear series primero
+        //        foreach (var estado in estados)
+        //        {
+        //            Series serie = new Series(estado);
+        //            serie.ChartType = SeriesChartType.Column;
+        //            serie.IsValueShownAsLabel = true; // muestra cantidad arriba
+        //            chartActivos.Series.Add(serie);
+        //        }
+
+        //        // Ahora recorrer sedes (categorías del eje X)
+        //        foreach (var sede in sedes)
+        //        {
+        //            foreach (var estado in estados)
+        //            {
+        //                var fila = dt.AsEnumerable()
+        //                    .FirstOrDefault(r =>
+        //                        r["Sede"].ToString() == sede &&
+        //                        r["EstadoActual"].ToString() == estado);
+
+        //                int cantidad = fila != null
+        //                    ? Convert.ToInt32(fila["Cantidad"])
+        //                    : 0;
+
+        //                chartActivos.Series[estado].Points.AddXY(sede, cantidad);
+        //            }
+        //        }
+        //    }
+        //}
+
+
         private void CargarGrafico()
         {
             chartActivos.Series.Clear();
             chartActivos.ChartAreas[0].AxisX.Interval = 1;
 
-            //string conexion = "TU_CADENA_DE_CONEXION";
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT Sede, EstadoActual, Cantidad FROM vw_ResumenActivosPorSedeEstado";
+                string query;
 
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                if (cmbTipoActivo.Text == "Todos")
+                {
+                    query = @"SELECT Sede, EstadoActual, Cantidad
+                      FROM vw_ResumenActivosPorSedeEstadov1";
+                }
+                else
+                {
+                    query = @"SELECT Sede, EstadoActual, Cantidad
+                      FROM vw_ResumenActivosPorSedeEstadov1
+                      WHERE TipoActivo = @TipoActivo";
+                }
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                if (cmbTipoActivo.Text != "Todos")
+                {
+                    cmd.Parameters.AddWithValue("@TipoActivo", cmbTipoActivo.Text);
+                }
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
@@ -363,16 +436,14 @@ ORDER BY s.NombreSede, ea.Estado;
                                 .Distinct()
                                 .ToList();
 
-                // Crear series primero
                 foreach (var estado in estados)
                 {
                     Series serie = new Series(estado);
                     serie.ChartType = SeriesChartType.Column;
-                    serie.IsValueShownAsLabel = true; // muestra cantidad arriba
+                    serie.IsValueShownAsLabel = true;
                     chartActivos.Series.Add(serie);
                 }
 
-                // Ahora recorrer sedes (categorías del eje X)
                 foreach (var sede in sedes)
                 {
                     foreach (var estado in estados)
@@ -390,6 +461,37 @@ ORDER BY s.NombreSede, ea.Estado;
                     }
                 }
             }
+        }
+
+        private void CargarTiposActivo()
+        {
+            cmbTipoActivo.Items.Clear();
+            cmbTipoActivo.Items.Add("Todos");
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+            SELECT DISTINCT TipoActivo
+            FROM vw_ResumenActivosPorSedeEstadov1
+            ORDER BY TipoActivo";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cmbTipoActivo.Items.Add(dr["TipoActivo"].ToString());
+                }
+            }
+
+            cmbTipoActivo.SelectedIndex = 0;
+        }
+
+        private void cmbTipoActivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarGrafico();
         }
     }
 }

@@ -45,10 +45,11 @@
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vwResumenActivosPorSedeEstadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventarioActivosDataSet3 = new GestionInventario.InventarioActivosDataSet3();
+            this.vw_ResumenActivosPorSedeEstadoTableAdapter = new GestionInventario.InventarioActivosDataSet3TableAdapters.vw_ResumenActivosPorSedeEstadoTableAdapter();
             this.resumenActivosPorSedeEstadoViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estadoYSedeView = new GestionInventario.EstadoYSedeView();
             this.resumenActivosPorSedeEstadoViewTableAdapter = new GestionInventario.EstadoYSedeViewTableAdapters.ResumenActivosPorSedeEstadoViewTableAdapter();
-            this.vw_ResumenActivosPorSedeEstadoTableAdapter = new GestionInventario.InventarioActivosDataSet3TableAdapters.vw_ResumenActivosPorSedeEstadoTableAdapter();
+            this.cmbTipoActivo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet2)).BeginInit();
@@ -68,9 +69,10 @@
             // 
             this.lblRegistro.AutoSize = true;
             this.lblRegistro.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistro.Location = new System.Drawing.Point(300, 33);
+            this.lblRegistro.Location = new System.Drawing.Point(400, 41);
+            this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(157, 25);
+            this.lblRegistro.Size = new System.Drawing.Size(196, 32);
             this.lblRegistro.TabIndex = 12;
             this.lblRegistro.Text = "ESTADO ACTUAL";
             this.lblRegistro.Click += new System.EventHandler(this.lblRegistro_Click);
@@ -84,13 +86,14 @@
             this.chartActivos.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartActivos.Legends.Add(legend1);
-            this.chartActivos.Location = new System.Drawing.Point(38, 312);
+            this.chartActivos.Location = new System.Drawing.Point(51, 461);
+            this.chartActivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartActivos.Name = "chartActivos";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartActivos.Series.Add(series1);
-            this.chartActivos.Size = new System.Drawing.Size(678, 268);
+            this.chartActivos.Size = new System.Drawing.Size(905, 330);
             this.chartActivos.TabIndex = 13;
             this.chartActivos.Text = "chart1";
             this.chartActivos.Click += new System.EventHandler(this.chart1_Click);
@@ -121,9 +124,11 @@
             this.estadoActualDataGridViewTextBoxColumn,
             this.cantidadDataGridViewTextBoxColumn});
             this.dgvEstado.DataSource = this.vwResumenActivosPorSedeEstadoBindingSource;
-            this.dgvEstado.Location = new System.Drawing.Point(38, 78);
+            this.dgvEstado.Location = new System.Drawing.Point(51, 86);
+            this.dgvEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvEstado.Name = "dgvEstado";
-            this.dgvEstado.Size = new System.Drawing.Size(678, 204);
+            this.dgvEstado.RowHeadersWidth = 51;
+            this.dgvEstado.Size = new System.Drawing.Size(905, 248);
             this.dgvEstado.TabIndex = 22;
             this.dgvEstado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -131,19 +136,25 @@
             // 
             this.sedeDataGridViewTextBoxColumn.DataPropertyName = "Sede";
             this.sedeDataGridViewTextBoxColumn.HeaderText = "Sede";
+            this.sedeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sedeDataGridViewTextBoxColumn.Name = "sedeDataGridViewTextBoxColumn";
+            this.sedeDataGridViewTextBoxColumn.Width = 125;
             // 
             // estadoActualDataGridViewTextBoxColumn
             // 
             this.estadoActualDataGridViewTextBoxColumn.DataPropertyName = "EstadoActual";
             this.estadoActualDataGridViewTextBoxColumn.HeaderText = "EstadoActual";
+            this.estadoActualDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.estadoActualDataGridViewTextBoxColumn.Name = "estadoActualDataGridViewTextBoxColumn";
+            this.estadoActualDataGridViewTextBoxColumn.Width = 125;
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.Width = 125;
             // 
             // vwResumenActivosPorSedeEstadoBindingSource
             // 
@@ -154,6 +165,10 @@
             // 
             this.inventarioActivosDataSet3.DataSetName = "InventarioActivosDataSet3";
             this.inventarioActivosDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_ResumenActivosPorSedeEstadoTableAdapter
+            // 
+            this.vw_ResumenActivosPorSedeEstadoTableAdapter.ClearBeforeFill = true;
             // 
             // resumenActivosPorSedeEstadoViewBindingSource
             // 
@@ -169,20 +184,31 @@
             // 
             this.resumenActivosPorSedeEstadoViewTableAdapter.ClearBeforeFill = true;
             // 
-            // vw_ResumenActivosPorSedeEstadoTableAdapter
+            // cmbTipoActivo
             // 
-            this.vw_ResumenActivosPorSedeEstadoTableAdapter.ClearBeforeFill = true;
+            this.cmbTipoActivo.FormattingEnabled = true;
+            this.cmbTipoActivo.Items.AddRange(new object[] {
+            "Todos",
+            "DIADEMA",
+            "Computador"});
+            this.cmbTipoActivo.Location = new System.Drawing.Point(692, 388);
+            this.cmbTipoActivo.Name = "cmbTipoActivo";
+            this.cmbTipoActivo.Size = new System.Drawing.Size(231, 24);
+            this.cmbTipoActivo.TabIndex = 23;
+            this.cmbTipoActivo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoActivo_SelectedIndexChanged);
             // 
             // FormEstado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(776, 580);
+            this.ClientSize = new System.Drawing.Size(1036, 791);
+            this.Controls.Add(this.cmbTipoActivo);
             this.Controls.Add(this.dgvEstado);
             this.Controls.Add(this.chartActivos);
             this.Controls.Add(this.lblRegistro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormEstado";
             this.Text = "Estado";
             this.Load += new System.EventHandler(this.FormEstado_Load);
@@ -218,5 +244,6 @@
         private InventarioActivosDataSet3 inventarioActivosDataSet3;
         private System.Windows.Forms.BindingSource vwResumenActivosPorSedeEstadoBindingSource;
         private InventarioActivosDataSet3TableAdapters.vw_ResumenActivosPorSedeEstadoTableAdapter vw_ResumenActivosPorSedeEstadoTableAdapter;
+        private System.Windows.Forms.ComboBox cmbTipoActivo;
     }
 }
