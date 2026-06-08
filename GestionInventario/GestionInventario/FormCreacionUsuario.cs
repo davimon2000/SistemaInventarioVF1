@@ -72,15 +72,15 @@ namespace GestionInventario
                     conn.Open();
 
                     string query = @"INSERT INTO Usuarios 
-                            (Usuario, NombreCompleto, Rol, SedeId, PasswordHash, PermisosMtto, PrimerIngreso)
+                            (Usuario, NombreCompleto, Rol, SedeId, PasswordHash, PermisosMtto, PrimerIngreso, Activo)
                             VALUES
-                            (@Usuario, @Nombre, @Rol, @SedeId, @PasswordHash, @EsAdmin, 1)";
+                            (@Usuario, @Nombre, @Rol, @SedeId, @PasswordHash, @EsAdmin, 1, 1)";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     cmd.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
                     cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                    cmd.Parameters.AddWithValue("@Rol", txtNombre.Text);
+                    cmd.Parameters.AddWithValue("@Rol", cmbRol.Text);
                     cmd.Parameters.AddWithValue("@SedeId", cmbSede.SelectedValue);
                     cmd.Parameters.AddWithValue("@PasswordHash", hash);
                     cmd.Parameters.AddWithValue("@EsAdmin", checkMtto.Checked);
@@ -88,6 +88,9 @@ namespace GestionInventario
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Usuario creado correctamente");
+                    txtContraseña.Text = "";
+                    txtNombre.Text = "";
+                    txtUsuario.Text = "";
                 }
             }
             catch (Exception ex)

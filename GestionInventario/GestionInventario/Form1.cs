@@ -231,6 +231,14 @@ namespace GestionInventario
         {
             Application.Exit();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Trazabilidad frm = Trazabilidad.ventana_unica();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.BringToFront();
+        }
     }
 
 }

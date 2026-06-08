@@ -170,3 +170,4 @@ C:\Users\David Rodriguez\SistemaInventarioVF1\GestionInventario\GestionInventari
 C:\Users\David Rodriguez\SistemaInventarioVF1\GestionInventario\GestionInventario\obj\Debug\GestionI.14355B1F.Up2Date
 C:\Users\David Rodriguez\SistemaInventarioVF1\GestionInventario\GestionInventario\obj\Debug\GestionInventario.exe
 C:\Users\David Rodriguez\SistemaInventarioVF1\GestionInventario\GestionInventario\obj\Debug\GestionInventario.pdb
+C:\Users\David Rodriguez\SistemaInventarioVF1\GestionInventario\GestionInventario\obj\Debug\GestionInventario.Trazabilidad.resources

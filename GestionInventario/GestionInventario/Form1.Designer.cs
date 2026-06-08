@@ -35,6 +35,7 @@ namespace GestionInventario
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMDI));
             this.pnlMenuVertical = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btnCreacionUsuarios = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@ namespace GestionInventario
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnEstado = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnConsulta = new System.Windows.Forms.Button();
@@ -62,8 +64,7 @@ namespace GestionInventario
             this.btnRegistro = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnIngresomtto = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -80,6 +81,7 @@ namespace GestionInventario
             // pnlMenuVertical
             // 
             this.pnlMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.pnlMenuVertical.Controls.Add(this.button2);
             this.pnlMenuVertical.Controls.Add(this.panel10);
             this.pnlMenuVertical.Controls.Add(this.btnSalir);
             this.pnlMenuVertical.Controls.Add(this.pictureBox9);
@@ -111,6 +113,12 @@ namespace GestionInventario
             resources.ApplyResources(this.pnlMenuVertical, "pnlMenuVertical");
             this.pnlMenuVertical.Name = "pnlMenuVertical";
             this.pnlMenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMenuVertical_Paint);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.panel10, "panel10");
+            this.panel10.Name = "panel10";
             // 
             // btnSalir
             // 
@@ -215,6 +223,12 @@ namespace GestionInventario
             resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Name = "panel5";
             // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.panel11, "panel11");
+            this.panel11.Name = "panel11";
+            // 
             // pictureBox5
             // 
             resources.ApplyResources(this.pictureBox5, "pictureBox5");
@@ -310,17 +324,15 @@ namespace GestionInventario
             this.btnIngresomtto.UseVisualStyleBackColor = true;
             this.btnIngresomtto.Click += new System.EventHandler(this.btnIngresomtto_Click_1);
             // 
-            // panel10
+            // button2
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            resources.ApplyResources(this.panel10, "panel10");
-            this.panel10.Name = "panel10";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            resources.ApplyResources(this.panel11, "panel11");
-            this.panel11.Name = "panel11";
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // FormMDI
             // 
@@ -379,5 +391,6 @@ namespace GestionInventario
         private Button btnSalir;
         private Panel panel10;
         private Panel panel11;
+        private Button button2;
     }
 }

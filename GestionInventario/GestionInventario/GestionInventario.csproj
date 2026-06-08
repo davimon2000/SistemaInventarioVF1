@@ -316,6 +316,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TecnicosDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad.Designer.cs">
+      <DependentUpon>Trazabilidad.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +382,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Trazabilidad.resx">
+      <DependentUpon>Trazabilidad.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ActivosDS.xsc">
       <DependentUpon>ActivosDS.xsd</DependentUpon>
     </None>

@@ -40,9 +40,10 @@
             // 
             this.lblRegistro.AutoSize = true;
             this.lblRegistro.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistro.Location = new System.Drawing.Point(136, 36);
+            this.lblRegistro.Location = new System.Drawing.Point(181, 44);
+            this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(170, 25);
+            this.lblRegistro.Size = new System.Drawing.Size(210, 32);
             this.lblRegistro.TabIndex = 4;
             this.lblRegistro.Text = "INICIO DE SESIÓN";
             this.lblRegistro.Click += new System.EventHandler(this.lblRegistro_Click);
@@ -51,9 +52,10 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(50, 106);
+            this.lblUsuario.Location = new System.Drawing.Point(67, 130);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(69, 21);
+            this.lblUsuario.Size = new System.Drawing.Size(86, 28);
             this.lblUsuario.TabIndex = 19;
             this.lblUsuario.Text = "Usuario:";
             // 
@@ -61,50 +63,56 @@
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(50, 169);
+            this.lblContraseña.Location = new System.Drawing.Point(67, 208);
+            this.lblContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(96, 21);
+            this.lblContraseña.Size = new System.Drawing.Size(119, 28);
             this.lblContraseña.TabIndex = 20;
             this.lblContraseña.Text = "Contraseña:";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(161, 109);
+            this.txtUsuario.Location = new System.Drawing.Point(215, 134);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(164, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(217, 22);
             this.txtUsuario.TabIndex = 21;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(161, 172);
+            this.txtContraseña.Location = new System.Drawing.Point(215, 212);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(164, 20);
+            this.txtContraseña.Size = new System.Drawing.Size(217, 22);
             this.txtContraseña.TabIndex = 22;
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnRegistrar.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(161, 233);
+            this.btnRegistrar.Location = new System.Drawing.Point(215, 287);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(114, 29);
+            this.btnRegistrar.Size = new System.Drawing.Size(152, 36);
             this.btnRegistrar.TabIndex = 23;
             this.btnRegistrar.Text = "INGRESAR";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 301);
+            this.ClientSize = new System.Drawing.Size(589, 370);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblRegistro);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.Text = "FormLogin";
+            //this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -150,6 +150,12 @@ namespace GestionInventario
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asignacionDataGridViewEdit = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SedeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asignacionDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsuarioRed = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -190,12 +196,6 @@ namespace GestionInventario
             this.registroActivosTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.RegistroActivosTableAdapter();
             this.editarTableTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.EditarTableTableAdapter();
             this.mantenimientoTableAdapter = new GestionInventario.ConsultaActivosDSTableAdapters.MantenimientoTableAdapter();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SedeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosViewDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
@@ -487,6 +487,7 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -614,6 +615,7 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -725,6 +727,7 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem2.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem2.AutoSize = false;
+            this.bindingNavigatorPositionItem2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem2.Name = "bindingNavigatorPositionItem2";
             this.bindingNavigatorPositionItem2.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem2.Text = "0";
@@ -902,6 +905,7 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem3.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem3.AutoSize = false;
+            this.bindingNavigatorPositionItem3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem3.Name = "bindingNavigatorPositionItem3";
             this.bindingNavigatorPositionItem3.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem3.Text = "0";
@@ -1055,6 +1059,7 @@ namespace GestionInventario
             // 
             this.bindingNavigatorPositionItem4.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem4.AutoSize = false;
+            this.bindingNavigatorPositionItem4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem4.Name = "bindingNavigatorPositionItem4";
             this.bindingNavigatorPositionItem4.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem4.Text = "0";
@@ -1238,6 +1243,54 @@ namespace GestionInventario
             this.asignacionDataGridViewEdit.Size = new System.Drawing.Size(943, 112);
             this.asignacionDataGridViewEdit.TabIndex = 42;
             this.asignacionDataGridViewEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asignacionDataGridViewEdit_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "FechaAsignacion";
+            this.dataGridViewTextBoxColumn38.HeaderText = "FechaAsignacion";
+            this.dataGridViewTextBoxColumn38.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.Width = 125;
+            // 
+            // IdActivo
+            // 
+            this.IdActivo.DataPropertyName = "IdActivo";
+            this.IdActivo.HeaderText = "IdActivo";
+            this.IdActivo.MinimumWidth = 6;
+            this.IdActivo.Name = "IdActivo";
+            this.IdActivo.Width = 125;
+            // 
+            // SedeId
+            // 
+            this.SedeId.DataPropertyName = "SedeId";
+            this.SedeId.HeaderText = "SedeId";
+            this.SedeId.MinimumWidth = 6;
+            this.SedeId.Name = "SedeId";
+            this.SedeId.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "EstadoDevolucion";
+            this.dataGridViewTextBoxColumn14.HeaderText = "EstadoDevolucion";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "CondicionEntrega";
+            this.dataGridViewTextBoxColumn15.HeaderText = "CondicionEntrega";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "FechaDevolucion";
+            this.dataGridViewTextBoxColumn19.HeaderText = "FechaDevolucion";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Width = 125;
             // 
             // asignacionDataGridView
             // 
@@ -1588,54 +1641,6 @@ namespace GestionInventario
             // mantenimientoTableAdapter
             // 
             this.mantenimientoTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "FechaAsignacion";
-            this.dataGridViewTextBoxColumn38.HeaderText = "FechaAsignacion";
-            this.dataGridViewTextBoxColumn38.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            this.dataGridViewTextBoxColumn38.Width = 125;
-            // 
-            // IdActivo
-            // 
-            this.IdActivo.DataPropertyName = "IdActivo";
-            this.IdActivo.HeaderText = "IdActivo";
-            this.IdActivo.MinimumWidth = 6;
-            this.IdActivo.Name = "IdActivo";
-            this.IdActivo.Width = 125;
-            // 
-            // SedeId
-            // 
-            this.SedeId.DataPropertyName = "SedeId";
-            this.SedeId.HeaderText = "SedeId";
-            this.SedeId.MinimumWidth = 6;
-            this.SedeId.Name = "SedeId";
-            this.SedeId.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "EstadoDevolucion";
-            this.dataGridViewTextBoxColumn14.HeaderText = "EstadoDevolucion";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "CondicionEntrega";
-            this.dataGridViewTextBoxColumn15.HeaderText = "CondicionEntrega";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "FechaDevolucion";
-            this.dataGridViewTextBoxColumn19.HeaderText = "FechaDevolucion";
-            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 125;
             // 
             // FormConsulta
             // 
