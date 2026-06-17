@@ -50,6 +50,14 @@
             this.estadoYSedeView = new GestionInventario.EstadoYSedeView();
             this.resumenActivosPorSedeEstadoViewTableAdapter = new GestionInventario.EstadoYSedeViewTableAdapters.ResumenActivosPorSedeEstadoViewTableAdapter();
             this.cmbTipoActivo = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.inventarioActivosDataSet4 = new GestionInventario.InventarioActivosDataSet4();
+            this.vwResumenActivosPorSedeEstadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_ResumenActivosPorSedeEstadoTableAdapter1 = new GestionInventario.InventarioActivosDataSet4TableAdapters.vw_ResumenActivosPorSedeEstadoTableAdapter();
+            this.sedeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoActualDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.registroActivosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet2)).BeginInit();
@@ -59,6 +67,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumenActivosPorSedeEstadoViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadoYSedeView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwResumenActivosPorSedeEstadoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // registroActivosBindingSource
@@ -87,7 +98,7 @@
             legend1.Name = "Legend1";
             this.chartActivos.Legends.Add(legend1);
             this.chartActivos.Location = new System.Drawing.Point(51, 461);
-            this.chartActivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartActivos.Margin = new System.Windows.Forms.Padding(4);
             this.chartActivos.Name = "chartActivos";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -125,11 +136,12 @@
             this.cantidadDataGridViewTextBoxColumn});
             this.dgvEstado.DataSource = this.vwResumenActivosPorSedeEstadoBindingSource;
             this.dgvEstado.Location = new System.Drawing.Point(51, 86);
-            this.dgvEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvEstado.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEstado.Name = "dgvEstado";
             this.dgvEstado.RowHeadersWidth = 51;
             this.dgvEstado.Size = new System.Drawing.Size(905, 248);
             this.dgvEstado.TabIndex = 22;
+            this.dgvEstado.Visible = false;
             this.dgvEstado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // sedeDataGridViewTextBoxColumn
@@ -197,18 +209,83 @@
             this.cmbTipoActivo.TabIndex = 23;
             this.cmbTipoActivo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoActivo_SelectedIndexChanged);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sedeDataGridViewTextBoxColumn1,
+            this.tipoActivoDataGridViewTextBoxColumn,
+            this.estadoActualDataGridViewTextBoxColumn1,
+            this.cantidadDataGridViewTextBoxColumn1});
+            this.dataGridView1.DataSource = this.vwResumenActivosPorSedeEstadoBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(51, 86);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(905, 248);
+            this.dataGridView1.TabIndex = 24;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // inventarioActivosDataSet4
+            // 
+            this.inventarioActivosDataSet4.DataSetName = "InventarioActivosDataSet4";
+            this.inventarioActivosDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vwResumenActivosPorSedeEstadoBindingSource1
+            // 
+            this.vwResumenActivosPorSedeEstadoBindingSource1.DataMember = "vw_ResumenActivosPorSedeEstado";
+            this.vwResumenActivosPorSedeEstadoBindingSource1.DataSource = this.inventarioActivosDataSet4;
+            // 
+            // vw_ResumenActivosPorSedeEstadoTableAdapter1
+            // 
+            this.vw_ResumenActivosPorSedeEstadoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // sedeDataGridViewTextBoxColumn1
+            // 
+            this.sedeDataGridViewTextBoxColumn1.DataPropertyName = "Sede";
+            this.sedeDataGridViewTextBoxColumn1.HeaderText = "Sede";
+            this.sedeDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.sedeDataGridViewTextBoxColumn1.Name = "sedeDataGridViewTextBoxColumn1";
+            this.sedeDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // tipoActivoDataGridViewTextBoxColumn
+            // 
+            this.tipoActivoDataGridViewTextBoxColumn.DataPropertyName = "TipoActivo";
+            this.tipoActivoDataGridViewTextBoxColumn.HeaderText = "TipoActivo";
+            this.tipoActivoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tipoActivoDataGridViewTextBoxColumn.Name = "tipoActivoDataGridViewTextBoxColumn";
+            this.tipoActivoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // estadoActualDataGridViewTextBoxColumn1
+            // 
+            this.estadoActualDataGridViewTextBoxColumn1.DataPropertyName = "EstadoActual";
+            this.estadoActualDataGridViewTextBoxColumn1.HeaderText = "EstadoActual";
+            this.estadoActualDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.estadoActualDataGridViewTextBoxColumn1.Name = "estadoActualDataGridViewTextBoxColumn1";
+            this.estadoActualDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // cantidadDataGridViewTextBoxColumn1
+            // 
+            this.cantidadDataGridViewTextBoxColumn1.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn1.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.cantidadDataGridViewTextBoxColumn1.Name = "cantidadDataGridViewTextBoxColumn1";
+            this.cantidadDataGridViewTextBoxColumn1.Width = 125;
+            // 
             // FormEstado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1036, 791);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmbTipoActivo);
             this.Controls.Add(this.dgvEstado);
             this.Controls.Add(this.chartActivos);
             this.Controls.Add(this.lblRegistro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormEstado";
             this.Text = "Estado";
             this.Load += new System.EventHandler(this.FormEstado_Load);
@@ -221,6 +298,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumenActivosPorSedeEstadoViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadoYSedeView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioActivosDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwResumenActivosPorSedeEstadoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +325,13 @@
         private System.Windows.Forms.BindingSource vwResumenActivosPorSedeEstadoBindingSource;
         private InventarioActivosDataSet3TableAdapters.vw_ResumenActivosPorSedeEstadoTableAdapter vw_ResumenActivosPorSedeEstadoTableAdapter;
         private System.Windows.Forms.ComboBox cmbTipoActivo;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private InventarioActivosDataSet4 inventarioActivosDataSet4;
+        private System.Windows.Forms.BindingSource vwResumenActivosPorSedeEstadoBindingSource1;
+        private InventarioActivosDataSet4TableAdapters.vw_ResumenActivosPorSedeEstadoTableAdapter vw_ResumenActivosPorSedeEstadoTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sedeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoActivoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoActualDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn1;
     }
 }

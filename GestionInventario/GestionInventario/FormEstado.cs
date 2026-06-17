@@ -39,6 +39,8 @@ namespace GestionInventario
 
         private void FormEstado_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'inventarioActivosDataSet4.vw_ResumenActivosPorSedeEstado' Puede moverla o quitarla según sea necesario.
+            this.vw_ResumenActivosPorSedeEstadoTableAdapter1.Fill(this.inventarioActivosDataSet4.vw_ResumenActivosPorSedeEstado);
             // TODO: esta línea de código carga datos en la tabla 'inventarioActivosDataSet3.vw_ResumenActivosPorSedeEstado' Puede moverla o quitarla según sea necesario.
             this.vw_ResumenActivosPorSedeEstadoTableAdapter.Fill(this.inventarioActivosDataSet3.vw_ResumenActivosPorSedeEstado);
             // TODO: esta línea de código carga datos en la tabla 'estadoYSedeView.ResumenActivosPorSedeEstadoView' Puede moverla o quitarla según sea necesario.
@@ -492,6 +494,11 @@ ORDER BY s.NombreSede, ea.Estado;
         private void cmbTipoActivo_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarGrafico();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -1133,11 +1133,11 @@ namespace GestionInventario
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewTextBoxColumn33});
             this.mantenimientoDataGridViewEdit.DataSource = this.mantenimientoBindingSource3;
-            this.mantenimientoDataGridViewEdit.Location = new System.Drawing.Point(116, 472);
+            this.mantenimientoDataGridViewEdit.Location = new System.Drawing.Point(53, 268);
             this.mantenimientoDataGridViewEdit.Margin = new System.Windows.Forms.Padding(4);
             this.mantenimientoDataGridViewEdit.Name = "mantenimientoDataGridViewEdit";
             this.mantenimientoDataGridViewEdit.RowHeadersWidth = 51;
-            this.mantenimientoDataGridViewEdit.Size = new System.Drawing.Size(967, 146);
+            this.mantenimientoDataGridViewEdit.Size = new System.Drawing.Size(1015, 221);
             this.mantenimientoDataGridViewEdit.TabIndex = 41;
             this.mantenimientoDataGridViewEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mantenimientoDataGridViewEdit_CellContentClick);
             // 
@@ -1236,11 +1236,11 @@ namespace GestionInventario
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn19});
             this.asignacionDataGridViewEdit.DataSource = this.asignacionBindingSource1;
-            this.asignacionDataGridViewEdit.Location = new System.Drawing.Point(139, 559);
+            this.asignacionDataGridViewEdit.Location = new System.Drawing.Point(53, 268);
             this.asignacionDataGridViewEdit.Margin = new System.Windows.Forms.Padding(4);
             this.asignacionDataGridViewEdit.Name = "asignacionDataGridViewEdit";
             this.asignacionDataGridViewEdit.RowHeadersWidth = 51;
-            this.asignacionDataGridViewEdit.Size = new System.Drawing.Size(943, 112);
+            this.asignacionDataGridViewEdit.Size = new System.Drawing.Size(1015, 221);
             this.asignacionDataGridViewEdit.TabIndex = 42;
             this.asignacionDataGridViewEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asignacionDataGridViewEdit_CellContentClick);
             // 
@@ -1307,11 +1307,11 @@ namespace GestionInventario
             this.FechaDevolucion,
             this.EstadoDevolucion});
             this.asignacionDataGridView.DataSource = this.asignacionBindingSource;
-            this.asignacionDataGridView.Location = new System.Drawing.Point(95, 400);
+            this.asignacionDataGridView.Location = new System.Drawing.Point(53, 268);
             this.asignacionDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.asignacionDataGridView.Name = "asignacionDataGridView";
             this.asignacionDataGridView.RowHeadersWidth = 51;
-            this.asignacionDataGridView.Size = new System.Drawing.Size(988, 196);
+            this.asignacionDataGridView.Size = new System.Drawing.Size(1015, 221);
             this.asignacionDataGridView.TabIndex = 34;
             this.asignacionDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asignacionDataGridView_CellContentClick);
             // 
@@ -1584,7 +1584,7 @@ namespace GestionInventario
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn18});
             this.mantenimientoDataGridView.DataSource = this.mantenimientoBindingSource2;
-            this.mantenimientoDataGridView.Location = new System.Drawing.Point(44, 345);
+            this.mantenimientoDataGridView.Location = new System.Drawing.Point(53, 268);
             this.mantenimientoDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.mantenimientoDataGridView.Name = "mantenimientoDataGridView";
             this.mantenimientoDataGridView.RowHeadersWidth = 51;
@@ -1874,6 +1874,12 @@ namespace GestionInventario
         private DataGridViewTextBoxColumn Serial;
         private DataGridViewTextBoxColumn CodInterno;
         private DataGridView mantenimientoDataGridView;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private DataGridViewTextBoxColumn IdActivo;
+        private DataGridViewTextBoxColumn SedeId;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -1882,11 +1888,5 @@ namespace GestionInventario
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private DataGridViewTextBoxColumn UsuarioSistemaId;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
-        private DataGridViewTextBoxColumn IdActivo;
-        private DataGridViewTextBoxColumn SedeId;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
     }
 }

@@ -65,7 +65,7 @@ namespace GestionInventario
             // TODO: esta línea de código carga datos en la tabla 'inventarioActivosDataSet3.RegistroActivos' Puede moverla o quitarla según sea necesario.
             // this.registroActivosTableAdapter.Fill(this.inventarioActivosDataSet3.RegistroActivos);
             // TODO: esta línea de código carga datos en la tabla 'activosViewDS.ActivosView' Puede moverla o quitarla según sea necesario.
-            this.activosViewTableAdapter.Fill(this.activosViewDS.ActivosView);
+            //this.activosViewTableAdapter.Fill(this.activosViewDS.ActivosView);
 
 
             //String seleccion = cmbTabla.Text;
